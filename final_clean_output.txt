@@ -1,4 +1,4 @@
-S150088539  AVHAD KALPESH BALIRAM                   RANJANABAI               71842239C 
+rS150088539  AVHAD KALPESH BALIRAM                   RANJANABAI               71842239C 
                                                                                   
                
                                     
@@ -29,7 +29,7 @@ S150088539  AVHAD KALPESH BALIRAM                   RANJANABAI               718
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   8.08, TOTAL CREDITS EARNED   50
+   8.08,   50
  
 
  
@@ -64,7 +64,7 @@ S150088540  AWACHAR SHOBHANA BHAURAO                SUNITATAI                718
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   38
+   nn,   38
  
  
                    
@@ -105,7 +105,7 @@ S150088541  AWALE PRAJAKTA SUNIL                    KUSUM                    718
   210258C    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
 
  
@@ -140,7 +140,7 @@ S150088542  BHOSALE RUSHIKESH VIJAY                 HIRABAI                  718
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
  
                    
@@ -181,7 +181,7 @@ S150088543  BHOSALE VISHWAJEET VILAS                SUNITA                   718
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
 
  
@@ -216,7 +216,7 @@ S150088544  BUTTE GAURABAI SAYABANNA                LAXMIBAI                 718
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.96, TOTAL CREDITS EARNED   50
+   6.96,   50
  
  
                    
@@ -257,7 +257,7 @@ S150088546  DHIRAL PATEL                            JAGRUTI                  718
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   12
+   nn,   12
  
 
  
@@ -292,7 +292,7 @@ S150088547  GAIKWAD VAIBHAV RATAN                   SUSHILA                  718
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
  
                    
@@ -333,7 +333,7 @@ S150088548  GAVHANE SHUBHAM KANTILAL                SHOBHA                   718
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.4, TOTAL CREDITS EARNED   50
+   6.4,   50
  
 
  
@@ -368,7 +368,7 @@ S150088549  JADHAV APARNA  KANTA                    SUNITA                   718
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.26, TOTAL CREDITS EARNED   50
+   7.26,   50
  
  
                    
@@ -409,7 +409,7 @@ S150088550  JADHAV SOMESH SANJAY                    UJWALA                   718
   210258C    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   34
+   nn,   34
  
 
  
@@ -444,7 +444,7 @@ S150088551  KONKATI RUCHIKA NAGESH                  CHANDRASHILA             718
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   36
+   nn,   36
  
  
                    
@@ -485,7 +485,7 @@ S150088552  LAGHULE VIKRANT PARSHURAM               SHASHIKALA               718
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   41
+   nn,   41
  
 
  
@@ -520,7 +520,7 @@ S150088553  LATELWAR PRAGATI MADHUKAR               JYOTI                    718
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   30
+   nn,   30
  
  
                    
@@ -561,7 +561,7 @@ S150088554  MANE RACHANA RAMESH                     MANISHA                  718
   210258C    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.06, TOTAL CREDITS EARNED   50
+   7.06,   50
  
 
  
@@ -596,7 +596,7 @@ S150088556  MANKHAIR SNEHA GAJANAN                  ALKA                     718
   210258C    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   8.08, TOTAL CREDITS EARNED   50
+   8.08,   50
  
  
                    
@@ -637,7 +637,7 @@ S150088557  NIKHIL BHARAT AHIRE                     VANDANA                  718
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
 
  
@@ -672,7 +672,7 @@ S150088558  PATIL MANISHA PRAMOD                    NIRMALA                  718
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -713,7 +713,7 @@ S150088559  PATIL RAJESHWARI MADHUKAR               ARCHANA                  718
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.54, TOTAL CREDITS EARNED   50
+   7.54,   50
  
 
  
@@ -748,7 +748,7 @@ S150088560  PHAD POOJA RAMDAS                       KAVERI                   718
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
  
                    
@@ -789,7 +789,7 @@ S150088561  PILEWAN SIDDHANTH MOHAN                 SAVITA                   718
   210258C    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   18
+   nn,   18
  
 
  
@@ -824,7 +824,7 @@ S150088562  SALUNKHE MANASWI  NIVRUTTI              REKHA                    718
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.36, TOTAL CREDITS EARNED   50
+   7.36,   50
  
  
                    
@@ -865,7 +865,7 @@ S150088563  SAMTA RATANLAL CHOPADA                  SADHANA                  718
   210258C    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   8.4, TOTAL CREDITS EARNED   50
+   8.4,   50
  
 
  
@@ -900,7 +900,7 @@ S150088564  SARAF PRANALI RAJENDRA                  BHAVNA                   718
   210258C    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   36
+   nn,   36
  
  
                    
@@ -941,7 +941,7 @@ S150088565  SHINDE APURVA VASANT                    LATA                     718
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   32
+   nn,   32
  
 
  
@@ -976,7 +976,7 @@ S150088566  SHIVADE GAURI RAJENDRA                  SHOBHA                   718
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   26
+   nn,   26
  
  
                    
@@ -1017,7 +1017,7 @@ S150088567  SUMEDH MAHAJAN                          JYOTI MAHAJAN            718
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   33
+   nn,   33
  
 
  
@@ -1052,7 +1052,7 @@ S150088568  VIJAPURE PRIYANKA RAMCHANDRA            SUREKHA                  718
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.16, TOTAL CREDITS EARNED   50
+   7.16,   50
  
  
                    
@@ -1093,7 +1093,7 @@ S150088569  n RAJIV NAGESH                          RAJAM                    716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.78, TOTAL CREDITS EARNED   50
+   6.78,   50
 RESULT RESERVED FOR BACKLOGS.
  
 
@@ -1129,7 +1129,7 @@ S150088571  RISHABH SINGH                       RAGINI                   7160264
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   32
+   nn,   32
  
  
                    
@@ -1170,7 +1170,7 @@ S150088572  SONALI SANTOSH KUMAR                  SUNANDA                  71602
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
 
  
@@ -1205,7 +1205,7 @@ S150088573  AADISH JAIN                             ANITA JAIN               717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   44
+   nn,   44
  
  
                    
@@ -1246,7 +1246,7 @@ S150088574  AASHUTOSH TIWARI                        ARUNA TIWARI             717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   16
+   nn,   16
  
 
  
@@ -1281,7 +1281,7 @@ S150088575  ABHISHEK CHATURVEDI                     NEELAM CHATURVEDI        717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   24
+   nn,   24
  
  
                    
@@ -1322,7 +1322,7 @@ S150088576  ADARSH BEVORE                           ANITA RAI                717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   8.72, TOTAL CREDITS EARNED   50
+   8.72,   50
  
 
  
@@ -1357,7 +1357,7 @@ S150088577  ADOLE SWAPNIL HARISHCHANDRA             MAYA                     717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.62, TOTAL CREDITS EARNED   50
+   7.62,   50
  
  
                    
@@ -1398,7 +1398,7 @@ S150088579  AKASH DILIP NALAWADE                    SAMPATI NALAWADE         717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   8.06, TOTAL CREDITS EARNED   50
+   8.06,   50
  
 
  
@@ -1433,7 +1433,7 @@ S150088580  AKSHAY DESHPANDE                        RANJANA DESHPANDE        717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.06, TOTAL CREDITS EARNED   50
+   7.06,   50
  
  
                    
@@ -1474,7 +1474,7 @@ S150088582  ALOK SHARMA                             SANDHYA SHARMA           717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   21
+   nn,   21
  
 
  
@@ -1509,7 +1509,7 @@ S150088583  AMBER RAJ                               MANJU CHOURASIA          717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   29
+   nn,   29
 RESULT RESERVED FOR BACKLOGS.
  
  
@@ -1551,7 +1551,7 @@ S150088584  AMBHORE PARIKSHIT KRUSHNARAO            ARTI                     716
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   11
+   nn,   11
 RESULT RESERVED FOR BACKLOGS.
  
 
@@ -1587,7 +1587,7 @@ S150088585  Awari Mahesh Kiran                      Chandrakala              717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   38
+   nn,   38
  
  
                    
@@ -1628,7 +1628,7 @@ S150088586  BAMBOLKAR VAIBHAV SURESH                KALPANA                  716
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   4
+   nn,   4
 RESULT RESERVED FOR BACKLOGS.
  
 
@@ -1664,7 +1664,7 @@ S150088589  BHANDARI SHRIKANT MAHADEV               CHANDRABAGA              717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   20
+   nn,   20
 RESULT RESERVED FOR BACKLOGS.
  
  
@@ -1706,7 +1706,7 @@ S150088591  Bhuyar Shravan Chandrakant              Rekha                    717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
 
  
@@ -1741,7 +1741,7 @@ S150088592  BIRADAR GAJANAN MURLIDHAR               ANITA                    717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
  
                    
@@ -1782,7 +1782,7 @@ S150088593  BOBE SURAJ RAMESH                       Ulka                     717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
 
  
@@ -1817,7 +1817,7 @@ S150088594  CHANDWADE AKASH SUDAM                   REKHA                    716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.7, TOTAL CREDITS EARNED   50
+   6.7,   50
  
  
                    
@@ -1858,7 +1858,7 @@ S150088597  Chhajed Anand Santosh                   Rakhi                    717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   35
+   nn,   35
  
 
  
@@ -1893,7 +1893,7 @@ S150088599  CHINMAYEE TANDON                        PRITI TANDON             717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
  
                    
@@ -1934,7 +1934,7 @@ S150088600  CHITALKAR ADINATH PANDHARINATH          MANISHA                  716
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   34
+   nn,   34
 RESULT RESERVED FOR BACKLOGS.
  
 
@@ -1970,7 +1970,7 @@ S150088601  CHOUDHARY RAJ MANOJ                     SANDHYA                  716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.98, TOTAL CREDITS EARNED   50
+   6.98,   50
  
  
                    
@@ -2011,7 +2011,7 @@ S150088602  DABHI DHAVAL VAIBHAVRAJ                 DAXITA VAIBHAVRAJ DABHI  717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
 
  
@@ -2046,7 +2046,7 @@ S150088603  DANDAWATE VISHWAJEET KISAN              SAVITA                   717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
  
                    
@@ -2087,7 +2087,7 @@ S150088604  DEEP BANERJEE                           SEEMA BANERJEE           717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   32
+   nn,   32
  
 
  
@@ -2122,7 +2122,7 @@ S150088605  DESHPANDE KALYANI LAXMIKANT             SANDHYA                  717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -2163,7 +2163,7 @@ S150088606  DESHPANDE SANKET DILIPRAO               NANDA                    717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   32
+   nn,   32
  
 
  
@@ -2198,7 +2198,7 @@ S150088607  DESURKAR ROHIT RAMESH                   SARITA                   717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.9, TOTAL CREDITS EARNED   50
+   7.9,   50
  
  
                    
@@ -2239,7 +2239,7 @@ S150088608  DEVANSHU JAIN                           RITIKA JAIN              717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   31
+   nn,   31
  
 
  
@@ -2274,7 +2274,7 @@ S150088609  DHANE NAMRATA ANIL                      SUJATA                   716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.24, TOTAL CREDITS EARNED   50
+   6.24,   50
  
  
                    
@@ -2315,7 +2315,7 @@ S150088610  DHOPATE ADINATH BALASAHEB               PRABHAVATI               717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   38
+   nn,   38
  
 
  
@@ -2350,7 +2350,7 @@ S150088611  DHUMAL AKSHAY GOVIND                    SUKHASHALA               717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   35
+   nn,   35
  
  
                    
@@ -2391,7 +2391,7 @@ S150088612  DRUSHTI                                 SARIKA ANTAPURKAR        717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
 
  
@@ -2426,7 +2426,7 @@ S150088614  FIRKE KANCHAN NINA                      VIJAYA                   717
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.36, TOTAL CREDITS EARNED   50
+   6.36,   50
  
  
                    
@@ -2467,7 +2467,7 @@ S150088615  Francis Sheryl Clement                  Shirley                  717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   8.06, TOTAL CREDITS EARNED   50
+   8.06,   50
  
 
  
@@ -2502,7 +2502,7 @@ S150088616  Gaikwad Harsha Nitin                    Nanda                    717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -2543,7 +2543,7 @@ S150088617  GAIKWAD SHUBHAM GHANSHAM                SUNITA                   715
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   6
+   nn,   6
 RESULT RESERVED FOR BACKLOGS.
  
 
@@ -2579,7 +2579,7 @@ S150088619  GANESHWADE MANOJ DADASO                 ANITA                    717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.86, TOTAL CREDITS EARNED   50
+   7.86,   50
  
  
                    
@@ -2620,7 +2620,7 @@ S150088620  GARDI AVADHUT SUNIL                     NAMITA                   717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
 
  
@@ -2655,7 +2655,7 @@ S150088621  GARG HARSH SANJAY                       RITU                     716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   41
+   nn,   41
  
  
                    
@@ -2696,7 +2696,7 @@ S150088622  GAURAV DILIP GHADGE                     KANTA DILIP GHADGE       717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   8.26, TOTAL CREDITS EARNED   50
+   8.26,   50
  
 
  
@@ -2731,7 +2731,7 @@ S150088623  GAVANE SHAM SANJAY                      SUNITA                   716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   24
+   nn,   24
  
  
                    
@@ -2772,7 +2772,7 @@ S150088624  Gawande Dnyaneshwari Ramchandra         Swati                    717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.5, TOTAL CREDITS EARNED   50
+   7.5,   50
  
 
  
@@ -2807,7 +2807,7 @@ S150088625  GHATE ABHISHEK KAILAS                   SUNITA                   716
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   3
+   nn,   3
 RESULT RESERVED FOR BACKLOGS.
  
  
@@ -2849,7 +2849,7 @@ S150088627  GIRGUNE SHIVANI SUDHIR                  SWATI                    717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
 
  
@@ -2884,7 +2884,7 @@ S150088628  GITE PRATIKSHA LAXMAN                   SANGITA                  717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -2925,7 +2925,7 @@ S150088629  Gore Ankita Padmakar                    Pooja                    717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   44
+   nn,   44
  
 
  
@@ -2960,7 +2960,7 @@ S150088631  GURAV SUYASH SANTOSH                    VAISHALI                 717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -3001,7 +3001,7 @@ S150088632  HIWALE NEHA RAHUL                       SANDHYA                  717
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
 
  
@@ -3036,7 +3036,7 @@ S150088633  IDAWATE SWAPNIL DATTATRY                SUWARNA                  717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   8.06, TOTAL CREDITS EARNED   50
+   8.06,   50
  
  
                    
@@ -3077,7 +3077,7 @@ S150088634  IPPILI ROHIT                            HEMA                     717
   210258C    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   8.46, TOTAL CREDITS EARNED   50
+   8.46,   50
  
 
  
@@ -3112,7 +3112,7 @@ S150088635  JADHAV KANCHAN ASHOK                    ASHA                     716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -3153,7 +3153,7 @@ S150088636  JAGTAP CHETAN VIVEK                     VAISHALI                 717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
 
  
@@ -3188,7 +3188,7 @@ S150088638  JANBANDHU DIKSHA BALKRISHNA             MADHUMALA                717
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   41
+   nn,   41
  
  
                    
@@ -3229,7 +3229,7 @@ S150088642  JOSHI ROHAN RAVINDRA                    NIRMALA                  716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
 
  
@@ -3264,7 +3264,7 @@ S150088643  KALE JAY VIJAY                          BHAVANA                  717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   18
+   nn,   18
 RESULT RESERVED FOR BACKLOGS.
  
  
@@ -3306,7 +3306,7 @@ S150088644  KALPANDE TREVINI SURESH                 SANDHYA                  716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6, TOTAL CREDITS EARNED   50
+   6,   50
  
 
  
@@ -3341,7 +3341,7 @@ S150088645  KAMTHANE SAGAR SANJEEV                  PRATIBHA                 717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -3382,7 +3382,7 @@ S150088646  KANKATTI AMAR PRABHAKAR                 VANDANA                  717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   34
+   nn,   34
  
 
  
@@ -3417,7 +3417,7 @@ S150088647  KANNAO ADITI GIRISH                     ANURADHA                 717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -3458,7 +3458,7 @@ S150088648  KARMANKAR GAURAV VIJAY                  GEETA                    716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.34, TOTAL CREDITS EARNED   50
+   6.34,   50
  
 
  
@@ -3493,7 +3493,7 @@ S150088649  KARNE PRITI ANKUSH                      BHARATI                  717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -3534,7 +3534,7 @@ S150088650  KASHID OMKAR BALASAHEB                  SWATI                    716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.8, TOTAL CREDITS EARNED   50
+   6.8,   50
  
 
  
@@ -3569,7 +3569,7 @@ S150088651  KATTA NEERAJ VENKATRATNAM               RAJESHWARI               716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -3610,7 +3610,7 @@ S150088652  KAUTHEKAR VEDANT VINAY                  UMA                      716
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   2
+   nn,   2
 RESULT RESERVED FOR BACKLOGS.
  
 
@@ -3646,7 +3646,7 @@ S150088653  KHAIRE ANIKET RAJESH                    BHAGYSHREE               717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   32
+   nn,   32
  
  
                    
@@ -3687,7 +3687,7 @@ S150088654  KHAN AMREENAMEERHAMZA                   BANU                     715
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.5, TOTAL CREDITS EARNED   50
+   6.5,   50
  
 
  
@@ -3722,7 +3722,7 @@ S150088655  KHAN MOHD NOMAAN                        SHAGUFTA KHAN            717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -3763,7 +3763,7 @@ S150088656  KHARCHE SAYALI HARIBHAU                 MINAXI                   716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.66, TOTAL CREDITS EARNED   50
+   6.66,   50
  
 
  
@@ -3798,7 +3798,7 @@ S150088658  KHODE ASHUTOSH MAHENDRA                 NALINI                   717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -3839,7 +3839,7 @@ S150088659  KIRTI RAMESH GIRAMKAR                   JAYASHREE                717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   34
+   nn,   34
 RESULT RESERVED FOR BACKLOGS.
  
 
@@ -3875,7 +3875,7 @@ S150088660  Kolhe Rutuja Sanjay                     Ratnamala                717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -3916,7 +3916,7 @@ S150088661  Kolte Nitin Anil                        Shilpa                   717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   38
+   nn,   38
  
 
  
@@ -3951,7 +3951,7 @@ S150088662  KOUSAR NELOFER ADALAT                   HAMIDUN                  716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.02, TOTAL CREDITS EARNED   50
+   6.02,   50
  
  
                    
@@ -3992,7 +3992,7 @@ S150088663  KRITIN PANDITA                          RASHMI K PANDITA         717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   40
+   nn,   40
  
 
  
@@ -4027,7 +4027,7 @@ S150088666  KUMAR SUMANT UDAY                       BABY                     716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.52, TOTAL CREDITS EARNED   50
+   7.52,   50
  
  
                    
@@ -4068,7 +4068,7 @@ S150088668  KUSHAGRA KASHYAP                        KANCHAN GUPTA            717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   24
+   nn,   24
 RESULT RESERVED FOR BACKLOGS.
  
 
@@ -4104,7 +4104,7 @@ S150088669  Kutemate Ashwin Rajesh                  Sangeeta                 717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   38
+   nn,   38
  
  
                    
@@ -4145,7 +4145,7 @@ S150088670  LADE SHANTNU ANANDRAO                   KAMAL                    715
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   35
+   nn,   35
  
 
  
@@ -4180,7 +4180,7 @@ S150088671  LANJEWAR NIHAL UMESH                    MONIKA                   717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -4221,7 +4221,7 @@ S150088672  MAHALE SAGAR SUNIL                      MAHALE PUSHPA SUNIL      717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   8.22, TOTAL CREDITS EARNED   50
+   8.22,   50
  
 
  
@@ -4256,7 +4256,7 @@ S150088674  MANE GANESH DHANANJAY                   CHANDRAKALA              717
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.38, TOTAL CREDITS EARNED   50
+   6.38,   50
  
  
                    
@@ -4297,7 +4297,7 @@ S150088675  MANE SHRADDHA SHIVAJI                   SHARMILA                 717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
 
  
@@ -4332,7 +4332,7 @@ S150088676  MASKE DIKSHA DATTATRAY                  ASHA                     717
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   5.62, TOTAL CREDITS EARNED   50
+   5.62,   50
  
  
                    
@@ -4373,7 +4373,7 @@ S150088677  MAYEKAR ADWAIT ANIL                     ASHWINI                  716
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   10
+   nn,   10
 RESULT RESERVED FOR BACKLOGS.
  
 
@@ -4409,7 +4409,7 @@ S150088678  MEGHNA RAJEEV                           SREELATHA RAJEEV         717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   28
+   nn,   28
  
  
                    
@@ -4450,7 +4450,7 @@ S150088679  MISHRA ROHIT RAKESH                     SITA                     716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   27
+   nn,   27
 RESULT RESERVED FOR BACKLOGS.
  
 
@@ -4486,7 +4486,7 @@ S150088680  MISHRA UTKARSH SHIVNARAYAN              PREMLATA                 717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -4527,7 +4527,7 @@ S150088681  MOTE ABHIJEET MAYAPAA                   ALKA                     716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   27
+   nn,   27
 RESULT RESERVED FOR BACKLOGS.
  
 
@@ -4563,7 +4563,7 @@ S150088683  MUDIT SHAH                              PARUL SHAH               717
   210258C    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
  
                    
@@ -4604,7 +4604,7 @@ S150088684  MUSALE DURGESH PRAKASH                  SARALA                   716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
 
  
@@ -4639,7 +4639,7 @@ S150088685  Muthe Tushar Kashinath                  sangita                  717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   30
+   nn,   30
 RESULT RESERVED FOR BACKLOGS.
  
  
@@ -4681,7 +4681,7 @@ S150088686  Nagargoje Sandip Vitthalrao             Sindhubai                717
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.84, TOTAL CREDITS EARNED   50
+   6.84,   50
  
 
  
@@ -4716,7 +4716,7 @@ S150088687  Nalawade Abhishek Sanjay                Alka                     717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   8.12, TOTAL CREDITS EARNED   50
+   8.12,   50
  
  
                    
@@ -4757,7 +4757,7 @@ S150088688  Nalawade Tushar Popat                   surekha                  717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   34
+   nn,   34
  
 
  
@@ -4792,7 +4792,7 @@ S150088689  Nandeshwar Kuldeep Kavindra             Varsha                   717
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   5.84, TOTAL CREDITS EARNED   50
+   5.84,   50
  
  
                    
@@ -4833,7 +4833,7 @@ S150088691  NAVNEET PARMAR                          NEELAM PARMAR            717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   4
+   nn,   4
 RESULT RESERVED FOR BACKLOGS.
  
 
@@ -4869,7 +4869,7 @@ S150088693  NEHARKAR PRACHI NIVRUTTI                SANJIVANI                716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
  
                    
@@ -4910,7 +4910,7 @@ S150088695  NIKAM AISHWARYA ANANT                   ARTI                     717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
 
  
@@ -4945,7 +4945,7 @@ S150088696  NIPUN HEDAOO                            SMITA                    717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -4986,7 +4986,7 @@ S150088697  NISHANT MEHTA                         SANGEETA                 71602
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
 
  
@@ -5021,7 +5021,7 @@ S150088699  PALANEER BHARGAV RAVICHANDRAN           ARUNA PALANEER           717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -5062,7 +5062,7 @@ S150088700  PANDE ANAND SHIVKANT                    GAYATRI                  716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
 
  
@@ -5097,7 +5097,7 @@ S150088701  PANDHARE GEETANJALI BABAN               MANDA                    717
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   38
+   nn,   38
  
  
                    
@@ -5138,7 +5138,7 @@ S150088702  Pandhare Pranav Ishwardas               Indira                   717
   210258C    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   13
+   nn,   13
 RESULT RESERVED FOR BACKLOGS.
  
 
@@ -5174,7 +5174,7 @@ S150088703  pasge shruti anil                       poornima                 717
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   25
+   nn,   25
  
  
                    
@@ -5215,7 +5215,7 @@ S150088704  PATE SAURABH DATTATRAY                  VAISHALI                 717
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.06, TOTAL CREDITS EARNED   50
+   7.06,   50
  
 
  
@@ -5250,7 +5250,7 @@ S150088706  PATEL OMINI ANIPKUMAR                   TIKESWARY                717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -5291,7 +5291,7 @@ S150088707  PATEL SAMARTH BHADRESHBHAI              KETKI BHADRESHBHAI PATEL 717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
 
  
@@ -5326,7 +5326,7 @@ S150088709  PAWAR DHANANJAY VIKRAMSINH              MANDAKINI PAWAR          717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   33
+   nn,   33
  
  
                    
@@ -5367,7 +5367,7 @@ S150088710  PAWAR HARSHADA PANDIT                   VAISHALI                 716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   38
+   nn,   38
  
 
  
@@ -5402,7 +5402,7 @@ S150088711  POONAM KANODE                           ANITA KANODE             717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   9.26, TOTAL CREDITS EARNED   50
+   9.26,   50
  
  
                    
@@ -5443,7 +5443,7 @@ S150088712  PRADNYESH JITENDRA DOSHI                BHARATI                  717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
 
  
@@ -5478,7 +5478,7 @@ S150088713  PRANAV JITENDRA DOSHI                   BHARATI JITENDRA DOSHI   717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
  
                    
@@ -5519,7 +5519,7 @@ S150088714  PRASUN KUMAR SINHA                      CHANDRA PRABHA           717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
 
  
@@ -5554,7 +5554,7 @@ S150088716  PRIYADARSHI                             LAXMI DEVI               717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   28
+   nn,   28
  
  
                    
@@ -5595,7 +5595,7 @@ S150088717  PURVA DEEPAK JAIN                       SUNITA JAIN              717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   8.22, TOTAL CREDITS EARNED   50
+   8.22,   50
  
 
  
@@ -5630,7 +5630,7 @@ S150088718  Rajhuns Akshay Ajay                     Anujayini                717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   22
+   nn,   22
 RESULT RESERVED FOR BACKLOGS.
  
  
@@ -5672,7 +5672,7 @@ S150088719  RAJKUMAR DINESH INGALE                  LAXMITAI                 717
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.06, TOTAL CREDITS EARNED   50
+   7.06,   50
  
 
  
@@ -5707,7 +5707,7 @@ S150088720  RASAL RUSHIRAJ ROHIDAS                  RENUKA                   717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.5, TOTAL CREDITS EARNED   50
+   7.5,   50
  
  
                    
@@ -5748,7 +5748,7 @@ S150088721  RASHINKAR PIYUSH JAYANT                 RUPA                     717
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   5.74, TOTAL CREDITS EARNED   50
+   5.74,   50
  
 
  
@@ -5783,7 +5783,7 @@ S150088723  RAUT AKSHAY BALASAHEB                   RAUT SHOBHA BALASAHEB    717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.26, TOTAL CREDITS EARNED   50
+   7.26,   50
  
  
                    
@@ -5824,7 +5824,7 @@ S150088724  RAUT JAYESH POPAT                       NIRMALA                  717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
 
  
@@ -5859,7 +5859,7 @@ S150088725  Raut Neha Raosaheb                      Jayashri                 717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   43
+   nn,   43
  
  
                    
@@ -5900,7 +5900,7 @@ S150088727  Reddy Anuja Ramesh                      Surekha                  717
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.56, TOTAL CREDITS EARNED   50
+   6.56,   50
  
 
  
@@ -5935,7 +5935,7 @@ S150088728  RISHABH RAJ                             RASHMI REKHA             717
   210258C    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   22
+   nn,   22
 RESULT RESERVED FOR BACKLOGS.
  
  
@@ -5977,7 +5977,7 @@ S150088729  RUIKAR VAISHNAVI ANANT                  SANGITA                  717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
 
  
@@ -6012,7 +6012,7 @@ S150088730  Sahu Abhijeet Rajeshkumar               Manju                    717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -6053,7 +6053,7 @@ S150088732  SAMBHE KUNAL RAMESHRAO                  SUNITA                   717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
 
  
@@ -6088,7 +6088,7 @@ S150088736  Shaikh Muskan Shahabuddin               Anjum                    717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.88, TOTAL CREDITS EARNED   50
+   7.88,   50
  
  
                    
@@ -6129,7 +6129,7 @@ S150088737  SHAMSUNDAR SHANTANU DHANANJAY           REKHA                    716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
 
  
@@ -6164,7 +6164,7 @@ S150088738  SHANKHDHAR HARSHIT VRAJESH              MADHU                    716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   41
+   nn,   41
  
  
                    
@@ -6205,7 +6205,7 @@ S150088739  SHARAD PANDEY                           REENA PANDEY             717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
 
  
@@ -6240,7 +6240,7 @@ S150088740  SHARMA AAYUSHMAN PRADEEP                APARNA                   716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -6281,7 +6281,7 @@ S150088741  Sharma Amit Shambhunath                 Madhvi                   717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.4, TOTAL CREDITS EARNED   50
+   7.4,   50
  
 
  
@@ -6316,7 +6316,7 @@ S150088742  SHARMA ANUJ KULDEEP SHARMA              RUPAL                    716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   5.3, TOTAL CREDITS EARNED   50
+   5.3,   50
  
  
                    
@@ -6357,7 +6357,7 @@ S150088743  SHASHANK SATISH KOHADE                  NIRMALA                  717
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.14, TOTAL CREDITS EARNED   50
+   6.14,   50
  
 
  
@@ -6392,7 +6392,7 @@ S150088744  SHASHWAT UPADHYAY                       SHASHI UPADHYAY          717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   8.64, TOTAL CREDITS EARNED   50
+   8.64,   50
  
  
                    
@@ -6433,7 +6433,7 @@ S150088745  Shejul Pritam Ganesh                    Kokila                   717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   34
+   nn,   34
  
 
  
@@ -6468,7 +6468,7 @@ S150088747  SHETTY MAHESH NARAYAN                   JALAJA                   717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -6509,7 +6509,7 @@ S150088748  SHINDE AISHWARYA VINAYAK                SUNITA                   716
   210258C    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
 
  
@@ -6544,7 +6544,7 @@ S150088749  SHINDE RUTUJA NITIN                     ASHA                     717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   23
+   nn,   23
 RESULT RESERVED FOR BACKLOGS.
  
  
@@ -6586,7 +6586,7 @@ S150088750  SHIRBHATE SAMIKSHA DEVENDRA             LEENA                    717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
 
  
@@ -6621,7 +6621,7 @@ S150088751  SHIVANSH GUPTA                          MAMTA GUPTA              717
   210258C    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   8, TOTAL CREDITS EARNED   50
+   8,   50
  
  
                    
@@ -6662,7 +6662,7 @@ S150088752  SHREYANSH SHANKHDHAR                    REKHA SHANKHDHAR         717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   8.74, TOTAL CREDITS EARNED   50
+   8.74,   50
  
 
  
@@ -6697,7 +6697,7 @@ S150088753  SHRUTI BHATNAGAR                        ANJANA BHATNAGAR         717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   44
+   nn,   44
  
  
                    
@@ -6738,7 +6738,7 @@ S150088754  Simran thaploo                          Kanchan                  717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   42
+   nn,   42
  
 
  
@@ -6773,7 +6773,7 @@ S150088755  SINGH ASHWANI LALLAN                    GEETA                    716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.32, TOTAL CREDITS EARNED   50
+   6.32,   50
  
  
                    
@@ -6814,7 +6814,7 @@ S150088756  Singhal Pooja Naresh                    Meena                    717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   8.22, TOTAL CREDITS EARNED   50
+   8.22,   50
  
 
  
@@ -6849,7 +6849,7 @@ S150088757  SMRITI RAINA                            SUNITA SHARMA            717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -6890,7 +6890,7 @@ S150088758  Srivastava Shivam Ratan                 Sunita                   717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
 
  
@@ -6925,7 +6925,7 @@ S150088760  SUPEKAR ADITI LAXMAN                    RANJANA                  716
   210258C    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   34
+   nn,   34
 RESULT RESERVED FOR BACKLOGS.
  
  
@@ -6967,7 +6967,7 @@ S150088761  SWAPNIL SONI                            SANGEETA DEVI            717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
 
  
@@ -7002,7 +7002,7 @@ S150088763  TAMBOLI ALISHA KAMARALI                 SHAIN                    717
   210258C    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   46
+   nn,   46
  
  
                    
@@ -7043,7 +7043,7 @@ S150088764  TANMAYI SUNDAR ROKADE                   SHEETAL                  717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   26
+   nn,   26
 RESULT RESERVED FOR BACKLOGS.
  
 
@@ -7079,7 +7079,7 @@ S150088765  TANMOY MAHATO                           ALPANA MAHATO            717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   38
+   nn,   38
  
  
                    
@@ -7120,7 +7120,7 @@ S150088766  Tayde Nilesh Raju                       Yamuna                   717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.28, TOTAL CREDITS EARNED   50
+   7.28,   50
  
 
  
@@ -7155,7 +7155,7 @@ S150088767  Thakur Palak Ajit                       Nitu                     717
   210258C    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.36, TOTAL CREDITS EARNED   50
+   6.36,   50
  
  
                    
@@ -7196,7 +7196,7 @@ S150088769  TONEY ADITYA PRAKASH                    ARUNA                    716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   5.78, TOTAL CREDITS EARNED   50
+   5.78,   50
  
 
  
@@ -7231,7 +7231,7 @@ S150088771  VISHAL BHAN                             VIJAY BHAN               717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.72, TOTAL CREDITS EARNED   50
+   7.72,   50
  
  
                    
@@ -7272,7 +7272,7 @@ S150088772  VISPUTE ADITYA RAJENDRA                 VARSHA                   716
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   nn, TOTAL CREDITS EARNED   31
+   nn,   31
 RESULT RESERVED FOR BACKLOGS.
  
 
@@ -7308,7 +7308,7 @@ S150088773  WAGHMALE SHIVANI APPASAHEB              SANGITA                  717
   210258D    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   7.3, TOTAL CREDITS EARNED   50
+   7.3,   50
  
  
                    
@@ -7349,7 +7349,7 @@ S150088774  WAGHMARE SAMEER PRAKASH                 MEENAKSHI                717
   210258A    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.84, TOTAL CREDITS EARNED   50
+   6.84,   50
  
 
  
@@ -7384,4 +7384,4 @@ S150088775  ZAREKAR SNEHAL RAJENDRA                 SUCHITA                  716
    214458    nnnnnnn  nnnnnnn  nnnnnnn       PP  nnnnnnn  nnnnnnn  PP   00   P    00    00
  
  
-SECOND YEAR SGPA   6.68, TOTAL CREDITS EARNED   50
+   6.68,   50
