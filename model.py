@@ -6,6 +6,33 @@ import PyPDF2
 from io import StringIO
 import base64
 
+def cleanText(text : str) -> str:
+    type(text)
+    text = text.replace('SAVITRIBAI PHULE PUNE UNIVERSITY, S.E.(2015 COURSE) EXAMINATION,MAY 2018','')
+    text = text.replace('COLLEGE    : D.Y. PATIL COLLEGE OF ENGINEERING,  PUNE','')
+    text = text.replace('BRANCH CODE: 29-S.E.(2015 PAT.)(INFORMATIOM TECHNOLOGY)','')
+    text = text.replace('DATE       : 23 JUL 2018','')
+    text = text.replace('....................................................................................................','')
+    text = text.replace('SEM.:1','')
+    text = text.replace('SEM.:2','')
+    text = text.replace('OE       TH     [OE+TH]     TW       PR       OR    Tot% Crd  Grd  Pts   Pts','')
+    text = text.replace('OE       TH     [OE+TH]     TW       PR       OR    Tot% Crd  Grd  Pts   Pts','')
+    text = text.replace('DYPP','')
+    text = text.replace('Grd   Crd','')
+    text = text.replace('SEM. 2','')
+    text = text.replace('SEM. 1','')
+    text = text.replace('~','')
+    text = text.replace(' .','')
+    text.replace('~','nan')
+    text = text.replace('*',' ')
+    text = text.replace(':',' ')
+    text = text.replace('-','n')
+    text = text.replace('SECOND YEAR SGPA','')
+    text = text.replace('TOTAL CREDITS EARNED ','')
+    # SECOND YEAR SGPA   8.08, TOTAL CREDITS EARNED   50
+    text = text.strip()
+    return text 
+
 def displayPDF(file):
   # Opening file from file path
   # with open(file, "rb") as f:
@@ -28,33 +55,7 @@ def pdfToText(path):
         text = f.read()
         return text 
         
-@st.cache(suppress_st_warning=True)
-def showTextFile(path):
-    text_file = F'<iframe src="data:application/pdf;base64,{path}" width="700" height="1000" type="application/pdf"></iframe>'
-  # Displaying File
-    st.markdown(text_file, unsafe_allow_html=True)
 
-# @st.cache
-# def convert_pdf_to_txt_file(path):
-#     texts = []
-#     rsrcmgr = PDFResourceManager()
-#     retstr = StringIO()
-#     laparams = LAParams()
-#     device = TextConverter(rsrcmgr, retstr, laparams=laparams)
-#     # fp = open(path, 'rb')
-#     interpreter = PDFPageInterpreter(rsrcmgr, device)
-    
-#     file_pages = PDFPage.get_pages(path)
-#     nbPages = len(list(file_pages))
-#     for page in PDFPage.get_pages(path):
-#       interpreter.process_page(page)
-#       t = retstr.getvalue()
-#     # text = retstr.getvalue()
-
-#     # fp.close()
-#     device.close()
-#     retstr.close()
-#     return t, nbPages
 
 st.title('pdf to exel')
 
@@ -73,6 +74,38 @@ if pdf_file:
 
 show_text = st.button('show text')
 if show_text:
-   p = st.write(pdfToText(pdf_file))
-   showTextFile(p)
+    text = pdfToText(pdf_file)
+    st.write(type(text))
+    st.markdown("""
+    
+       Hello
+    """)
+
+    # text = text.replace('SAVITRIBAI PHULE PUNE UNIVERSITY, S.E.(2015 COURSE) EXAMINATION,MAY 2018','')
+    # text = text.replace('COLLEGE    : D.Y. PATIL COLLEGE OF ENGINEERING,  PUNE','')
+    # text = text.replace('BRANCH CODE: 29-S.E.(2015 PAT.)(INFORMATIOM TECHNOLOGY)','')
+    # text = text.replace('DATE       : 23 JUL 2018','')
+    # text = text.replace('....................................................................................................','')
+    # text = text.replace('SEM.:1','')
+    # text = text.replace('SEM.:2','')
+    # text = text.replace('OE       TH     [OE+TH]     TW       PR       OR    Tot% Crd  Grd  Pts   Pts','')
+    # text = text.replace('OE       TH     [OE+TH]     TW       PR       OR    Tot% Crd  Grd  Pts   Pts','')
+    # text = text.replace('DYPP','')
+    # text = text.replace('Grd   Crd','')
+    # text = text.replace('SEM. 2','')
+    # text = text.replace('SEM. 1','')
+    # text = text.replace('~','')
+    # text = text.replace(' .','')
+    # text.replace('~','nan')
+    # text = text.replace('*',' ')
+    # text = text.replace(':',' ')
+    # text = text.replace('-','n')
+    # text = text.replace('SECOND YEAR SGPA','')
+    # text = text.replace('TOTAL CREDITS EARNED ','')
+    # # SECOND YEAR SGPA   8.08, TOTAL CREDITS EARNED   50
+    # text = text.strip()
+
+    text = cleanText(text)
+    st.write(text)
+   
     
