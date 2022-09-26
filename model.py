@@ -81,30 +81,6 @@ if show_text:
        Hello
     """)
 
-    # text = text.replace('SAVITRIBAI PHULE PUNE UNIVERSITY, S.E.(2015 COURSE) EXAMINATION,MAY 2018','')
-    # text = text.replace('COLLEGE    : D.Y. PATIL COLLEGE OF ENGINEERING,  PUNE','')
-    # text = text.replace('BRANCH CODE: 29-S.E.(2015 PAT.)(INFORMATIOM TECHNOLOGY)','')
-    # text = text.replace('DATE       : 23 JUL 2018','')
-    # text = text.replace('....................................................................................................','')
-    # text = text.replace('SEM.:1','')
-    # text = text.replace('SEM.:2','')
-    # text = text.replace('OE       TH     [OE+TH]     TW       PR       OR    Tot% Crd  Grd  Pts   Pts','')
-    # text = text.replace('OE       TH     [OE+TH]     TW       PR       OR    Tot% Crd  Grd  Pts   Pts','')
-    # text = text.replace('DYPP','')
-    # text = text.replace('Grd   Crd','')
-    # text = text.replace('SEM. 2','')
-    # text = text.replace('SEM. 1','')
-    # text = text.replace('~','')
-    # text = text.replace(' .','')
-    # text.replace('~','nan')
-    # text = text.replace('*',' ')
-    # text = text.replace(':',' ')
-    # text = text.replace('-','n')
-    # text = text.replace('SECOND YEAR SGPA','')
-    # text = text.replace('TOTAL CREDITS EARNED ','')
-    # # SECOND YEAR SGPA   8.08, TOTAL CREDITS EARNED   50
-    # text = text.strip()
-
     text = cleanText(text)
     st.write(text)
    
