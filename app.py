@@ -3,9 +3,9 @@ import pandas as pd
 import numpy as np 
 import seaborn as sns 
 import matplotlib.pyplot as plt 
-import plotly.express as px #interactive plotting
-import re       #clean string
-import PyPDF2  #convert pdf to text 
+import plotly.express as px # interactive plotting
+import re       # clean string
+import PyPDF2  # convert pdf to text 
 import time 
 import plotly.express as px 
 
@@ -22,7 +22,7 @@ st.markdown("""
     
 """)
 #multiple tabls in header
-tab1, tab2 = st.tabs(["📈 PDF TO Excel Convertor", "🗃 Excel data Analyser"])
+tab1, tab2,tab3,tab4 = st.tabs(["📈 PDF TO Excel Convertor", "📅 Excel data Analyser","🎢Data visualisation","🧑‍💻PDF TO CSV"])
 
 
 with tab1:
@@ -48,6 +48,9 @@ with tab1:
         with st.expander('show bar'):
             st.plotly_chart(px.bar(excel_file['PTS2.12']))
 
+
+with tab2:
+    st.write("hello")
 # if tab2:
 #     with tab2:
 #         st.sidebar.write('Upload CSV or EXCEL file to Analyse')
