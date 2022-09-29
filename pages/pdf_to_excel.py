@@ -1,5 +1,3 @@
-from distutils.log import error
-from msilib.schema import Error
 import streamlit as st 
 import pandas as pd
 import numpy as np 
