@@ -162,3 +162,4 @@ with tab3:
 
         fig3 = px.scatter(df['age'])
         st.plotly_chart(fig3)
+        #add another
