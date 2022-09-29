@@ -8,7 +8,7 @@ from io import StringIO
 import base64
 import re 
 import plotly.express as px 
-import seaborn as sns 
+# import seaborn as sns 
 import matplotlib.pyplot as plt 
 
 st.set_page_config(
