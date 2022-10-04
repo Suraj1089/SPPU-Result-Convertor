@@ -15,6 +15,7 @@ contourpy==1.0.5
 cycler==0.11.0
 debugpy==1.6.3
 decorator==5.1.1
+distro==1.7.0
 entrypoints==0.4
 executing==1.1.0
 fastjsonschema==2.16.2
@@ -61,7 +62,7 @@ pyrsistent==0.18.1
 python-dateutil==2.8.2
 pytz==2022.2.1
 pytz-deprecation-shim==0.1.0.post0
-# pywin32==304
+pywin32==304
 pyzmq==24.0.1
 requests==2.28.1
 rich==12.5.1
@@ -72,6 +73,7 @@ smmap==5.0.0
 stack-data==0.5.1
 streamlit==1.13.0
 tabula==1.0.5
+tabula-py==2.5.1
 tenacity==8.1.0
 toml==0.10.2
 toolz==0.12.0
