@@ -33,5 +33,5 @@ practice
 pdf_to_excel.py 
 final.txt
 final_clean_output.txt
-.vscode
-css
+.vscode/
+css/
