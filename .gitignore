@@ -35,3 +35,5 @@ final.txt
 final_clean_output.txt
 .vscode/
 css/
+.vscode
+!.vscode/launch.json
