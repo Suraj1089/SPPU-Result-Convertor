@@ -8,16 +8,18 @@ from itdepartment import get_table_download_link, displayPDF, pdfToText, cleanTe
 if __name__ == "__main__":
 
     # set page title and icon
-    st.set_page_config(
-        page_title='Result Analysis',
-        page_icon='📃'
-    )
+    try:
+        st.set_page_config(
+            page_title='Result Analysis',
+            page_icon='📃'
+        )
+    except Exception as e:
+        pass 
 
     # st.title("SPPU Result Analyser")
     st.markdown("""
-        ## :outbox_tray: SPPU DATA ANALYSER: PDF to Excel
-        [![GitHub](https://img.shields.io/twitter/url?label=Github&logo=GitHub&style=social&url=https%3A%2F%2Fgithub.com%2Fnainiayoub)](https://github.com/Suraj1089/SPPU-Result-Convertor)
-        
+        ## :outbox_tray: SPPU DATA ANALYSER: PDF TO EXCEL/CSV
+       
     """)
 
     department = st.selectbox(
@@ -28,10 +30,10 @@ if __name__ == "__main__":
 
     if department == 'IT':
 
-        pdf_file = st.file_uploader("", type="pdf")
+        pdf_file = st.file_uploader(label = "Upload file", type="pdf")
         if pdf_file:
             # display document
-            with st.expander("Display document"):
+            with st.expander(label = "Display document"):
                 displayPDF(pdf_file)
 
             # convert pdf to text
@@ -41,7 +43,7 @@ if __name__ == "__main__":
             text = cleanText(text)
             
             #dict to store subject codes
-            subject_codes = st.text_input('Enter subject codes seperated by space - Ex(214441 214445 214447)')
+            subject_codes = st.text_input(label = 'Enter subject codes seperated by space - Ex(214441 214445 214447)')
             subject_codes_submit = st.button('Submit')
             if subject_codes_submit:
                 subject_codes = subject_codes.split()
@@ -62,152 +64,6 @@ if __name__ == "__main__":
 
 
 
-    elif department == 'COMPUTER':
-        if department not in st.session_state:
-            st.session_state.department = 'COMPUTER'
-        
-            # select department
-            department_year = st.sidebar.selectbox('Select Year',
-                                                ['SE', 'TE', 'BE']
-                                                )
-            st.write(f"selected department is {department}")
-            st.write(f"selected branch is {department_year}")
-            uploaded_excel_file = st.sidebar.file_uploader(
-                "", type=['csv', 'xlsx'])
-            if uploaded_excel_file is not None:
-                file_container = st.expander('See uploaded data')
-                excel_file = pd.read_csv(uploaded_excel_file)
-                uploaded_excel_file.seek(0)
-                file_container.write(excel_file)
 
-    elif department == 'AIDS':
-        if department not in st.session_state:
-            st.session_state.department = 'AIDS'
-    
-            # select department
-            department_year = st.sidebar.selectbox('Select Year',
-                                                ['SE', 'TE', 'BE']
-                                                )
-            st.write(f"selected department is {department}")
-            st.write(f"selected branch is {department_year}")
-            uploaded_excel_file = st.sidebar.file_uploader(
-                "", type=['csv', 'xlsx'])
-            if uploaded_excel_file is not None:
-                file_container = st.expander('See uploaded data')
-                excel_file = pd.read_csv(uploaded_excel_file)
-                uploaded_excel_file.seek(0)
-                file_container.write(excel_file)
-
-
-    elif department == 'MECHANICAL':
-        if department not in st.session_state:
-            st.session_state.department = 'MECHANICAL'
-    
-            # select department
-            department_year = st.sidebar.selectbox('Select Year',
-                                                ['SE', 'TE', 'BE']
-                                                )
-            st.write(f"selected department is {department}")
-            st.write(f"selected branch is {department_year}")
-            uploaded_excel_file = st.sidebar.file_uploader(
-                "", type=['csv', 'xlsx'])
-            if uploaded_excel_file is not None:
-                file_container = st.expander('See uploaded data')
-                excel_file = pd.read_csv(uploaded_excel_file)
-                uploaded_excel_file.seek(0)
-                file_container.write(excel_file)
-
-
-    elif department == 'E&TC':
-        if department not in st.session_state:
-            st.session_state.department = 'E&TC'
-    
-            # select department
-            department_year = st.sidebar.selectbox('Select Year',
-                                                ['SE', 'TE', 'BE']
-                                                )
-            st.write(f"selected department is {department}")
-            st.write(f"selected branch is {department_year}")
-            uploaded_excel_file = st.sidebar.file_uploader(
-                "", type=['csv', 'xlsx'])
-            if uploaded_excel_file is not None:
-                file_container = st.expander('See uploaded data')
-                excel_file = pd.read_csv(uploaded_excel_file)
-                uploaded_excel_file.seek(0)
-                file_container.write(excel_file)
-
-    elif department == 'CIVIL':
-        if department not in st.session_state:
-            st.session_state.department = 'CIVIL'
-        
-            # select department
-            department_year = st.sidebar.selectbox('Select Year',
-                                                ['SE', 'TE', 'BE']
-                                                )
-            st.write(f"selected department is {department}")
-            st.write(f"selected branch is {department_year}")
-            uploaded_excel_file = st.sidebar.file_uploader(
-                "", type=['csv', 'xlsx'])
-            if uploaded_excel_file is not None:
-                file_container = st.expander('See uploaded data')
-                excel_file = pd.read_csv(uploaded_excel_file)
-                uploaded_excel_file.seek(0)
-                file_container.write(excel_file)
-
-
-    elif department == 'ELECTRICAL':
-        if department not in st.session_state:
-            st.session_state.department = 'ELECTRICAL'
-
-            # select department
-            department_year = st.sidebar.selectbox('Select Year',
-                                                ['SE', 'TE', 'BE']
-                                                )
-            st.write(f"selected department is {department}")
-            st.write(f"selected branch is {department_year}")
-            uploaded_excel_file = st.sidebar.file_uploader(
-                "", type=['csv', 'xlsx'])
-            if uploaded_excel_file is not None:
-                file_container = st.expander('See uploaded data')
-                excel_file = pd.read_csv(uploaded_excel_file)
-                uploaded_excel_file.seek(0)
-                file_container.write(excel_file)
-
-    elif department == 'INSTRUMENTATION':
-        if department not in st.session_state:
-            st.session_state.department = 'INSTRUMENTATION'
-    
-            # select department
-            department_year = st.sidebar.selectbox('Select Year',
-                                                ['SE', 'TE', 'BE']
-                                                )
-            st.write(f"selected department is {department}")
-            st.write(f"selected branch is {department_year}")
-            uploaded_excel_file = st.sidebar.file_uploader(
-                "", type=['csv', 'xlsx'])
-            if uploaded_excel_file is not None:
-                file_container = st.expander('See uploaded data')
-                excel_file = pd.read_csv(uploaded_excel_file)
-                uploaded_excel_file.seek(0)
-                file_container.write(excel_file)
-
-    elif department == 'FIRST YEAR':
-        if department not in st.session_state:
-            st.session_state.department = 'FIRST YEAR'
-        
-            # select department
-            department_year = st.sidebar.selectbox('Select Year',
-                                                ['SE', 'TE', 'BE']
-                                                )
-            st.write(f"selected department is {department}")
-            st.write(f"selected branch is {department_year}")
-            uploaded_excel_file = st.sidebar.file_uploader(
-                "", type=['csv', 'xlsx'])
-            if uploaded_excel_file is not None:
-                file_container = st.expander('See uploaded data')
-                excel_file = pd.read_csv(uploaded_excel_file)
-                uploaded_excel_file.seek(0)
-                file_container.write(excel_file)
-
-
-
+    else:
+        st.markdown(f'### Sorry for incovinience🙏,currently this feature is not available for {department} department We will add it soon. ONLY IT DEPARTMENT IS AVAILABLE NOW')

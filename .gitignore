@@ -16,7 +16,6 @@ model.py
 re_snippets 
 reularex.ipynb
 SE_IT_SEM_2_RESULT_ANALYSIS.xlsx
-SE_IT_SEM_2_RESULT_ANALYSIS.xlsx
 tabss.py 
 titanic.csv
 TEIB139_suraj_pisal_assi1_.pdf 
@@ -34,3 +33,5 @@ practice
 pdf_to_excel.py 
 final.txt
 final_clean_output.txt
+.vscode
+css
