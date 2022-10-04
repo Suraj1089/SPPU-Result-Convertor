@@ -13,9 +13,6 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 
 
-# --- LOAD CSS, PDF & PROFIL PIC ---
-with open('css/main.css') as f:
-    st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
 
 
 @st.cache
