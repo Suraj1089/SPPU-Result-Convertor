@@ -30,10 +30,10 @@ def mainApp():
 
     if department == 'IT':
 
-        pdf_file = st.file_uploader(label = "Upload file", type="pdf")
+        pdf_file = st.file_uploader(label = "Upload Pdf File", type="pdf")
         if pdf_file:
             # display document
-            with st.expander(label = "Display document"):
+            with st.expander(label = "Show Uploaded File"):
                 displayPDF(pdf_file)
 
             text = pdfToText(pdf_file)
@@ -55,26 +55,28 @@ def mainApp():
                 st.write(student_data)
                 st.markdown(get_table_download_link(student_data), unsafe_allow_html=True)
             
-            with st.expander('Show students marks'):
+            with st.expander('Show Students Marks'):
                 subject_codes = st.text_input('Enter subject code to see subject marks(One at at time)')
                 subject_codes_submit = st.button('Submit',key='one_subject_codes_submit')
                 if subject_codes_submit:
                     try:
                         subject_codes = subject_codes.split()
                         subject_codes = {i:None for i in subject_codes}
-                        st.markdown('### Selected subjects are :')
+                        st.markdown('#### Selected subjects')
                         st.write(subject_codes)
                         marks = cleanMarks(text,subject_codes)
                         student_marks = concat_subjects(marks)
                         student_marks = pd.concat([student_data,student_marks],axis=1)
+                        st.success('Done!....')
                         st.dataframe(student_marks)
                         st.markdown(get_table_download_link(student_marks), unsafe_allow_html=True)
                     except:
-                        st.error('Please enter valid subject codes')
+                        st.error('Please enter valid subject code')
                         st.error('Cannot convert following subject codes to excel file')
                         return 
             
             with st.expander('Dowload Excel File'):
+                st.warning('Enter subject codes those are common for all student(Exclude honors courses)')
                 subject_codes = st.text_input('Enter subject codes separated by space Example: 18IT101 18IT102')
                 subject_codes_submit = st.button('Submit',key='all_subject_codes_submit')
                 if subject_codes_submit:
@@ -161,7 +163,47 @@ def datavisualization():
                     st.error('Please select columns to visualize')
                     return
 
-    
+def input_dataframe_column_names():
+    with st.expander('Rename Column Names'):
+        csv_file = st.file_uploader(label = "Upload csv/excel file",key='input_dataframe_column_names')
+        if csv_file is not None:
+            st.write(csv_file.type)
+            df = None
+            if csv_file.type == 'text/csv':
+                df = pd.read_csv(csv_file)
+            elif csv_file.type == 'excel':
+                df = pd.read_excel(csv_file)
+            elif csv_file.type == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
+                df = pd.read_excel(csv_file)
+            else:
+                st.error('Upload a valid csv/excel file')
+                return
+
+            #store length of columns
+            initial_df_columns_length = len(df.columns)
+            if df is not None:
+                st.markdown('##### Show Initial column names')
+                st.write(list(df.columns))
+                st.markdown('### Enter column names separated by space')
+                column_names = st.text_input('Enter column names')
+                column_names_submit = st.button('Submit')
+                if column_names_submit:
+                    try:
+                        column_names = column_names.split()
+                        try:
+                            df.columns = column_names
+                        except:
+                            st.error(f'Initial file contains {initial_df_columns_length} columns and you entered {len(column_names)} column names')
+                            return
+                        st.markdown('##### columns names after renaming')
+                        st.write(list(df.columns))
+                        st.markdown('### Dataframe after renaming columns')
+                        st.success('Done..........')
+                        st.dataframe(df)   
+                        st.markdown(get_table_download_link(df), unsafe_allow_html=True)
+                    except:
+                        st.error('Please enter valid column names(all column names should be unique)')
+                        return
 
 
 if __name__ == "__main__":
@@ -188,6 +230,9 @@ if __name__ == "__main__":
 
     #drop empty columns
     drop_empty_colums()
+
+    #change column names
+    input_dataframe_column_names()
 
     #data visualization
     datavisualization()

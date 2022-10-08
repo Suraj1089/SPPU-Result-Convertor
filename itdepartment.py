@@ -26,8 +26,6 @@ def student_details(text: str):
     return dataframe
 
 
-
-
 @st.cache
 def get_table_download_link(df):
     """Generates a link allowing the data in a given panda dataframe to be downloaded
@@ -37,15 +35,26 @@ def get_table_download_link(df):
     csv = df.to_csv(index=False)
     # some strings <-> bytes conversions necessary here
     b64 = base64.b64encode(csv.encode()).decode()
-    href = f'<a href="data:file/csv;base64,{b64}" download="SeatNo.csv">Download Excel file</a>'
+    href = f'<a href="data:file/csv;base64,{b64}" download="output.csv">Download Excel file</a>'
     return href
 
 # find name,seat_no,prn_no
 
-
-
 @st.cache
 def cleanText(text: str) -> str:
+    text = text.replace('THEORY OF COMPUTATION', '')
+    text = text.replace('OPERATING SYSTEMS', '')
+    text = text.replace('MACHINE LEARNING', '')
+    text = text.replace('HUMAN COMPUTER INTERACTION', '')
+    text = text.replace('A DESIGN AND ANALYSIS OF ALG.', '')
+    text = text.replace('SEMINAR', '')
+    text = text.replace('HUMAN COMP. INTERACTION-LAB.', '')
+    text = text.replace('LABORATORY PRACTICE-I', '')
+    text = text.replace('OPERATING SYSTEMS LAB(TW+PR)', '')
+    text = text.replace('(TW+PR)', '')
+    text = text.replace('STARTUP ECOSYSTEMS', '')
+    text = text.replace('SEMINAR', '')
+    text = text.replace('SEMINAR', '')
     text = text.replace('DISCRETE MATHEMATICS', '')
     text = text.replace('LOGIC DESIGN & COMP. ORG.', '')
     text = text.replace('DATA STRUCTURES & ALGO.', '')
@@ -118,7 +127,6 @@ def cleanText(text: str) -> str:
     # SECOND YEAR SGPA   8.08, TOTAL CREDITS EARNED   50
     text = text.strip()
     return text
-
 # function to display pdf
 
 
