@@ -2,8 +2,24 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import time
+import re 
 import numpy as np 
-from itdepartment import get_table_download_link, displayPDF, pdfToText, cleanText, student_details, cleanMarks, concat_subjects
+from itdepartment import get_table_download_link,displayPDF, pdfToText, cleanText,student_details,cleanMarks,concat_subjects
+
+@st.cache
+def prn_no(text : str):
+    pattern = re.findall(
+        r'7\d{7}[A-Z]*',text
+    )
+    d = {'PRN-NO':[]}
+    for i in pattern:
+        temp = i.split()
+        d['PRN-NO'].append(temp[0])
+        
+    dataframe = pd.DataFrame(d)
+    return dataframe
+    
+
 
 if __name__ == "__main__":
 
@@ -22,6 +38,7 @@ if __name__ == "__main__":
        
     """)
 
+
     department = st.selectbox(
         'Select Department',
         ['IT', 'COMPUTER', 'AIDS', 'MECHANICAL', 'E&TC',
@@ -36,34 +53,47 @@ if __name__ == "__main__":
             with st.expander(label = "Display document"):
                 displayPDF(pdf_file)
 
-            # convert pdf to text
             text = pdfToText(pdf_file)
-
-            # clean text file remove all puntuations
             text = cleanText(text)
+            seat_no_name = student_details(text)
+            student_prn_no = prn_no(text)
+
+            student_data = pd.concat([seat_no_name,student_prn_no],axis=1)
             
-            #dict to store subject codes
-            subject_codes = st.text_input(label = 'Enter subject codes seperated by space - Ex(214441 214445 214447)')
-            subject_codes_submit = st.button('Submit')
-            if subject_codes_submit:
-                subject_codes = subject_codes.split()
-                subject_codes = {i:None for i in subject_codes}
-                st.markdown('### Selected subjects are :')
-                st.write(subject_codes)
-                marks = cleanMarks(text,subject_codes)
-                student_marks = concat_subjects(marks)
-                # st.dataframe(student_marks)
-                student_marks = student_marks.replace('--',np.nan)
-                student_marks = student_marks.replace('nnn',np.nan)
-                student_marks = student_marks.dropna(axis=1, how='all')
-                st.markdown('### Generated Excel Sheet')
-                # st.dataframe(student_marks)
-                data = student_details(text)
-                student_marks = pd.concat([data,student_marks],axis=1)
-                st.markdown(get_table_download_link(student_marks), unsafe_allow_html=True)
+            with st.expander('Display text'):
+                st.write(text)
+             
+            
+            with st.expander('Show clean data'):
+                st.write(student_data)
+                st.markdown(get_table_download_link(student_data), unsafe_allow_html=True)
+            
+            with st.expander('Show students marks'):
+                subject_codes = st.text_input('Enter subject code to see subject marks(One at at time)')
+                subject_codes_submit = st.button('Submit',key='one_subject_codes_submit')
+                if subject_codes_submit:
+                    subject_codes = subject_codes.split()
+                    subject_codes = {i:None for i in subject_codes}
+                    st.markdown('### Selected subjects are :')
+                    st.write(subject_codes)
+                    marks = cleanMarks(text,subject_codes)
+                    student_marks = concat_subjects(marks)
+                    student_marks = pd.concat([student_data,student_marks],axis=1)
+                    st.dataframe(student_marks)
+                    st.markdown(get_table_download_link(student_marks), unsafe_allow_html=True)
+            
+            with st.expander('Dowload Excel File'):
+                subject_codes = st.text_input('Enter subject codes separated by space Example: 18IT101 18IT102')
+                subject_codes_submit = st.button('Submit',key='all_subject_codes_submit')
+                if subject_codes_submit:
+                    subject_codes = subject_codes.split()
+                    subject_codes = {i:None for i in subject_codes}
+                    st.markdown('### Selected subjects are :')
+                    st.write(subject_codes)
+                    marks = cleanMarks(text,subject_codes)
+                    student_marks = concat_subjects(marks)
+                    student_marks = pd.concat([student_data,student_marks],axis=1)
+                    st.markdown(get_table_download_link(student_marks), unsafe_allow_html=True)
+            
+            
 
-
-
-
-    else:
-        st.markdown(f'### Sorry for incovinience🙏,currently this feature is not available for {department} department We will add it soon. ONLY IT DEPARTMENT IS AVAILABLE NOW')
