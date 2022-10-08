@@ -6,13 +6,12 @@ import PyPDF2
 from io import StringIO
 import base64
 import re
-
-import tabula.io as tabula
+import os 
 import plotly.express as px
 # import seaborn as sns
 import matplotlib.pyplot as plt
 
-
+@st.cache
 def student_details(text: str):
     l = []
     pattern = re.findall(
@@ -42,9 +41,6 @@ def get_table_download_link(df):
     return href
 
 # find name,seat_no,prn_no
-
-
-
 
 
 
@@ -137,12 +133,6 @@ def displayPDF(file):
     st.markdown(pdf_display, unsafe_allow_html=True)
 
 
-def show_pdf(file_path):
-    with open(file_path,"rb") as f:
-        base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-    pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="800" type="application/pdf"></iframe>'
-    st.markdown(pdf_display, unsafe_allow_html=True)
-
 @st.cache
 def pdfToText(path):
     pdfreader = PyPDF2.PdfFileReader(path)
@@ -153,6 +143,8 @@ def pdfToText(path):
             f.write(pagObj.extractText())
     with open('final_txt.txt', 'r') as f:
         text = f.read()
+    if os.path.exists("final_txt.txt"):
+        os.remove("final_txt.txt")
         return text
 
 
