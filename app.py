@@ -38,7 +38,10 @@ if __name__ == "__main__":
        
     """)
 
+    st.warning("This app is still in development. Please report any bugs to the developer.")
+    st.warning("developer contact - surajpisal113@gmail.com")
 
+    
     department = st.selectbox(
         'Select Department',
         ['IT', 'COMPUTER', 'AIDS', 'MECHANICAL', 'E&TC',
@@ -51,6 +54,8 @@ if __name__ == "__main__":
         if pdf_file:
             # display document
             with st.expander(label = "Display document"):
+                with st.spinner("Loading document..."):
+                    pass 
                 displayPDF(pdf_file)
 
             text = pdfToText(pdf_file)
@@ -60,40 +65,55 @@ if __name__ == "__main__":
 
             student_data = pd.concat([seat_no_name,student_prn_no],axis=1)
             
-            with st.expander('Display text'):
-                st.write(text)
+            # with st.expander('Display text'):
+            #     st.write(text)
              
             
             with st.expander('Show clean data'):
+                with st.spinner("Loading document..."):
+                    pass
                 st.write(student_data)
                 st.markdown(get_table_download_link(student_data), unsafe_allow_html=True)
             
             with st.expander('Show students marks'):
+                with st.spinner("Loading document..."):
+                    pass 
                 subject_codes = st.text_input('Enter subject code to see subject marks(One at at time)')
                 subject_codes_submit = st.button('Submit',key='one_subject_codes_submit')
                 if subject_codes_submit:
-                    subject_codes = subject_codes.split()
-                    subject_codes = {i:None for i in subject_codes}
-                    st.markdown('### Selected subjects are :')
-                    st.write(subject_codes)
-                    marks = cleanMarks(text,subject_codes)
-                    student_marks = concat_subjects(marks)
-                    student_marks = pd.concat([student_data,student_marks],axis=1)
-                    st.dataframe(student_marks)
-                    st.markdown(get_table_download_link(student_marks), unsafe_allow_html=True)
+                    try:
+                        subject_codes = subject_codes.split()
+                        subject_codes = {i:None for i in subject_codes}
+                        st.markdown('### Selected subjects are :')
+                        st.write(subject_codes)
+                        marks = cleanMarks(text,subject_codes)
+                        student_marks = concat_subjects(marks)
+                        student_marks = pd.concat([student_data,student_marks],axis=1)
+                        st.dataframe(student_marks)
+                        st.markdown(get_table_download_link(student_marks), unsafe_allow_html=True)
+                    except:
+                        st.error('Please enter valid subject codes')
+                        st.error('Cannot convert following subject codes to excel file')
             
             with st.expander('Dowload Excel File'):
+                with st.spinner("Loading document..."):
+                    pass 
                 subject_codes = st.text_input('Enter subject codes separated by space Example: 18IT101 18IT102')
                 subject_codes_submit = st.button('Submit',key='all_subject_codes_submit')
                 if subject_codes_submit:
-                    subject_codes = subject_codes.split()
-                    subject_codes = {i:None for i in subject_codes}
-                    st.markdown('### Selected subjects are :')
-                    st.write(subject_codes)
-                    marks = cleanMarks(text,subject_codes)
-                    student_marks = concat_subjects(marks)
-                    student_marks = pd.concat([student_data,student_marks],axis=1)
-                    st.markdown(get_table_download_link(student_marks), unsafe_allow_html=True)
+                    try: 
+                        subject_codes = subject_codes.split()
+                        subject_codes = {i:None for i in subject_codes}
+                        st.markdown('### Selected subjects are :')
+                        st.write(subject_codes)
+                        marks = cleanMarks(text,subject_codes)
+                        student_marks = concat_subjects(marks)
+                        student_marks = pd.concat([student_data,student_marks],axis=1)
+                        st.markdown(get_table_download_link(student_marks), unsafe_allow_html=True)
+                    except:
+                        st.error('Please enter valid subject codes')
+                        st.error('Cannot convert following subject codes to excel file')
             
             
-
+    else:
+        st.warning('This app is working only for IT department(SELECT IT DEPARTMENT)')
