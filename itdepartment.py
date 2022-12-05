@@ -217,3 +217,69 @@ def concat_subjects(d: dict):
         dataframe containing student marks of all subjects.
     """
     return pd.concat([i for i in d.values()], axis=1)
+
+
+# @st.cache
+# def change_column_data_type(dataframe):
+
+    """
+        function to change data type of columns
+        ## Parameters
+        dataframe : dataframe
+        ## return
+        dataframe with changed data type
+    """
+    dataframe['OE'] = dataframe['OE'].astype('float')
+    dataframe['TH'] = dataframe['TH'].astype('float')
+    dataframe['OE_TH'] = dataframe['OE_TH'].astype('float')
+    dataframe['TW'] = dataframe['TW'].astype('float')
+    dataframe['PR'] = dataframe['PR'].astype('float')
+    dataframe['OR'] = dataframe['OR'].astype('float')
+    dataframe['TOT'] = dataframe['TOT'].astype('float')
+    dataframe['CRD'] = dataframe['CRD'].astype('float')
+    dataframe['PTS1'] = dataframe['PTS1'].astype('float')
+    dataframe['PTS2'] = dataframe['PTS2'].astype('float')
+    return dataframe
+
+def create_analysis_table(dataframe):
+    """
+        function to create analysis table
+        ## Parameters
+        dataframe : dataframe
+        ## return
+        dataframe with analysis table
+    """
+    # create analysis table
+    d = {'Total No of Students':None,'All Clear':None,'First Class with Distinction':None,
+            'First Class':None,'Higher Second Class':None,'Second Class':None,'Pass Class':None,
+            'One Backlog':None,'Two Backlog':None,'Three Backlog':None,'Four Backlog':None,
+            'More than four Backlog':None,'Students Promoted to New class':None
+            
+        }
+        
+    
+
+def subject_wise_analyse(dataframe,subject_codes):
+    """
+        function to analyse subject wise marks
+    
+    """
+    for codes in subject_codes.keys():
+        subject_codes[codes] = dataframe[dataframe['subject']==codes]
+    return subject_codes
+
+
+def remove_subject_names(text : str) -> str:
+    """
+        function to remove subject names from text
+    """
+    subject_names = []
+    with st.form(key='remove_subject_names'):
+        total_no_of_subjects = int(st.number_input('Enter total no of subjects'))
+        for i in range(total_no_of_subjects):
+            subject_names.append(st.text_input(f'Enter subject {i+1} name'))
+        submit = st.form_submit_button(label='Submit')
+    if submit:
+        for i in subject_names:
+            text = text.replace(i,'')
+    return text
