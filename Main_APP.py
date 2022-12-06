@@ -114,6 +114,7 @@ def mainApp():
                         # remove columns with all nan values
                         student_marks = student_marks.replace(
                             'nnnnnnn', np.nan)
+                        student_marks = student_marks.replace('nnn', np.nan)
                         student_marks = student_marks.dropna(axis=1, how='all')
                         st.dataframe(student_marks)
                         st.markdown(get_table_download_link(
@@ -154,6 +155,7 @@ def mainApp():
                         student_marks = student_marks.replace(
                             'nnnnnnn', np.nan)
                         student_marks = student_marks.replace('nnn', np.nan)
+                        student_marks = student_marks.replace('nan', np.nan)
                         student_marks = student_marks.replace('nnnn', np.nan)
 
                         student_marks = student_marks.dropna(axis=1, how='all')
