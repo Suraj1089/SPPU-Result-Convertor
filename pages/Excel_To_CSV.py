@@ -10,6 +10,11 @@ from io import BytesIO
 from pyxlsb import open_workbook as open_xlsb
 import streamlit as st
 import time
+from st_aggrid import GridUpdateMode, DataReturnMode
+from st_aggrid import AgGrid
+from st_aggrid.grid_options_builder import GridOptionsBuilder
+from st_aggrid.shared import JsCode
+from itdepartment import dispaly_interactive
 
 
 def to_excel(df):
@@ -34,10 +39,36 @@ def app():
                         "FileType": uploaded_file.type, "FileSize": uploaded_file.size}
         st.write(file_details)
         df = pandas.read_excel(uploaded_file)
+        storeDf = df
         st.write("Data in Excel file")
-        st.write(df)
+
+        gridOptions = dispaly_interactive(df)
+
+        st.success(
+            f"""
+                💡 Tip! Hold the shift key when selecting rows to select multiple rows at once!
+                """
+        )
+        response = AgGrid(
+            df,
+            gridOptions=gridOptions,
+            enable_enterprise_modules=True,
+            update_mode=GridUpdateMode.MODEL_CHANGED,
+            data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
+            fit_columns_on_grid_load=False,
+        )
+
+        df = pd.DataFrame(response["selected_rows"])
+
+        st.subheader("Filtered data will appear below 👇 ")
+        st.text("")
+
+        st.table(df)
+
+        st.text("")
+
         fileName = uploaded_file.name.split(".")[0] + ".csv"
-        csvFile = df.to_csv(index=False)
+        csvFile = storeDf.to_csv(index=False)
         if st.download_button(
             label="Download CSV File",
             data=csvFile,

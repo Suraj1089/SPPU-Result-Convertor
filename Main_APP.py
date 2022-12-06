@@ -6,6 +6,12 @@ import time
 import re
 import numpy as np
 from itdepartment import get_table_download_link, displayPDF, pdfToText, cleanText, student_details, cleanMarks, concat_subjects, remove_subject_names
+from st_aggrid import GridUpdateMode, DataReturnMode
+from st_aggrid import AgGrid
+from st_aggrid.grid_options_builder import GridOptionsBuilder
+from st_aggrid.shared import JsCode
+from itdepartment import dispaly_interactive
+# from functionforDownloadButtons import download_button
 
 
 @st.cache
@@ -28,7 +34,7 @@ def prn_no(text: str):
 
 def mainApp():
     """
-        main app 
+        main app
     """
     department = st.selectbox(
         'Select Department',
@@ -64,9 +70,29 @@ def mainApp():
             with st.expander('Show Students Details'):
                 # remove columns with all nan values
                 student_data = student_data.dropna(axis=1, how='all')
-                st.write(student_data)
+                storeStudentData = student_data.copy()
+                gridOptions = dispaly_interactive(student_data)
+
+                response = AgGrid(
+                    student_data,
+                    gridOptions=gridOptions,
+                    enable_enterprise_modules=True,
+                    update_mode=GridUpdateMode.MODEL_CHANGED,
+                    data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
+                    fit_columns_on_grid_load=False,
+                )
+
+                df = pd.DataFrame(response["selected_rows"])
+
+                st.subheader("Filtered data will appear below 👇 ")
+                st.text("")
+
+                st.table(df)
+
+                st.text("")
+
                 st.markdown(get_table_download_link(
-                    student_data), unsafe_allow_html=True)
+                    storeStudentData), unsafe_allow_html=True)
 
             with st.expander('Show Students Marks'):
 
@@ -86,6 +112,8 @@ def mainApp():
                             [student_data, student_marks], axis=1)
                         st.success('Done!....')
                         # remove columns with all nan values
+                        student_marks = student_marks.replace(
+                            'nnnnnnn', np.nan)
                         student_marks = student_marks.dropna(axis=1, how='all')
                         st.dataframe(student_marks)
                         st.markdown(get_table_download_link(
@@ -123,6 +151,14 @@ def mainApp():
                         student_marks = concat_subjects(marks)
                         student_marks = pd.concat(
                             [student_data, student_marks], axis=1)
+                        student_marks = student_marks.replace(
+                            'nnnnnnn', np.nan)
+                        student_marks = student_marks.replace('nnn', np.nan)
+                        student_marks = student_marks.replace('nnnn', np.nan)
+
+                        student_marks = student_marks.dropna(axis=1, how='all')
+
+                        # st.write(student_marks)
                         st.markdown(get_table_download_link(
                             student_marks), unsafe_allow_html=True)
                     except:
@@ -280,7 +316,7 @@ if __name__ == "__main__":
 
     # st.title("SPPU Result Analyser")
     st.markdown("""
-        ## :outbox_tray: SPPU DATA ANALYSER: PDF TO EXCEL/CSV
+        # :outbox_tray: SPPU DATA ANALYSER: PDF TO EXCEL/CSV
     """)
 
     # main App
@@ -294,4 +330,3 @@ if __name__ == "__main__":
 
     # data visualization
     datavisualization()
-

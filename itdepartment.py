@@ -10,6 +10,12 @@ import os
 import plotly.express as px
 # import seaborn as sns
 import matplotlib.pyplot as plt
+from st_aggrid import GridUpdateMode, DataReturnMode
+from st_aggrid import AgGrid
+from st_aggrid.grid_options_builder import GridOptionsBuilder
+from st_aggrid.shared import JsCode
+# from functionforDownloadButtons import download_button
+
 
 @st.cache
 def student_details(text: str):
@@ -219,27 +225,27 @@ def concat_subjects(d: dict):
     return pd.concat([i for i in d.values()], axis=1)
 
 
-# @st.cache
-# def change_column_data_type(dataframe):
+# # @st.cache
+# # def change_column_data_type(dataframe):
 
-    """
-        function to change data type of columns
-        ## Parameters
-        dataframe : dataframe
-        ## return
-        dataframe with changed data type
-    """
-    dataframe['OE'] = dataframe['OE'].astype('float')
-    dataframe['TH'] = dataframe['TH'].astype('float')
-    dataframe['OE_TH'] = dataframe['OE_TH'].astype('float')
-    dataframe['TW'] = dataframe['TW'].astype('float')
-    dataframe['PR'] = dataframe['PR'].astype('float')
-    dataframe['OR'] = dataframe['OR'].astype('float')
-    dataframe['TOT'] = dataframe['TOT'].astype('float')
-    dataframe['CRD'] = dataframe['CRD'].astype('float')
-    dataframe['PTS1'] = dataframe['PTS1'].astype('float')
-    dataframe['PTS2'] = dataframe['PTS2'].astype('float')
-    return dataframe
+#     """
+#         function to change data type of columns
+#         ## Parameters
+#         dataframe : dataframe
+#         ## return
+#         dataframe with changed data type
+#     """
+#     dataframe['OE'] = dataframe['OE'].astype('float')
+#     dataframe['TH'] = dataframe['TH'].astype('float')
+#     dataframe['OE_TH'] = dataframe['OE_TH'].astype('float')
+#     dataframe['TW'] = dataframe['TW'].astype('float')
+#     dataframe['PR'] = dataframe['PR'].astype('float')
+#     dataframe['OR'] = dataframe['OR'].astype('float')
+#     dataframe['TOT'] = dataframe['TOT'].astype('float')
+#     dataframe['CRD'] = dataframe['CRD'].astype('float')
+#     dataframe['PTS1'] = dataframe['PTS1'].astype('float')
+#     dataframe['PTS2'] = dataframe['PTS2'].astype('float')
+#     return dataframe
 
 def create_analysis_table(dataframe):
     """
@@ -283,3 +289,13 @@ def remove_subject_names(text : str) -> str:
         for i in subject_names:
             text = text.replace(i,'')
     return text
+
+
+def dispaly_interactive(df):
+    gb = GridOptionsBuilder.from_dataframe(df)
+    gb.configure_default_column(enableValue=True, enableRowGroup=True, enablePivot=True,
+                                sortable=True, filter=True, editable=True, resizable=True)
+    gb.configure_selection(selection_mode='multiple', use_checkbox=True)
+    gb.configure_side_bar()
+    gridOptions = gb.build()
+    return gridOptions
