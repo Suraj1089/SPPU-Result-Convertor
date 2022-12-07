@@ -34,7 +34,10 @@ def to_excel(df):
 
 
 def app():
-    st.title("CSV to Excel Conversion")
+    st.markdown("""
+        ## CSV to Excel Conversion
+    """)
+
     uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
     if uploaded_file is not None:
         file_details = {"FileName": uploaded_file.name,

@@ -280,6 +280,7 @@ def remove_subject_names(text : str) -> str:
         function to remove subject names from text
     """
     subject_names = []
+    st.warning('Enter subject names in the same order as in the marksheet')
     with st.form(key='remove_subject_names'):
         total_no_of_subjects = int(st.number_input('Enter total no of subjects'))
         for i in range(total_no_of_subjects):

@@ -31,7 +31,10 @@ def to_excel(df):
 
 
 def app():
-    st.title("Excel to CSV Coverter")
+    st.markdown("""
+        ## Excel to CSV Coverter
+    """)
+
     st.subheader("Upload your Excel file")
     uploaded_file = st.file_uploader("Choose a file", type="xlsx")
     if uploaded_file is not None:
