@@ -73,7 +73,9 @@ def app():
 
     st.code("""Que 13: How to get help?
     Ans: contact the developer at:
-    1. Email:surajpisal113@gmail.com.""")
+    1. Email:surajpisal113@gmail.com.
+    2. Email: vikrammarkali007@gmail.com""")
+    
 
     st.code("""Que 14: How to get support?
     Ans: contact the developer at:
