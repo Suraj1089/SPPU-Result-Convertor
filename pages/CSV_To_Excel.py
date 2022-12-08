@@ -10,7 +10,6 @@ from io import BytesIO
 from pyxlsb import open_workbook as open_xlsb
 import streamlit as st
 import time
-import time
 from st_aggrid import GridUpdateMode, DataReturnMode
 from st_aggrid import AgGrid
 from st_aggrid.grid_options_builder import GridOptionsBuilder

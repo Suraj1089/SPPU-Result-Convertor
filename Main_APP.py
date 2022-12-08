@@ -211,7 +211,7 @@ if __name__ == "__main__":
 
     # st.title("SPPU Result Analyser")
     st.markdown("""
-        ## :outbox_tray: SPPU DATA ANALYSER: PDF TO EXCEL/CSV
+        ## :outbox_tray: SPPU DATA ANALYSER
     """)
 
     # main App
