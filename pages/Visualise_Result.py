@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 import seaborn as sns
 from io import BytesIO
 from pyxlsb import open_workbook as open_xlsb
@@ -12,6 +11,7 @@ from st_aggrid.shared import JsCode
 import plotly.express as px
 import numpy as np
 from itdepartment import dispaly_interactive
+import matplotlib.pyplot as plt
 
 
 def main():
@@ -64,23 +64,27 @@ def main():
         # st.write(stroedDf.columns)
         # st.write(df.astype(str))
         col1, col2 = st.columns(2)
+        try:
 
-        with col1:
-            col1.metric('No of students having 0 backlogs',
-                        len(df[df['Total Backlog'] == 0]), 0)
+            with col1:
+                col1.metric('No of students having 0 backlogs',
+                            len(df[df['Total Backlog'] == 0]), 0)
 
-        with col2:
-            col2.metric('No of students having 1 backlogs',
-                        len(df[df['Total Backlog'] == 1]), 1)
+            with col2:
+                col2.metric('No of students having 1 backlogs',
+                            len(df[df['Total Backlog'] == 1]), 1)
 
-        col3, col4 = st.columns(2)
-        with col3:
-            col3.metric('No of students having 2 backlogs',
-                        len(df[df['Total Backlog'] == 2]), 2)
+            col3, col4 = st.columns(2)
+            with col3:
+                col3.metric('No of students having 2 backlogs',
+                            len(df[df['Total Backlog'] == 2]), 2)
 
-        with col4:
-            col4.metric('No of students having more than 3 backlogs',
-                        len(df[df['Total Backlog'] >= 3]), 3)
+            with col4:
+                col4.metric('No of students having more than 3 backlogs',
+                            len(df[df['Total Backlog'] >= 3]), 3)
+        except:
+            st.error('File is not in valid format')
+            return
 
         # st.write(df.dtypes.astype(str))
         # count of sgpa chart in plotly
@@ -88,6 +92,11 @@ def main():
         try:
             fig = px.histogram(df, x="SGPA1", color="SGPA1", marginal="rug",
                                title="SGPA Distribution")
+            fig.update_layout(
+                xaxis_title='Student SGPA',
+                yaxis_title='No of Students'
+            )
+
             st.plotly_chart(fig)
         except:
             st.error('Error occured while rendering the graph')
@@ -144,8 +153,15 @@ def main():
                     pass
 
         try:
+
             fig = px.bar(x=['214441', '214442', '214443', '214444', '214445', '214446', '214447',
                             '214448', '214449', '21444A'], y=avgCount, color=avgCount, hover_data=[avgCount])
+            # update x and y legends
+            fig.update_layout(
+                xaxis_title='subject codes',
+                yaxis_title='average marks'
+            )
+
             st.plotly_chart(fig)
         except:
             st.error('Error occured while plotting the graph')

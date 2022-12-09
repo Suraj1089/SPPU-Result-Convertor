@@ -43,6 +43,7 @@ def mainApp():
     )
 
     if department == 'IT':
+        st.write('Selected department is ',department)
 
         pdf_file = st.file_uploader(label="Upload Pdf File", type="pdf")
         if pdf_file:
@@ -194,8 +195,9 @@ def mainApp():
                         return
 
     else:
+        st.write('selected department is ',department)
         st.warning(
-            'This app is working only for IT department(SELECT IT DEPARTMENT)')
+            'Enter subject names as present in pdf file to clean data')
 
 
 if __name__ == "__main__":

@@ -43,7 +43,7 @@ def app():
     st.code("""Que 7: How to contact the developer?
     Ans: You can contact the developer at:
     1. Email: surajpisal113@gmail.com
-    2. LinkedIn: https://www.linkedin.com/in/surajpisal/""")
+    2. Email: Email: vikrammarkali007@gmail.com""")
 
     st.code("""Que 8: How to contribute to this project?
     Ans: You can contribute to this project by:
@@ -79,7 +79,8 @@ def app():
 
     st.code("""Que 14: How to get support?
     Ans: contact the developer at:
-    1. Email: surajpisal113@gmail.com.""")
+    1. Email: surajpisal113@gmail.com.
+    2.Emial:  vikrammarkali007@gmail.com""")
 
     st.code("""Que 15: Why should I use this app?
     Ans: You should use this app because:
