@@ -43,7 +43,7 @@ def mainApp():
     )
 
     if department == 'IT':
-        st.write('Selected department is ',department)
+        st.write('Selected department is ', department)
 
         pdf_file = st.file_uploader(label="Upload Pdf File", type="pdf")
         if pdf_file:
@@ -53,7 +53,8 @@ def mainApp():
 
             text = pdfToText(pdf_file)
             text = cleanText(text)
-            text = remove_subject_names(text)
+            # text = remove_subject_names(text)
+            st.write(text)
             try:
 
                 seat_no_name = student_details(text)
@@ -157,6 +158,10 @@ def mainApp():
                     'Enter subject codes separated by space Example: 18IT101 18IT102')
                 subject_codes_submit = st.button(
                     'Submit', key='all_subject_codes_submit')
+
+                # t = 1
+
+                # subject_codes = '214441 214442 214443 214444 214445 214446 214447 214448 214449'
                 if subject_codes_submit:
                     try:
                         subject_codes = subject_codes.split()
@@ -164,7 +169,7 @@ def mainApp():
                         st.markdown('### Selected subjects are :')
                         # replace nnnnnnn with np.nan
                         student_data = student_data.replace('nnnnnnn', np.nan)
-                        # remove columns with all nan values
+                        # remove columns with all nan values~
                         # student_data = student_data.dropna(axis=1, how='all')
                         st.write(subject_codes)
 
@@ -195,7 +200,7 @@ def mainApp():
                         return
 
     else:
-        st.write('selected department is ',department)
+        st.write('selected department is ', department)
         st.warning(
             'Enter subject names as present in pdf file to clean data')
 

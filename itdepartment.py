@@ -47,7 +47,72 @@ def get_table_download_link(df):
 # find name,seat_no,prn_no
 
 @st.cache
+def cleanSE2015Marks(text:str)->str:
+    text = text.replace('DISCRETE STRUCTURES','')
+    text = text.replace('DIGI ELECTRO & LOGIC DESIGN','')
+    text = text.replace('FUNDAMENTAL OF DATASTRUCTURE','')
+    text = text.replace('PROB SOLVI & OOPS','')
+    text = text.replace('DIGITAL LABORATORY','')
+    text = text.replace('PROGRAMMING LABORATORY','')
+    text = text.replace('OBJECT ORIEN PROGRAMMING LAB.','')
+    text = text.replace('COMMUNICATION SKILLS','')
+    text = text.replace('ROAD SAFETY','')
+    text = text.replace('ENGINEERING MATHEMATICS -III','')
+    text = text.replace('COMPUTER GRAPHICS','')
+    text = text.replace('PROCESSOR ARCH AND INTERFACING','')
+    text = text.replace('DATA STRUCTURES & FILES','')
+    text = text.replace('FOUND OF COMM & COMP NETWORK','')
+    text = text.replace('PROCESSOR INTERFACING LAB','')
+    text = text.replace('DATA STRUCTURE & FILES LAB','')
+    text = text.replace('COMPUTER GRAPHICS LABORATORY','')
+    text = text.replace('WATER MANAGEMENT','')
+    text = text.replace('SAVITRIBAI PHULE PUNE UNIVERSITY ,S.E.(2015 COURSE) EXAMINATION, MAY 2020','')
+    text = text.replace('COLLEGE: [CEGP010530] - D.Y. PATIL COLLEGE OF ENGINEERING, PUNE','')
+    text = text.replace('BRANCH CODE: 29-S.E.(2015 PAT.)(INFORMATION TECHNOLOGY)','')
+    text = text.replace('SUBJECT NAME OE TH [OE+TH] TW PR OR Tot% Crd Grd GP CP P&R ORD','')
+    text = text.replace('SEM.:')
+
+
+def cleanTE2015Marks(text:str)->str:
+
+    text = text.replace('THEORY OF COMPUTATION','')
+    text = text.replace('DATABASE MANAGEMENT SYSTEMS','')
+    text = text.replace('SW. ENGG. & PROJECT MGMT.','')
+    text = text.replace('OPERATING SYSTEM','')
+    text = text.replace('HUMAN-COMPUTER INTERACTION','')
+    text = text.replace('SOFTWARE LABORATORY-I','')
+    text = text.replace('SOFTWARE LABORATORY-II','')
+    text = text.replace('SOFTWARE LABORATORY-III','')
+    text = text.replace('LEDSP. & PERSONALITY DEVOP.','')
+    text = text.replace('COMPUTER NETWORK TECHNOLOGY','')
+    text = 
+#     314441 THEORY OF COMPUTATION 021/030 049/070 070/100 --- --- --- 70 04 A+ 09 36 --- ---
+#  314442 DATABASE MANAGEMENT SYSTEMS 022/030 048/070 070/100 --- --- --- 70 04 A+ 09 36 --- ---
+#  314443 SW. ENGG. & PROJECT MGMT. 018/030 044/070 062/100 --- --- --- 62 03 A 08 24 --- ---
+#  314444 OPERATING SYSTEM 028/030 052/070 080/100 --- --- --- 80 04 O 10 40 --- ---
+#  314445 HUMAN-COMPUTER INTERACTION 023/030 038/070 061/100 --- --- --- 61 03 A 08 24 --- ---
+#  314446 SOFTWARE LABORATORY-I --- --- --- --- 043/050 --- 86 01 O 10 10 --- ---
+#  314446 SOFTWARE LABORATORY-I --- --- --- 022/025 --- 043/050 86 01 O 10 10 --- ---
+#  314447 SOFTWARE LABORATORY-II --- --- --- 022/025 044/050 --- 88 02 O 10 20 --- ---
+#  314448 SOFTWARE LABORATORY-III --- --- --- 044/050 --- --- 88 01 O 10 10 --- ---
+#  310260D LEDSP. & PERSONALITY DEVOP. --- --- --- PP --- --- PP 00 P 00 00 --- ---
+# SEM.:2
+#  314450 COMPUTER NETWORK TECHNOLOGY * 028/030 059/070 087/100 --- --- --- 87 03 O 10 30 --- ---
+#  314451 SYSTEMS PROGRAMMING * 024/030 054/070 078/100 --- --- --- 78 04 A+ 09 36 --- ---
+#  314452 DESIGN AND ANALYSIS OF ALGO. * 017/030 046/070 063/100 --- --- --- 63 04 A 08 32 --- ---
+#  314453 CLOUD COMPUTING * 021/030 051/070 072/100 --- --- --- 72 03 A+ 09 27 --- ---
+#  314454 DATA SCI. & BIG DATA ANALYTICS * 020/030 049/070 069/100 --- --- --- 69 04 A 08 32 --- ---
+#  314455 SOFTWARE LABORATORY-IV * --- --- --- 022/025 --- 023/025 90 01 O 10 10 --- ---
+#  314456 SOFTWARE LABORATORY-V * --- --- --- 040/050 --- --- 80 01 O 10 10 --- ---
+#  314456 SOFTWARE LABORATORY-V * --- --- --- --- 042/050 --- 84 01 O 10 10 --- ---
+#  314457 SOFTWARE LABORATORY-VI * --- --- --- 023/025 023/025 --- 92 01 O 10 10 --- ---
+#  314458 PROJECT BASED SEMINAR * --- --- --- --- --- 045/050 90 01 O 10 10 --- ---
+#  314459D HEALTH & FITNESS MGMT. 
+
+
+@st.cache
 def cleanText(text: str) -> str:
+    text = text.replace('COMPUTER ORGANIZATION & ARCH.','')
     text = text.replace('THEORY OF COMPUTATION', '')
     text = text.replace('OPERATING SYSTEMS', '')
     text = text.replace('MACHINE LEARNING', '')
