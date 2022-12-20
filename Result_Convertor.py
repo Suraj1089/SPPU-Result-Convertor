@@ -6,6 +6,7 @@ import time
 import re
 import numpy as np
 from itdepartment import get_table_download_link, displayPDF, pdfToText, cleanText, student_details, cleanMarks, concat_subjects, remove_subject_names
+from itdepartment import cleanSE2015PatternMarks,cleanTE2015Marks
 from st_aggrid import GridUpdateMode, DataReturnMode
 from st_aggrid import AgGrid
 from st_aggrid.grid_options_builder import GridOptionsBuilder
@@ -52,8 +53,19 @@ def mainApp():
                 displayPDF(pdf_file)
 
             text = pdfToText(pdf_file)
+
+            with open('before2015.txt','w') as ss1:
+                ss1.write(text)
+            
+            import re 
+            # pattern *[A-Z]
+            # st.write(type(p))
+            # st.write(p)
+            # print(p)
+            # text = cleanTE2015Marks(text)
+            # text = cleanSE2015PatternMarks(text)
             text = cleanText(text)
-            text = remove_subject_names(text)
+            
             try:
 
                 seat_no_name = student_details(text)
@@ -109,6 +121,7 @@ def mainApp():
                         subject_codes = {i: None for i in subject_codes}
                         st.markdown('#### Selected subjects')
                         st.write(subject_codes)
+                        # st.write(text)
                         marks = cleanMarks(text, subject_codes)
                         student_marks = concat_subjects(marks)
                         student_marks = pd.concat(
@@ -173,6 +186,22 @@ def mainApp():
                         # 'Enter subject names separated by space same as in pdf Example: Data Structure and Algorithms Computer Organization and Architecture')
                         # subject_names = subject_names.split()
                         # text = remove_subject_names(text, subject_names)
+                        # p = re.findall(r'\b[A-Z]{2,}\b',text)
+           
+                        # # remove all PP or AB
+
+                        # p = [i for i in p if i not in ['PP','AB']]
+                        
+                        # for i in p:
+                        #     text = text.replace(i,'')
+                        # print(p)
+
+                        text = text.replace(' V ','')
+                        text = text.replace(' I ','')
+                        text = text.replace(' II ','')
+                        text = text.replace(' III ','')
+                        with open('mmm.txt','w') as mm:
+                            mm.write(text)
                         marks = cleanMarks(text, subject_codes)
                         student_marks = concat_subjects(marks)
                         student_marks = pd.concat(
