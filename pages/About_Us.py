@@ -25,6 +25,7 @@ the technologies like Machine Learning, and NLP. We can create scalable applicat
     Vikram Markali
     Email: vikrammarkali007@gmail.com
     LinkedIn: https://www.linkedin.com/in/vikram-markali/
+    Portfolio: https://vfolio.netlify.app/
     """)
 
 

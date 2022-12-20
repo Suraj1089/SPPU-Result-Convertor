@@ -166,5 +166,14 @@ def main():
         except:
             st.error('Error occured while plotting the graph')
 
+        
+        with st.expander("Get topper details"):
+            
+            try:
+                df = df.sort_values(by=['SGPA1'],ascending=False)
+                st.dataframe(df[['Exam Seat No','Name of Students','SGPA1']].head(5).reset_index(drop=True))
+            except:
+                st.error('Error occured while loading the data')
+
 
 main()
