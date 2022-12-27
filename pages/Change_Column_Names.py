@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from itdepartment import get_table_download_link
+from itdepartment import getTabledownloadLink
 
 
 def changeColumnNames():
@@ -46,7 +46,7 @@ def changeColumnNames():
                     st.markdown('### Dataframe after renaming columns')
                     st.success('Done..........')
                     st.dataframe(df)
-                    st.markdown(get_table_download_link(
+                    st.markdown(getTabledownloadLink(
                         df), unsafe_allow_html=True)
                 except:
                     st.error(

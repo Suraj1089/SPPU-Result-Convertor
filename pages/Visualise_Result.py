@@ -1,17 +1,10 @@
 import streamlit as st
 import pandas as pd
-import seaborn as sns
-from io import BytesIO
-from pyxlsb import open_workbook as open_xlsb
-import time
 from st_aggrid import GridUpdateMode, DataReturnMode
 from st_aggrid import AgGrid
-from st_aggrid.grid_options_builder import GridOptionsBuilder
-from st_aggrid.shared import JsCode
 import plotly.express as px
 import numpy as np
-from itdepartment import dispaly_interactive
-import matplotlib.pyplot as plt
+from itdepartment import displayInteractive
 
 
 def main():
@@ -34,7 +27,7 @@ def main():
 
             st.write("Data in Uploded file")
 
-            gridOptions = dispaly_interactive(stroedDf)
+            gridOptions = displayInteractive(stroedDf)
 
             st.success(
                 f"""
