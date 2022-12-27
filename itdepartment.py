@@ -297,12 +297,44 @@ def cleanMarks(text: str, subject_codes) -> dict:
     ## return
     dictonary containing dataframes of subject wise marks
     """
-    # dict to store marks
-    # subject_codes = {'214441':None, '214442':None, '214443':None, '214444':None,
-    #                  '214445':None, '214446':None, '214447':None, '214448':None, '214449':None, '202054A':None,
-    #                  '207003':None, '214450':None, '214451':None, '214452':None, '214453':None, '214454':None, '214455':None, '214456':None, '210258A':None}
+    for codes in subject_codes.keys():
+        pattern = re.findall(
+            fr'{codes}[A-Z]?\s+\w+[\/!#&$@ \*~]*\w*\s*\w*[\/!#&$@ \*~^]*\w*\s*[\/!#&$@ \*~^]*\w*\s*[\/!#&$@ \*~^]*\w*\s*[\/!#&$@ \*~^]*\w*\s*[\/!#&$@ \*~^]*\w*\s*[\+]*\w*\s*\+*\w*\s*\+*\w*\s*\w*\+*\s*\w*\s*\+*\w*\s', text)
 
-    # find subject wise marks
+        d = {'subject': [], 'OE': [], 'TH': [], 'OE_TH': [], 'TW': [], 'PR': [
+        ], 'OR': [], 'TOT': [], 'CRD': [], 'GRD': [], 'PTS1': [], 'PTS2': []}
+        for i in pattern:
+            # split the string in list
+            temp = i.split()
+            # print(len(temp))
+            # print(temp)
+            d['subject'].append(temp[0])
+            d['OE'].append(temp[1])
+            d['TH'].append(temp[2])
+            d['OE_TH'].append(temp[3])
+            d['TW'].append(temp[4])
+            d['PR'].append(temp[5])
+            d['OR'].append(temp[6])
+            d['TOT'].append(temp[7])
+            d['CRD'].append(temp[8])
+            d['GRD'].append(temp[9])
+            d['PTS1'].append(temp[10])
+            d['PTS2'].append(temp[11])
+        dataframe = pd.DataFrame(d)
+        # dataframe = dataframe.replace('nnnnnnn',np.nan)
+        # dataframe = dataframe.dropna(axis=1,how='all')
+        subject_codes[codes] = dataframe
+    return subject_codes
+
+@st.cache
+def cleanMarksDuplicateSubject(text: str, subject_codes) -> dict:
+    """
+    This function will clean the marks from the pdf file
+    ## Parameters
+    text : str 
+    ## return
+    dictonary containing dataframes of subject wise marks
+    """
     for codes in subject_codes.keys():
         pattern = re.findall(
             fr'{codes}[A-Z]?\s+\w+[\/!#&$@ \*~]*\w*\s*\w*[\/!#&$@ \*~^]*\w*\s*[\/!#&$@ \*~^]*\w*\s*[\/!#&$@ \*~^]*\w*\s*[\/!#&$@ \*~^]*\w*\s*[\/!#&$@ \*~^]*\w*\s*[\+]*\w*\s*\+*\w*\s*\+*\w*\s*\w*\+*\s*\w*\s*\+*\w*\s', text)
@@ -333,6 +365,8 @@ def cleanMarks(text: str, subject_codes) -> dict:
     return subject_codes
 
 
+
+
 @st.cache
 def concat_subjects(d: dict):
     """
@@ -344,28 +378,6 @@ def concat_subjects(d: dict):
     """
     return pd.concat([i for i in d.values()], axis=1)
 
-
-# # @st.cache
-# # def change_column_data_type(dataframe):
-
-#     """
-#         function to change data type of columns
-#         ## Parameters
-#         dataframe : dataframe
-#         ## return
-#         dataframe with changed data type
-#     """
-#     dataframe['OE'] = dataframe['OE'].astype('float')
-#     dataframe['TH'] = dataframe['TH'].astype('float')
-#     dataframe['OE_TH'] = dataframe['OE_TH'].astype('float')
-#     dataframe['TW'] = dataframe['TW'].astype('float')
-#     dataframe['PR'] = dataframe['PR'].astype('float')
-#     dataframe['OR'] = dataframe['OR'].astype('float')
-#     dataframe['TOT'] = dataframe['TOT'].astype('float')
-#     dataframe['CRD'] = dataframe['CRD'].astype('float')
-#     dataframe['PTS1'] = dataframe['PTS1'].astype('float')
-#     dataframe['PTS2'] = dataframe['PTS2'].astype('float')
-#     return dataframe
 
 def create_analysis_table(dataframe):
     """
