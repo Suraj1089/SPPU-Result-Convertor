@@ -3,14 +3,28 @@ import pandas as pd
 import time
 import re
 import numpy as np
-from itdepartment import getTabledownloadLink, displayPDF, pdfToText, cleanText, studentDetails, cleanMarks, concatSubjects, remove_subject_names
+from itdepartment import getTabledownloadLink, displayPDF, pdfToText, cleanText, studentDetails, cleanMarks
 from st_aggrid import GridUpdateMode, DataReturnMode
 from st_aggrid import AgGrid
 from itdepartment import displayInteractive
 
 
 @st.cache
-def prnNo(text: str):
+def concat_subjects(d: dict):
+    """
+        function to concat subject wise marks
+    """
+    return pd.concat([i for i in d.values()], axis=1)
+
+
+@st.cache
+def cleanTextRe(text: str) -> str:
+    text = re.sub(r'^[a-zA-Z]{2}', '', text)
+    return text
+
+
+@st.cache
+def extractPrnNo(text: str):
     """
         function to extract prn no from text
     """
@@ -50,12 +64,14 @@ def App():
 
             text = pdfToText(pdf_file)
             text = cleanText(text)
-            # text = remove_subject_names(text)
-            st.write(text)
+            # with open('textFinal.txt', 'w') as f:
+            #     f.write(text)
+
+            # st.write(text)
             try:
 
                 seat_no_name = studentDetails(text)
-                student_prn_no = prnNo(text)
+                student_prn_no = extractPrnNo(text)
 
                 student_data = pd.concat(
                     [seat_no_name, student_prn_no], axis=1)
@@ -94,6 +110,7 @@ def App():
 
             with st.expander('Show Students Marks by Subject Code'):
 
+                # text = cleanTextRe(text)
                 subject_codes = st.text_input(
                     'Enter subject code to see subject marks(One at at time)')
                 subject_codes_submit = st.button(
@@ -104,16 +121,34 @@ def App():
                         subject_codes = {i: None for i in subject_codes}
                         st.markdown('#### Selected subjects')
                         st.write(subject_codes)
-                        marks = cleanMarks(text, subject_codes)
-                        student_marks = concatSubjects(marks)
-                        student_marks = pd.concat(
-                            [student_data, student_marks], axis=1)
+                        st.spinner('Processing...')
+                        pattern = r'[A-Z]\w*[A-Z]'
+                        text = cleanTextRe(text)
+                        text = re.sub(pattern, '', text)
+                        # st.write(text)
+                        try:
+                            marks = cleanMarks(text, subject_codes)
+                        except:
+                            st.write(text[:5000])
+                            st.error(
+                                'Error in extracting marks. Please check the pdf file and try again.@cleanMarks')
+                            return
+                        
+                        try:
+                            student_marks = concat_subjects(marks)
+                            student_marks = pd.concat(
+                                [student_data, student_marks], axis=1)
+                        except:
+                            st.error(
+                                'Error in extracting marks. Please check the pdf file and try again.@concat_subjects')
+                            return
+
 
                         st.success('Done!....')
                         # remove columns with all nan values
                         student_marks = student_marks.replace(
                             'nnnnnnn', np.nan)
-                        student_marks = student_marks.replace('nnn', np.nan)
+                        # student_marks = student_marks.replace('nnn', np.nan)
                         student_marks = student_marks.dropna(axis=1, how='all')
                         studentMarksStore = student_marks.copy()
                         gridOptions = displayInteractive(student_marks)
@@ -139,9 +174,8 @@ def App():
                         st.markdown(getTabledownloadLink(
                             studentMarksStore), unsafe_allow_html=True)
                     except:
-                        st.error('Please enter valid subject code')
-                        st.error(
-                            'Cannot convert following subject codes to excel file')
+                        st.error('Please enter valid subject code or cannot convert this marks')
+                        
                         return
 
             with st.expander('Download Student marks in Excel/Csv File'):
@@ -159,11 +193,27 @@ def App():
                         st.markdown('### Selected subjects are :')
                         student_data = student_data.replace('nnnnnnn', np.nan)
                         st.write(subject_codes)
+                        st.spinner('Processing...')
+                        text = cleanTextRe(text)
+                        pattern = r'[A-Z]\w*[A-Z]'
+                        text = re.sub(pattern, '', text)
+                        try:
+                            marks = cleanMarks(text, subject_codes)
+                        except:
+                            st.error(
+                                'Error in extracting marks. Please check the pdf file and try again.@cleanMarks')
+                            return
+                        
+                        try:
 
-                        marks = cleanMarks(text, subject_codes)
-                        student_marks = concatSubjects(marks)
-                        student_marks = pd.concat(
-                            [student_data, student_marks], axis=1)
+                            student_marks = concat_subjects(marks)
+                            student_marks = pd.concat(
+                                [student_data, student_marks], axis=1)
+                        except:
+                            st.error(
+                                'Error in extracting marks. Please check the pdf file and try again.@concat_subjects')
+                            return
+
                         student_marks = student_marks.replace(
                             'nnnnnnn', np.nan)
                         student_marks = student_marks.replace('nnn', np.nan)
@@ -175,7 +225,8 @@ def App():
                         st.markdown(getTabledownloadLink(
                             student_marks), unsafe_allow_html=True)
                     except:
-                        st.error('Please enter valid subject codes OR Cannot convert following subject codes to excel file')
+                        st.error(
+                            'Please enter valid subject codes OR Cannot convert following subject codes to excel file')
                         return
 
     else:

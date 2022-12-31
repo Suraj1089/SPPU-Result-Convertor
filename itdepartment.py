@@ -32,8 +32,21 @@ def getTabledownloadLink(df):
     return href
 
 
+
 @st.cache
 def cleanText(text: str) -> str:
+    subjects = ['INFORMATION AND CYBER SECURITY', 'MACHINE LEARNING & APPS.', 
+                'SOFTWARE DESIGN AND MODELING', 'BUS. ANALYTICS & INTEL.', 'SW. TESTING & QA.',
+                'COMPUTER LABORATORY-VII', 'COMPUTER LABORATORY-VII', 'COMPUTER LABORATORY-VIII', 
+                'COMPUTER LABORATORY-VIII', 'PROJECT PHASE-I', 'CRITICAL THINKING',
+                'DISTRIBUTED COMPUTING SYSTEM', 'UBIQUITOUS COMPUTING', 'INTERNET OF THINGS (IOT)', 
+                'INTERNET OF THINGS (IOT)', 'SOCIAL MEDIA ANALYTICS', 'COMPUTER LABORATORY-IX', 'COMPUTER LABORATORY-IX', 
+                'COMPUTER LABORATORY-X', 'PROJECT WORK', 'PROJECT WORK', 'IOT- APPLI. IN ENGG. FIELD']
+    
+    for i in subjects:
+        text = text.replace(i, '')
+
+    # SE subject names and TE subject names
     text = text.replace('COMPUTER ORGANIZATION & ARCH.','')
     text = text.replace('THEORY OF COMPUTATION', '')
     text = text.replace('OPERATING SYSTEMS', '')
@@ -117,7 +130,7 @@ def cleanText(text: str) -> str:
     text = text.replace('-', 'n')
     text = text.replace('SECOND YEAR SGPA', '')
     text = text.replace('TOTAL CREDITS EARNED ', '')
-    # SECOND YEAR SGPA   8.08, TOTAL CREDITS EARNED   50
+
     text = text.strip()
     return text
 # function to display pdf
@@ -191,12 +204,6 @@ def cleanMarks(text: str, subject_codes) -> dict:
     return subject_codes
 
 
-@st.cache
-def concatSubjects(d: dict):
-    """
-        function to concat subject wise marks
-    """
-    return pd.concat([i for i in d.values()], axis=1)
 
 def displayInteractive(df):
     gb = GridOptionsBuilder.from_dataframe(df)
