@@ -64,8 +64,8 @@ def App():
 
             text = pdfToText(pdf_file)
             text = cleanText(text)
-            # with open('textFinal.txt', 'w') as f:
-            #     f.write(text)
+            with open('text.txt', 'w') as f:
+                f.write(text)
 
             # st.write(text)
             try:
@@ -129,7 +129,7 @@ def App():
                         try:
                             marks = cleanMarks(text, subject_codes)
                         except:
-                            st.write(text[:5000])
+                            # st.write(text[:5000])
                             st.error(
                                 'Error in extracting marks. Please check the pdf file and try again.@cleanMarks')
                             return
@@ -148,6 +148,12 @@ def App():
                         # remove columns with all nan values
                         student_marks = student_marks.replace(
                             'nnnnnnn', np.nan)
+                        student_marks = student_marks.replace(
+                            'nnnnnnn', np.nan)
+                        student_marks = student_marks.replace('nnn', np.nan)
+                        student_marks = student_marks.replace('nan', np.nan)
+                        student_marks = student_marks.replace('nnnn', np.nan)
+
                         # student_marks = student_marks.replace('nnn', np.nan)
                         student_marks = student_marks.dropna(axis=1, how='all')
                         studentMarksStore = student_marks.copy()
