@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+<header>
+	<nav class="cd-stretchy-nav">
+		<a class="cd-nav-trigger" href="#0">
+			<span aria-hidden="true"></span>
+		</a>
+
+		<ul>
+			<li><a href="#0" class="active"><span>Home</span></a></li>
+			<li><a href="#0"><span>Portfolio</span></a></li>
+			<li><a href="#0"><span>Services</span></a></li>
+			<li><a href="#0"><span>Store</span></a></li>
+			<li><a href="#0"><span>Contact</span></a></li>
+		</ul>
+
+		<span aria-hidden="true" class="stretchy-nav-bg"></span>
+	</nav>
+</header>
+
+<main class="cd-main-content">
+	
+	
+	<div>
+		<h1 style="font-size: 50px; font-family: 'Helvetica Neue', sans-serif; font-weight: bold; color: #ffffff;">Result Analyser</h1><br>
+		<!-- <img style="height: 70px;width: 70px;border-radius: 200px;" src="{% static 'img/2023.jpg' %}" alt="" class="round-image-logo"> -->
+    <p class="lead"><b>Designed for Colleges and Universities.</b>&nbsp;<a href="">Click Here</a>&nbsp;<b>for normal user</b></p>
+    
+    
+	</div><br><br><br>
+	<form id="file-upload-form" class="uploader">
+		<input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+	  
+		<label for="file-upload" id="file-drag">
+		  <img id="file-image" src="#" alt="Preview" class="hidden">
+		  <div id="start">
+			<i class="fa fa-download" aria-hidden="true"></i>
+			<div>Select a file or drag here</div>
+			<div id="notimage" class="hidden">Please select an image</div>
+			<span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+		  </div>
+		  <div id="response" class="hidden">
+			<div id="messages"></div>
+			<progress class="progress" id="file-progress" value="0">
+			  <span>0</span>%
+			</progress>
+		  </div>
+		  
+		</label>
+		<p>Are you a college Professor? Want to use custom convertor <a href="">Contact Here</a></p>
+	  </form> 
+</main> 
+
+{% endblock content %}
+	

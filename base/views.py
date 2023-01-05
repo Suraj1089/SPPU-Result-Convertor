@@ -6,4 +6,4 @@ def home(request):
     return render(request, 'base.html')
 
 def services(request):
-    return render(request,'base/services.html')
+    return render(request,'inc/index.html')
