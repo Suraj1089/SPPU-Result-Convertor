@@ -1,10 +1,35 @@
 # SPPU-Result-Convertor
-### A result conversion web app that convertes pdf documents to Excel. Also It helps to visualise data.
+This is a simple python script to convert the result of SPPU (Savitribai Phule Pune University) to a more readable format.
 
-![image](https://user-images.githubusercontent.com/85509795/194719372-bb999c44-772e-4652-883c-7861356b9deb.png)
-![image](https://user-images.githubusercontent.com/85509795/194719410-519e6db5-543d-4738-a574-c487f7ccb8d2.png)
-![image](https://user-images.githubusercontent.com/85509795/194719509-e6217a0a-dbc7-41bf-b902-7a1c76db2733.png)
-![image](https://user-images.githubusercontent.com/85509795/194719526-59211dac-bcca-4645-9601-eb7dd1e71183.png)
-![image](https://user-images.githubusercontent.com/85509795/194719592-ee964ca4-6b5c-4e75-9058-9b012ca0998a.png)
+## Usage
+1. Download the result from the SPPU website.
+2. Visit - https://suraj1089-sppu-result-convertor-result-convertor-fquift.streamlit.app/
+3. The result will be saved in the same directory as excel file.
 
 
+## Example
+### Input
+```
+PDF file
+```
+```
+
+### Output
+```
+EXCEL file
+```
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## Acknowledgments
+* [SPPU](https://www.unipune.ac.in/) - Savitribai Phule Pune University
+
+## Author
+* **Suraj Pisal** - [Suraj1089]
+
+
+## Disclaimer
+This project is not affiliated with SPPU in any way. This is just a simple script to convert the result to a more readable format.
+It is not guaranteed to work for all the results.
+If you have any issues, please open an issue on the [issues page].

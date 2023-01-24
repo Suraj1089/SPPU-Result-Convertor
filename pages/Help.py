@@ -71,16 +71,12 @@ def app():
     1. Forking the project
     2. Pulling the latest changes from the main branch""")
 
-    st.code("""Que 13: How to get help?
-    Ans: contact the developer at:
-    1. Email:surajpisal113@gmail.com.
-    2. Email: vikrammarkali007@gmail.com""")
-    
 
     st.code("""Que 14: How to get support?
     Ans: contact the developer at:
     1. Email: surajpisal113@gmail.com.
-    2.Emial:  vikrammarkali007@gmail.com""")
+    2.Emial: vikrammarkali007@gmail.com
+    3.Email: durgeshmahajan1722@gmail.com""")
 
     st.code("""Que 15: Why should I use this app?
     Ans: You should use this app because:

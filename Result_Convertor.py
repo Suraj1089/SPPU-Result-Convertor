@@ -22,7 +22,6 @@ def cleanTextRe(text: str) -> str:
     text = re.sub(r'^[a-zA-Z]{2}', '', text)
     return text
 
-
 @st.cache
 def extractPrnNo(text: str):
     """
@@ -44,7 +43,7 @@ def extractPrnNo(text: str):
 def App():
 
     st.markdown("""
-        ## :outbox_tray: SPPU DATA ANALYSER
+        ## :outbox_tray: Result Analyser :outbox_tray:
     """)
 
     department = st.selectbox(
@@ -64,8 +63,10 @@ def App():
 
             text = pdfToText(pdf_file)
             text = cleanText(text)
-            with open('text.txt', 'w') as f:
-                f.write(text)
+
+            # debug purpose
+            # with open('text.txt', 'w') as f:
+            #     f.write(text)
 
             # st.write(text)
             try:
