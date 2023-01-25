@@ -1,0 +1,8 @@
+{
+  "short_name": "SPPU Result Converter",
+  "name": "SPPU Result Converter",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
