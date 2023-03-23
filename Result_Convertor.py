@@ -6,7 +6,7 @@ import numpy as np
 from itdepartment import getTabledownloadLink, displayPDF, pdfToText, cleanText, studentDetails, cleanMarks
 # from st_aggrid import GridUpdateMode, DataReturnMode
 from st_aggrid import AgGrid, GridOptionsBuilder
-from itdepartment import displayInteractive
+# from itdepartment import displayInteractive
 
 
 @st.cache
@@ -84,25 +84,25 @@ def App():
             with st.expander('Show Students Details'):
                 student_data = student_data.dropna(axis=1, how='all')
                 storeStudentData = student_data.copy()
-                gridOptions = displayInteractive(student_data)
+                # gridOptions = displayInteractive(student_data)
 
-                response = AgGrid(
-                    student_data,
-                    gridOptions=gridOptions,
+                # response = AgGrid(
+                #     student_data,
+                #     gridOptions=gridOptions,
                     # enable_enterprise_modules=True,
                     # update_mode=GridUpdateMode.MODEL_CHANGED,
                     # data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
                     # fit_columns_on_grid_load=False,
-                )
+                # )
 
-                df = pd.DataFrame(response["selected_rows"])
+                # df = pd.DataFrame(response["selected_rows"])
 
                 st.spinner('Processing...')
                 time.sleep(4)
                 st.subheader("Filtered data will appear below 👇 ")
                 st.text("")
 
-                st.table(df)
+                # st.table(df)
 
                 st.text("")
 
@@ -158,24 +158,24 @@ def App():
                         # student_marks = student_marks.replace('nnn', np.nan)
                         student_marks = student_marks.dropna(axis=1, how='all')
                         studentMarksStore = student_marks.copy()
-                        gridOptions = displayInteractive(student_marks)
+                        # gridOptions = displayInteractive(student_marks)
 
-                        response = AgGrid(
-                            student_marks,
-                            gridOptions=gridOptions,
-                            # enable_enterprise_modules=True,
-                            # update_mode=GridUpdateMode.MODEL_CHANGED,
-                            # data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
-                            # fit_columns_on_grid_load=False,
-                        )
+                        # response = AgGrid(
+                        #     student_marks,
+                        #     gridOptions=gridOptions,
+                        #     # enable_enterprise_modules=True,
+                        #     # update_mode=GridUpdateMode.MODEL_CHANGED,
+                        #     # data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
+                        #     # fit_columns_on_grid_load=False,
+                        # )
 
-                        df = pd.DataFrame(response["selected_rows"])
+                        # df = pd.DataFrame(response["selected_rows"])
 
                         st.spinner('Processing...')
                         time.sleep(4)
                         st.subheader("Filtered data will appear below 👇 ")
                         st.text("")
-                        st.table(df)
+                        # st.table(df)
                         st.text("")
 
                         st.markdown(getTabledownloadLink(
