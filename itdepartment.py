@@ -4,7 +4,8 @@ import PyPDF2
 import base64
 import re
 import os 
-from st_aggrid.grid_options_builder import GridOptionsBuilder
+# from st_aggrid.grid_options_builder import GridOptionsBuilder
+from st_aggrid import  GridOptionsBuilder
 
 @st.cache
 def studentDetails(text: str):

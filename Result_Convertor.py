@@ -4,8 +4,8 @@ import time
 import re
 import numpy as np
 from itdepartment import getTabledownloadLink, displayPDF, pdfToText, cleanText, studentDetails, cleanMarks
-from st_aggrid import GridUpdateMode, DataReturnMode
-from st_aggrid import AgGrid
+# from st_aggrid import GridUpdateMode, DataReturnMode
+from st_aggrid import AgGrid, GridOptionsBuilder
 from itdepartment import displayInteractive
 
 
@@ -89,10 +89,10 @@ def App():
                 response = AgGrid(
                     student_data,
                     gridOptions=gridOptions,
-                    enable_enterprise_modules=True,
-                    update_mode=GridUpdateMode.MODEL_CHANGED,
-                    data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
-                    fit_columns_on_grid_load=False,
+                    # enable_enterprise_modules=True,
+                    # update_mode=GridUpdateMode.MODEL_CHANGED,
+                    # data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
+                    # fit_columns_on_grid_load=False,
                 )
 
                 df = pd.DataFrame(response["selected_rows"])
@@ -163,10 +163,10 @@ def App():
                         response = AgGrid(
                             student_marks,
                             gridOptions=gridOptions,
-                            enable_enterprise_modules=True,
-                            update_mode=GridUpdateMode.MODEL_CHANGED,
-                            data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
-                            fit_columns_on_grid_load=False,
+                            # enable_enterprise_modules=True,
+                            # update_mode=GridUpdateMode.MODEL_CHANGED,
+                            # data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
+                            # fit_columns_on_grid_load=False,
                         )
 
                         df = pd.DataFrame(response["selected_rows"])
