@@ -170,7 +170,7 @@ def pdfToText(path):
     with open('final_txt.txt', 'r') as f:
         text = f.read()
     if os.path.exists("final_txt.txt"):
-        # os.remove("final_txt.txt")
+        os.remove("final_txt.txt")
         return text
 
 
@@ -216,13 +216,3 @@ def cleanMarks(text: str, subject_codes) -> dict:
         subject_codes[codes] = dataframe
     return subject_codes
 
-
-
-# def displayInteractive(df):
-#     gb = GridOptionsBuilder
-#     gb.configure_default_column(enableValue=True, enableRowGroup=True, enablePivot=True,
-#                                 sortable=True, filter=True, editable=True, resizable=True)
-#     gb.configure_selection(selection_mode='multiple', use_checkbox=True)
-#     gb.configure_side_bar()
-#     gridOptions = gb.build()
-#     return gridOptions

@@ -4,16 +4,12 @@ import time
 import re
 import numpy as np
 from itdepartment import getTabledownloadLink, displayPDF, pdfToText, cleanText, studentDetails, cleanMarks
-# from st_aggrid import GridUpdateMode, DataReturnMode
-from st_aggrid import AgGrid, GridOptionsBuilder
-# from itdepartment import displayInteractive
+from st_aggrid import AgGrid
 
 
 @st.cache
 def concat_subjects(d: dict):
-    """
-        function to concat subject wise marks
-    """
+    #function to concat subject wise marks
     return pd.concat([i for i in d.values()], axis=1)
 
 
@@ -24,10 +20,7 @@ def cleanTextRe(text: str) -> str:
 
 @st.cache
 def extractPrnNo(text: str):
-    """
-        function to extract prn no from text
-    """
-    # PRN NO pattern
+    # function to extract prn no from text
     pattern = re.findall(
         r'7\d{7}[A-Z]*', text
     )
@@ -36,9 +29,24 @@ def extractPrnNo(text: str):
         temp = i.split()
         d['PRN-NO'].append(temp[0])
 
-    dataframe = pd.DataFrame(d)
-    return dataframe
+    return pd.DataFrame(d)
 
+@st.cache
+def replaceNan(df: pd.DataFrame) -> pd.DataFrame:
+    # function to replace nan values
+    df = df.replace('nnn', np.nan)
+    df = df.replace('nan', np.nan)
+    df = df.replace('nnnn', np.nan)
+    df = df.replace('nnnn', np.nan)
+    df = df.replace('nan', np.nan)
+    df = df.replace('nnnnn', np.nan)
+    df = df.replace('nnnnn', np.nan)
+    df = df.replace('nnnnnnn', np.nan)
+    df = df.replace('nnnnnnn', np.nan)
+    df = df.replace('nnn', np.nan)
+    df = df.replace('nan', np.nan)
+    df = df.replace('nnnn', np.nan)
+    return df
 
 def App():
 
@@ -64,11 +72,6 @@ def App():
             text = pdfToText(pdf_file)
             text = cleanText(text)
 
-            # debug purpose
-            # with open('text.txt', 'w') as f:
-            #     f.write(text)
-
-            # st.write(text)
             try:
 
                 seat_no_name = studentDetails(text)
@@ -82,17 +85,13 @@ def App():
                 return
 
             with st.expander('Show Students Details'):
+                # remove columns with all nan values
                 student_data = student_data.dropna(axis=1, how='all')
                 storeStudentData = student_data.copy()
                 
                 AgGrid(student_data)
                 st.spinner('Processing...')
                 time.sleep(4)
-                st.subheader("Filtered data will appear below 👇 ")
-                st.text("")
-
-                # st.table(df)
-
                 st.text("")
 
                 st.markdown(getTabledownloadLink(
@@ -107,7 +106,6 @@ def App():
                     'Submit', key='one_subject_codes_submit')
                 if subject_codes_submit:
                     try:
-                        print('subject codes')
                         subject_codes = subject_codes.split()
                         subject_codes = {i: None for i in subject_codes}
                         st.markdown('#### Selected subjects')
@@ -116,14 +114,11 @@ def App():
                         pattern = r'[A-Z]\w*[A-Z]'
                         text = cleanTextRe(text)
                         text = re.sub(pattern, '', text)
-                        # st.write(text)
                         try:
                             marks = cleanMarks(text, subject_codes)
-                            print(marks)
                         except:
-                            # st.write(text[:5000])
                             st.error(
-                                'Error in extracting marks. Please check the pdf file and try again.@cleanMarks')
+                                'Error in processing pdf. Please check the pdf file and try again')
                             return
                         
                         try:
@@ -138,13 +133,14 @@ def App():
 
                         st.success('Done!....')
                         # remove columns with all nan values
-                        student_marks = student_marks.replace(
-                            'nnnnnnn', np.nan)
-                        student_marks = student_marks.replace(
-                            'nnnnnnn', np.nan)
-                        student_marks = student_marks.replace('nnn', np.nan)
-                        student_marks = student_marks.replace('nan', np.nan)
-                        student_marks = student_marks.replace('nnnn', np.nan)
+                        student_marks = replaceNan(student_marks)
+                        # student_marks = student_marks.replace(
+                        #     'nnnnnnn', np.nan)
+                        # student_marks = student_marks.replace(
+                        #     'nnnnnnn', np.nan)
+                        # student_marks = student_marks.replace('nnn', np.nan)
+                        # student_marks = student_marks.replace('nan', np.nan)
+                        # student_marks = student_marks.replace('nnnn', np.nan)
 
                         # student_marks = student_marks.replace('nnn', np.nan)
                         student_marks = student_marks.dropna(axis=1, how='all')
@@ -155,9 +151,6 @@ def App():
                         
                         st.spinner('Processing...')
                         time.sleep(4)
-                        st.subheader("Filtered data will appear below 👇 ")
-                        st.text("")
-                        # st.table(df)
                         st.text("")
 
                         st.markdown(getTabledownloadLink(
@@ -180,7 +173,7 @@ def App():
                         subject_codes = subject_codes.split()
                         subject_codes = {i: None for i in subject_codes}
                         st.markdown('### Selected subjects are :')
-                        student_data = student_data.replace('nnnnnnn', np.nan)
+                        student_data = replaceNan(student_data)
                         st.write(subject_codes)
                         st.spinner('Processing...')
                         text = cleanTextRe(text)
@@ -202,12 +195,14 @@ def App():
                             st.error(
                                 'Error in extracting marks. Please check the pdf file and try again.@concat_subjects')
                             return
+                        
+                        student_marks = replaceNan(student_marks)
 
-                        student_marks = student_marks.replace(
-                            'nnnnnnn', np.nan)
-                        student_marks = student_marks.replace('nnn', np.nan)
-                        student_marks = student_marks.replace('nan', np.nan)
-                        student_marks = student_marks.replace('nnnn', np.nan)
+                        # student_marks = student_marks.replace(
+                        #     'nnnnnnn', np.nan)
+                        # student_marks = student_marks.replace('nnn', np.nan)
+                        # student_marks = student_marks.replace('nan', np.nan)
+                        # student_marks = student_marks.replace('nnnn', np.nan)
 
                         student_marks = student_marks.dropna(axis=1, how='all')
 
