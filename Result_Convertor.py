@@ -84,19 +84,8 @@ def App():
             with st.expander('Show Students Details'):
                 student_data = student_data.dropna(axis=1, how='all')
                 storeStudentData = student_data.copy()
-                # gridOptions = displayInteractive(student_data)
-
-                # response = AgGrid(
-                #     student_data,
-                #     gridOptions=gridOptions,
-                    # enable_enterprise_modules=True,
-                    # update_mode=GridUpdateMode.MODEL_CHANGED,
-                    # data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
-                    # fit_columns_on_grid_load=False,
-                # )
-
-                # df = pd.DataFrame(response["selected_rows"])
-
+                
+                AgGrid(student_data)
                 st.spinner('Processing...')
                 time.sleep(4)
                 st.subheader("Filtered data will appear below 👇 ")
@@ -118,6 +107,7 @@ def App():
                     'Submit', key='one_subject_codes_submit')
                 if subject_codes_submit:
                     try:
+                        print('subject codes')
                         subject_codes = subject_codes.split()
                         subject_codes = {i: None for i in subject_codes}
                         st.markdown('#### Selected subjects')
@@ -129,6 +119,7 @@ def App():
                         # st.write(text)
                         try:
                             marks = cleanMarks(text, subject_codes)
+                            print(marks)
                         except:
                             # st.write(text[:5000])
                             st.error(
@@ -160,17 +151,8 @@ def App():
                         studentMarksStore = student_marks.copy()
                         # gridOptions = displayInteractive(student_marks)
 
-                        # response = AgGrid(
-                        #     student_marks,
-                        #     gridOptions=gridOptions,
-                        #     # enable_enterprise_modules=True,
-                        #     # update_mode=GridUpdateMode.MODEL_CHANGED,
-                        #     # data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
-                        #     # fit_columns_on_grid_load=False,
-                        # )
-
-                        # df = pd.DataFrame(response["selected_rows"])
-
+                        AgGrid(student_marks)
+                        
                         st.spinner('Processing...')
                         time.sleep(4)
                         st.subheader("Filtered data will appear below 👇 ")

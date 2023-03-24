@@ -21,7 +21,16 @@ def studentDetails(text: str):
         dataframe = pd.DataFrame(d)
     return dataframe
 
-
+@st.cache
+def studentSgpa(text: str):
+    pattern = re.findall(r'SGPA1\W*\d*\W*\d*', text)
+    # SGPA1: 8.3
+    d = {'sgpa':[],'score':[]}
+    for i in pattern:
+        temp = i.split()
+        d['sgpa'].append(temp[0])
+        d['score'].append(temp[1])
+    return pd.DataFrame(d)
 @st.cache
 def getTabledownloadLink(df):
     """Generates a link allowing the data in a given panda dataframe to be downloaded
@@ -42,7 +51,7 @@ def cleanText(text: str) -> str:
                 'COMPUTER LABORATORY-VIII', 'PROJECT PHASE-I', 'CRITICAL THINKING',
                 'DISTRIBUTED COMPUTING SYSTEM', 'UBIQUITOUS COMPUTING', 'INTERNET OF THINGS (IOT)', 
                 'INTERNET OF THINGS (IOT)', 'SOCIAL MEDIA ANALYTICS', 'COMPUTER LABORATORY-IX', 'COMPUTER LABORATORY-IX', 
-                'COMPUTER LABORATORY-X', 'PROJECT WORK', 'PROJECT WORK', 'IOT- APPLI. IN ENGG. FIELD']
+                'COMPUTER LABORATORY-X', 'PROJECT WORK', 'PROJECT WORK', 'IOT- APPLI. IN ENGG. FIELD','INFO. & STORAGE RETRIEVAL']
     
     for i in subjects:
         text = text.replace(i, '')
@@ -161,7 +170,7 @@ def pdfToText(path):
     with open('final_txt.txt', 'r') as f:
         text = f.read()
     if os.path.exists("final_txt.txt"):
-        os.remove("final_txt.txt")
+        # os.remove("final_txt.txt")
         return text
 
 
@@ -186,6 +195,8 @@ def cleanMarks(text: str, subject_codes) -> dict:
         d = {'subject': [], 'OE': [], 'TH': [], 'OE_TH': [], 'TW': [], 'PR': [
         ], 'OR': [], 'TOT': [], 'CRD': [], 'GRD': [], 'PTS1': [], 'PTS2': []}
         
+        print(f'd is {d}')
+        print(pattern)
         for i in pattern:
             temp = i.split()
             d['subject'].append(temp[0])
@@ -200,6 +211,7 @@ def cleanMarks(text: str, subject_codes) -> dict:
             d['GRD'].append(temp[9])
             d['PTS1'].append(temp[10])
             d['PTS2'].append(temp[11])
+            print(i)
         dataframe = pd.DataFrame(d)
         subject_codes[codes] = dataframe
     return subject_codes
