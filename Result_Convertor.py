@@ -198,11 +198,23 @@ def App():
                         
                         student_marks = replaceNan(student_marks)
 
-                        # student_marks = student_marks.replace(
-                        #     'nnnnnnn', np.nan)
-                        # student_marks = student_marks.replace('nnn', np.nan)
-                        # student_marks = student_marks.replace('nan', np.nan)
-                        # student_marks = student_marks.replace('nnnn', np.nan)
+                        try:
+                            # find sgpa
+                            pattern = re.findall(r'SGPA1?\W*\d*\W*\d*', text)
+                            # SGPA1: 8.3
+                            d = {'sgpa':[],'score':[]}
+                            for i in pattern:
+                                print(i.split())
+                                temp = i.split()
+                                d['sgpa'].append(temp[0])
+                                d['score'].append(temp[2])
+                            sgpa = pd.DataFrame(d)
+                            student_marks = pd.concat([student_marks,sgpa],axis=1)
+                        except:
+                            st.error('Error in extracting sgpa')
+                            pass
+
+                        
 
                         student_marks = student_marks.dropna(axis=1, how='all')
 
