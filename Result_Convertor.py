@@ -22,7 +22,7 @@ def cleanTextRe(text: str) -> str:
 def extractPrnNo(text: str):
     # function to extract prn no from text
     pattern = re.findall(
-        r'7\d{7}[A-Z]*', text
+        r'7\d{7}[a-zA-Z]*', text
     )
     d = {'PRN-NO': []}
     for i in pattern:
@@ -111,9 +111,10 @@ def App():
                         st.markdown('#### Selected subjects')
                         st.write(subject_codes)
                         st.spinner('Processing...')
-                        pattern = r'[A-Z]\w*[A-Z]'
+                        pattern = r'[A-Z]{3}'
                         text = cleanTextRe(text)
                         text = re.sub(pattern, '', text)
+                        st.write(text)
                         try:
                             marks = cleanMarks(text, subject_codes)
                         except:
@@ -133,7 +134,16 @@ def App():
 
                         st.success('Done!....')
                         # remove columns with all nan values
-                        student_marks = replaceNan(student_marks)
+                        # student_marks = replaceNan(student_marks)
+                        student_marks = student_marks.replace(
+                            'nnnnnnn', np.nan)
+                        student_marks = student_marks.replace(
+                            'nnnnnnn', np.nan)
+                        student_marks = student_marks.replace('nnn', np.nan)
+                        student_marks = student_marks.replace('nan', np.nan)
+                        student_marks = student_marks.replace('nnnn', np.nan)
+
+                        student_marks = student_marks.replace('nnn', np.nan)
                         student_marks = student_marks.dropna(axis=1, how='all')
                         studentMarksStore = student_marks.copy()
 
@@ -166,8 +176,10 @@ def App():
                         student_data = replaceNan(student_data)
                         st.write(subject_codes)
                         st.spinner('Processing...')
+                        stored_text = text
                         text = cleanTextRe(text)
-                        pattern = r'[A-Z]\w*[A-Z]'
+                        # pattern = r'[A-Z]\w*[A-Z]'
+                        pattern = r'[A-Z]{3}'
                         text = re.sub(pattern, '', text)
                         try:
                             marks = cleanMarks(text, subject_codes)
@@ -190,16 +202,23 @@ def App():
 
                         try:
                             # find sgpa
-                            pattern = re.findall(r'SGPA1?\W*\d*\W*\d*', text)
+                            print('trying to extract spga')
+                            pattern = re.findall(r'SGPA1?\W*\d*\W*\d*', stored_text)
                             # SGPA1: 8.3
                             d = {'sgpa':[],'score':[]}
                             for i in pattern:
-                                temp = i.split()
+                                try:
+                                    temp = i.split()
+                                    if len(temp) == 1:
+                                        temp.append('00')
+                                except Exception as e:
+                                    temp = ['SGPA1','00']
                                 d['sgpa'].append(temp[0])
-                                d['score'].append(temp[2])
+                                d['score'].append(temp[1])
                             sgpa = pd.DataFrame(d)
                             student_marks = pd.concat([student_marks,sgpa],axis=1)
                         except:
+                            print('error in extracting spga')
                             st.error('Error in extracting sgpa')
                             pass
 
@@ -216,6 +235,7 @@ def App():
 
             with st.expander('Advance subject wise marks'):
                 st.warning('Use this feature only if above feature is not working')
+                st.warning('Keep default values if you are not sure')
 
                 result_type = st.selectbox(
                     'Select result type', ['SEMESTER', 'YEAR'])
@@ -248,6 +268,11 @@ def App():
                 subject_name = st.text_input(
                     "Enter subject name"
                 )
+                pattern = st.selectbox(
+                            options=['[A-Z]{3}','[A-Z]\w*[A-Z]'],
+                            label='Try changing pattern if not working(Select one) optional',
+
+                    )
                 subject_codes_submit = st.button(
                     'Submit', key='one_subject_codes_submit_advance')
                 if subject_codes_submit:
@@ -257,7 +282,9 @@ def App():
                         st.markdown('#### Selected subjects')
                         st.write(subject_codes)
                         st.spinner('Processing...')
-                        pattern = r'[A-Z]\w*[A-Z]'
+                        
+
+
                         text = cleanTextRe(text)
                         text = text.replace(subject_name,'')
                         text = re.sub(pattern, '', text)
