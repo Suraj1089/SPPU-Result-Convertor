@@ -4,8 +4,29 @@ import PyPDF2
 import base64
 import re
 import os 
-# from st_aggrid.grid_options_builder import GridOptionsBuilder
 from st_aggrid import  GridOptionsBuilder
+
+
+@st.cache
+def getSubjectNames(text:str,subject_codes: list) -> list:
+    subject_names = []
+    for code in subject_codes:
+        pattern = re.findall(fr'\b\d{6}[A-Z\s.-]*\b',text)
+        subject_names.append(pattern[1])
+    return subject_names
+
+@st.cache
+def getSubjectCodes(text: str,subjectCodeCount:int) -> list:
+    pattern = re.findall(r'[1-4]{1}\d{4,6}\w{1}', text)
+    # return a list of top 10 element having maximum occurence
+    d = {}
+    for i in pattern:
+        if i in d:
+            d[i] += 1
+        else:
+            d[i] = 1
+    return list(dict(sorted(d.items(), key=lambda item: item[1], reverse=True)).keys())[:subjectCodeCount]
+
 
 @st.cache
 def studentDetails(text: str):
@@ -45,7 +66,7 @@ def getTabledownloadLink(df):
 
 @st.cache
 def cleanText(text: str) -> str:
-    subjects = ['INFORMATION AND CYBER SECURITY', 'MACHINE LEARNING & APPS.', 
+    subjects = ['INFORMATION AND CYBER SECURITY', 'MACHINE LEARNING & APPS.','DESIGN AND ANALYSIS OF ALG.' 
                 'SOFTWARE DESIGN AND MODELING', 'BUS. ANALYTICS & INTEL.', 'SW. TESTING & QA.',
                 'COMPUTER LABORATORY-VII', 'COMPUTER LABORATORY-VII', 'COMPUTER LABORATORY-VIII', 
                 'COMPUTER LABORATORY-VIII', 'PROJECT PHASE-I', 'CRITICAL THINKING',
@@ -57,6 +78,7 @@ def cleanText(text: str) -> str:
         text = text.replace(i, '')
 
     # SE subject names and TE subject names
+    text = text.replace('DESIGN AND ANALYSIS OF ALG.','')
     text = text.replace('COMPUTER ORGANIZATION & ARCH.','')
     text = text.replace('THEORY OF COMPUTATION', '')
     text = text.replace('OPERATING SYSTEMS', '')
@@ -195,8 +217,6 @@ def cleanMarks(text: str, subject_codes) -> dict:
         d = {'subject': [], 'OE': [], 'TH': [], 'OE_TH': [], 'TW': [], 'PR': [
         ], 'OR': [], 'TOT': [], 'CRD': [], 'GRD': [], 'PTS1': [], 'PTS2': []}
         
-        print(f'd is {d}')
-        print(pattern)
         for i in pattern:
             temp = i.split()
             d['subject'].append(temp[0])
@@ -211,7 +231,6 @@ def cleanMarks(text: str, subject_codes) -> dict:
             d['GRD'].append(temp[9])
             d['PTS1'].append(temp[10])
             d['PTS2'].append(temp[11])
-            print(i)
         dataframe = pd.DataFrame(d)
         subject_codes[codes] = dataframe
     return subject_codes

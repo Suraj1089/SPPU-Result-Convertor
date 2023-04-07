@@ -23,4 +23,4 @@ urllib3==1.26.10
 uvicorn==0.18.3
 validators==0.20.0
 streamlit-aggrid==0.0.4
-
+plotly

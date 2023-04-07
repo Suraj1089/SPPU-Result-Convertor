@@ -3,7 +3,7 @@ import pandas as pd
 import time
 import re
 import numpy as np
-from itdepartment import getTabledownloadLink, displayPDF, pdfToText, cleanText, studentDetails, cleanMarks
+from itdepartment import getTabledownloadLink, displayPDF, pdfToText, cleanText, studentDetails, cleanMarks,getSubjectCodes,getSubjectNames
 from st_aggrid import AgGrid
 
 
@@ -134,18 +134,8 @@ def App():
                         st.success('Done!....')
                         # remove columns with all nan values
                         student_marks = replaceNan(student_marks)
-                        # student_marks = student_marks.replace(
-                        #     'nnnnnnn', np.nan)
-                        # student_marks = student_marks.replace(
-                        #     'nnnnnnn', np.nan)
-                        # student_marks = student_marks.replace('nnn', np.nan)
-                        # student_marks = student_marks.replace('nan', np.nan)
-                        # student_marks = student_marks.replace('nnnn', np.nan)
-
-                        # student_marks = student_marks.replace('nnn', np.nan)
                         student_marks = student_marks.dropna(axis=1, how='all')
                         studentMarksStore = student_marks.copy()
-                        # gridOptions = displayInteractive(student_marks)
 
                         AgGrid(student_marks)
                         
@@ -204,7 +194,6 @@ def App():
                             # SGPA1: 8.3
                             d = {'sgpa':[],'score':[]}
                             for i in pattern:
-                                print(i.split())
                                 temp = i.split()
                                 d['sgpa'].append(temp[0])
                                 d['score'].append(temp[2])
@@ -224,6 +213,91 @@ def App():
                         st.error(
                             'Please enter valid subject codes OR Cannot convert following subject codes to excel file')
                         return
+
+            with st.expander('Advance subject wise marks'):
+                st.warning('Use this feature only if above feature is not working')
+
+                result_type = st.selectbox(
+                    'Select result type', ['SEMESTER', 'YEAR'])
+                st.write('You selected:', result_type)
+                
+                # IF SEMESTER RESULT then 10 SUBJECTS ELSE 20
+                if result_type == 'SEMESTER':
+                    options = st.multiselect(
+                        'select subject codes',
+                        getSubjectCodes(text,10)
+                    )
+                else:
+                    options = st.multiselect(
+                        'select subject codes',
+                        getSubjectCodes(text,20)
+                    )
+
+                
+                st.write('Selected subject codes:', options)
+
+                subject_names = st.multiselect(
+                    'select subject names',
+                    getSubjectNames(text,options)
+                )
+                st.write('Selected subject names:', subject_names)
+
+                subject_codes = st.text_input(
+                    'Enter subject code')
+                
+                subject_name = st.text_input(
+                    "Enter subject name"
+                )
+                subject_codes_submit = st.button(
+                    'Submit', key='one_subject_codes_submit_advance')
+                if subject_codes_submit:
+                    try:
+                        subject_codes = subject_codes.split()
+                        subject_codes = {i: None for i in subject_codes}
+                        st.markdown('#### Selected subjects')
+                        st.write(subject_codes)
+                        st.spinner('Processing...')
+                        pattern = r'[A-Z]\w*[A-Z]'
+                        text = cleanTextRe(text)
+                        text = text.replace(subject_name,'')
+                        text = re.sub(pattern, '', text)
+                        try:
+                            marks = cleanMarks(text, subject_codes)
+                        except:
+                            st.error(
+                                'Error in processing pdf. Please check the pdf file and try again')
+                            return
+                        
+                        try:
+                            student_marks = concat_subjects(marks)
+                            student_marks = pd.concat(
+                                [student_data, student_marks], axis=1)
+                        except:
+                            st.error(
+                                'Error in extracting marks. Please check the pdf file and try again.@concat_subjects')
+                            return
+
+
+                        st.success('Done!....')
+                        # remove columns with all nan values
+                        student_marks = replaceNan(student_marks)
+                        student_marks = student_marks.dropna(axis=1, how='all')
+                        studentMarksStore = student_marks.copy()
+
+                        AgGrid(student_marks)
+                        
+                        st.spinner('Processing...')
+                        time.sleep(4)
+                        st.text("")
+
+                        st.markdown(getTabledownloadLink(
+                            studentMarksStore), unsafe_allow_html=True)
+                    except:
+                        st.error('Please enter valid subject code or cannot convert this marks')
+                        
+                        return
+
+
 
     else:
         st.write('selected department is ', department)

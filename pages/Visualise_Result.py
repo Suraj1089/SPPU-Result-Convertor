@@ -1,10 +1,9 @@
 import streamlit as st
 import pandas as pd
-from st_aggrid import GridUpdateMode, DataReturnMode
 from st_aggrid import AgGrid
 import plotly.express as px
 import numpy as np
-from itdepartment import displayInteractive
+
 
 
 def main():
@@ -27,24 +26,7 @@ def main():
 
             st.write("Data in Uploded file")
 
-            gridOptions = displayInteractive(stroedDf)
-
-            st.success(
-                f"""
-                        💡 Tip! Hold the shift key when selecting rows to select multiple rows at once!
-                        """
-            )
-            response = AgGrid(
-                stroedDf,
-                gridOptions=gridOptions,
-                enable_enterprise_modules=True,
-                update_mode=GridUpdateMode.MODEL_CHANGED,
-                data_return_mode=DataReturnMode.FILTERED_AND_SORTED,
-                fit_columns_on_grid_load=False,
-            )
-
-            stroedDf = pd.DataFrame(response["selected_rows"])
-
+            AgGrid(df)
             st.subheader("Filtered data will appear below 👇 ")
             st.text("")
 
