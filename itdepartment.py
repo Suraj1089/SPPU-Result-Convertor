@@ -7,13 +7,20 @@ import os
 from st_aggrid import  GridOptionsBuilder
 
 
+# @st.cache
+# def getSubjectNames(text:str,subject_codes: list) -> list:
+#     subject_names = []
+#     for code in subject_codes:
+#         pattern = re.findall(fr'{code}\s+([A-Z\s]+)',text)
+#         print(pattern[0],pattern[1])
+#         subject_names.append(pattern[1])
+#     return subject_names
+
 @st.cache
-def getSubjectNames(text:str,subject_codes: list) -> list:
-    subject_names = []
-    for code in subject_codes:
-        pattern = re.findall(fr'\b\d{6}[A-Z\s.-]*\b',text)
-        subject_names.append(pattern[1])
-    return subject_names
+def getSubjectNames(text):
+    pattern = r"\d{6}\s(.+?)\s\s\*"
+    subject_codes = re.findall(pattern, text)
+    return subject_codes
 
 @st.cache
 def getSubjectCodes(text: str,subjectCodeCount:int) -> list:
@@ -192,7 +199,7 @@ def pdfToText(path):
     with open('final_txt.txt', 'r') as f:
         text = f.read()
     if os.path.exists("final_txt.txt"):
-        os.remove("final_txt.txt")
+        # os.remove("final_txt.txt")
         pass
         return text
 

@@ -70,6 +70,8 @@ def App():
                 displayPDF(pdf_file)
 
             text = pdfToText(pdf_file)
+            # store text to find subject names
+            textForSubjectNames = text
             text = cleanText(text)
 
             try:
@@ -258,7 +260,7 @@ def App():
 
                 subject_names = st.multiselect(
                     'select subject names',
-                    getSubjectNames(text,options)
+                    list(set(getSubjectNames(textForSubjectNames)))
                 )
                 st.write('Selected subject names:', subject_names)
 
