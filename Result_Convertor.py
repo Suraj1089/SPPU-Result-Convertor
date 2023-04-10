@@ -262,11 +262,13 @@ def App():
                 
                 st.write('Selected subject codes:', options)
 
-                subject_names = st.multiselect(
-                    'select subject names',
-                    list(set(getSubjectNames(textForSubjectNames)))
-                )
-                st.write('Selected subject names:', subject_names)
+                if options:
+
+                    subject_names = st.multiselect(
+                        'select subject names',
+                        list(set(getSubjectNames(textForSubjectNames)))
+                    )
+                    st.write('Selected subject names:', subject_names)
 
                 subject_codes = st.text_input(
                     'Enter subject code')
