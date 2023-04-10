@@ -120,7 +120,6 @@ def App():
                         pattern = r'[A-Z]{3}'
                         text = cleanTextRe(text)
                         text = re.sub(pattern, '', text)
-                        st.write(text)
                         try:
                             marks = cleanMarks(text, subject_codes)
                         except:
