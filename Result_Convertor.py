@@ -69,7 +69,11 @@ def App():
             with st.expander(label="Show Uploaded File"):
                 displayPDF(pdf_file)
 
-            text = pdfToText(pdf_file)
+            try:
+                text = pdfToText(pdf_file)
+            except FileNotFoundError:
+                st.error('File not found try again!')
+                return
             # store text to find subject names
             textForSubjectNames = text
             text = cleanText(text)
