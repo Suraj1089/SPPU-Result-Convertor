@@ -86,6 +86,17 @@ def app():
     4. It is secure
     5. It is open source""")
 
+    st.code("""Que 16: How to visualize the data?
+        Ans: To visualize Data File contains columns name similar to this:
+                Sr.No.,Division,
+                Exam Seat No,
+                PRN,Name of Students,
+                ISE,ESE,Total,Total%,
+                CRD,GRD,GP,CP,TW,Total%,CRD,GRD,
+                GP,CP,ISE,ESE,Total,Total%,CRD,GP,CP,	
+                SGPA1,Total,CRD,Total Backlog""")
+
+
     # form to get feedback from the user
     st.title('Feedback')
     with st.form('feedback_form'):

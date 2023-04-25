@@ -13,9 +13,8 @@ def main():
     uploadedFile = st.file_uploader(
         label="Upload CSV or Excel File", type=["csv", "xlsx"])
     
-    st.warning('To view the visualisation, please upload the file in the format provided in the sample file.')
-    st.write('File contains columns Sr. No.	Division	Exam Seat No	PRN	Name of Students	ISE	ESE	Total	Total%	CRD	GRD	GP	CP	TW	Total%	CRD	GRD	GP	CP	ISE	ESE	Total	Total%	CRD		GP	CP	ISE	ESE	Total	Total%	CRD	GRD	GP	CP	ISE	ESE	Total	Total%	CRD	GRD	GP	CP	ISE	ESE	Total	Total%	CRD	GRD	GP	CP	TW	PR	Total%	CRD	GRD	GP	CP	TW	PR	Total%	CRD	GRD	GP	CP	PR	Total%	CRD	GRD	GP	CP	TW	Total%	CRD	GRD	GP	CP	SGPA1	Total CRD	Total Backlog')
-
+    st.warning('To view the visualisation, please upload the file in the format provided in the sample file.See the help Section')
+    
     if uploadedFile is not None:
         stroedDf = None
         if uploadedFile.type == 'text/csv':

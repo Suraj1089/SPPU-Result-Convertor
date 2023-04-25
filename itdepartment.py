@@ -7,14 +7,6 @@ import os
 from st_aggrid import  GridOptionsBuilder
 
 
-# @st.cache
-# def getSubjectNames(text:str,subject_codes: list) -> list:
-#     subject_names = []
-#     for code in subject_codes:
-#         pattern = re.findall(fr'{code}\s+([A-Z\s]+)',text)
-#         print(pattern[0],pattern[1])
-#         subject_names.append(pattern[1])
-#     return subject_names
 
 @st.cache
 def getSubjectNames(text):
@@ -199,8 +191,7 @@ def pdfToText(path):
     with open('final_txt.txt', 'r') as f:
         text = f.read()
     if os.path.exists("final_txt.txt"):
-        # os.remove("final_txt.txt")
-        pass
+        os.remove("final_txt.txt")
         return text
 
 
