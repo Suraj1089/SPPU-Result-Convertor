@@ -12,11 +12,14 @@ def main():
     # file uploader for csv or excel file
     uploadedFile = st.file_uploader(
         label="Upload CSV or Excel File", type=["csv", "xlsx"])
+    
+    st.warning('To view the visualisation, please upload the file in the format provided in the sample file.')
+    st.write('File contains columns Sr. No.	Division	Exam Seat No	PRN	Name of Students	ISE	ESE	Total	Total%	CRD	GRD	GP	CP	TW	Total%	CRD	GRD	GP	CP	ISE	ESE	Total	Total%	CRD		GP	CP	ISE	ESE	Total	Total%	CRD	GRD	GP	CP	ISE	ESE	Total	Total%	CRD	GRD	GP	CP	ISE	ESE	Total	Total%	CRD	GRD	GP	CP	TW	PR	Total%	CRD	GRD	GP	CP	TW	PR	Total%	CRD	GRD	GP	CP	PR	Total%	CRD	GRD	GP	CP	TW	Total%	CRD	GRD	GP	CP	SGPA1	Total CRD	Total Backlog')
 
     if uploadedFile is not None:
         stroedDf = None
         if uploadedFile.type == 'text/csv':
-            stroedDf = pd.read_csv(uploadedFile,)
+            stroedDf = pd.read_csv(uploadedFile)
         else:
             stroedDf = pd.read_excel(uploadedFile)
 
