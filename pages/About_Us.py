@@ -35,5 +35,22 @@ the technologies like Machine Learning, and NLP. We can create scalable applicat
     Portfolio: [https://durgeshm01722-portfolio.netlify.app/](https://durgeshm01722-portfolio.netlify.app/)  
     """)
 
+    
+    st.markdown("""
+    Contact:
+    Name: Rasika Ghadge  
+    Email: ghadgerasika16@gmail.com
+    LinkedIn: [https://www.linkedin.com/in/rasika-ghadge-207444217/](https://www.linkedin.com/in/rasika-ghadge-207444217/)  
+    Portfolio: [https://surajpisal.netlify.app/](https://surajpisal.netlify.app/)  
+    """)
+
+    
+    st.markdown("""
+    Contact:
+    Name: Pradnya Barve
+    Email: pradnyyabarve@gmail.com
+    LinkedIn: [https://www.linkedin.com/in/pradnya-barve-3a3488218/](https://www.linkedin.com/in/pradnya-barve-3a3488218/)  
+    """)
+
 
 app()
