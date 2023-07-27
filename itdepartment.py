@@ -97,6 +97,13 @@ def cleanText(text: str) -> str:
     text = text.replace('CYBER LAWS & USE OF S.M','')
     text = text.replace('TOTAL GRADE POINTS / TOTAL CREDITS','')
     text = text.replace('FOURTH YEAR','')
+    text = text.replace('SE SGPA','')
+    text = text.replace('FE SGPA','')
+    text = text.replace('TE SGPA','')
+    text = text.replace('FIRST CLASS WITH DISTINCTION','')
+    text = text.replace('CGPA','')
+
+    
     
     text = text.replace('DESIGN AND ANALYSIS OF ALG.','')
     text = text.replace('COMPUTER ORGANIZATION & ARCH.','')
