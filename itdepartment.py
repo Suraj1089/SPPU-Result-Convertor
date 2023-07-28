@@ -92,8 +92,8 @@ def cleanText(text: str) -> str:
     text = text.replace('GAME ENGINEERING','')
     text = text.replace('BLOCKCHAIN TECHNOLOGY','')
     text = text.replace('STARTUP & ENTREPRENEURSHIP','')
-    text = text.replace('LAB PRACTICE V','')
     text = text.replace('LAB PRACTICE VI','')
+    text = text.replace('LAB PRACTICE V','')
     text = text.replace('CYBER LAWS & USE OF S.M','')
     text = text.replace('TOTAL GRADE POINTS / TOTAL CREDITS','')
     text = text.replace('FOURTH YEAR','')
@@ -232,6 +232,7 @@ def showUploadedFile(file):
 
 @st.cache
 def cleanMarks(text: str, subject_codes) -> dict:
+    print(subject_codes)
     """
     This function will clean the marks from the pdf file.
     """
@@ -245,8 +246,18 @@ def cleanMarks(text: str, subject_codes) -> dict:
         d = {'subject': [], 'OE': [], 'TH': [], 'OE_TH': [], 'TW': [], 'PR': [
         ], 'OR': [], 'TOT': [], 'CRD': [], 'GRD': [], 'PTS1': [], 'PTS2': []}
         
-        for i in pattern:
+        print('pattern' , pattern)
+        with open('patern.txt', 'w') as patt:
+            patt.write(str(pattern))
+        for index,i in enumerate(pattern):
+            print(index)
             temp = i.split()
+            if len(temp) < 12:
+                while len(temp)!=12:
+                    temp.append('Error')
+            
+            # print('temp ', temp)
+            # print(len(temp))
             d['subject'].append(temp[0])
             d['OE'].append(temp[1])
             d['TH'].append(temp[2])
@@ -261,5 +272,6 @@ def cleanMarks(text: str, subject_codes) -> dict:
             d['PTS2'].append(temp[11])
         dataframe = pd.DataFrame(d)
         subject_codes[codes] = dataframe
+    print('returning subjects ', subject_codes)
     return subject_codes
 
