@@ -7,18 +7,18 @@ from itdepartment import getTabledownloadLink, displayPDF, pdfToText, cleanText,
 from st_aggrid import AgGrid
 
 
-@st.cache
+@st.cache_resource
 def concat_subjects(d: dict):
     #function to concat subject wise marks
     return pd.concat([i for i in d.values()], axis=1)
 
 
-@st.cache
+@st.cache_resource
 def cleanTextRe(text: str) -> str:
     text = re.sub(r'^[a-zA-Z]{2}', '', text)
     return text
 
-@st.cache
+@st.cache_resource
 def extractPrnNo(text: str):
     # function to extract prn no from text
     pattern = re.findall(
@@ -31,7 +31,7 @@ def extractPrnNo(text: str):
 
     return pd.DataFrame(d)
 
-@st.cache
+@st.cache_resource
 def replaceNan(df: pd.DataFrame) -> pd.DataFrame:
     # function to replace nan values
     df = df.replace('nnn', np.nan)
@@ -64,6 +64,7 @@ def App():
         st.write('Selected department is ', department)
 
         pdf_file = st.file_uploader(label="Upload Pdf File", type="pdf")
+        pdfFileName = 'marks'
         if pdf_file:
             # display document
             with st.expander(label="Show Uploaded File"):
@@ -93,6 +94,16 @@ def App():
                     "Error in extracting data from pdf. Please check the pdf file and try again.")
                 return
 
+            # show progress bar
+            # Create an empty container for the progress bar
+            progressBar = st.progress(0, text='Processing File')
+            for percentageComplete in range(100):
+                time.sleep(0.05)
+                progressBar.progress(percentageComplete + 1, text='Processing File')
+            
+            # hide progress bar after finish
+            progressBar.empty()
+
             with st.expander('Show Students Details'):
                 # remove columns with all nan values
                 student_data = student_data.dropna(axis=1, how='all')
@@ -103,8 +114,18 @@ def App():
                 time.sleep(4)
                 st.text("")
 
-                st.markdown(getTabledownloadLink(
-                    storeStudentData), unsafe_allow_html=True)
+                downloadButtonAllCol1,downloadButtonAllCol2 = st.columns(2)
+                with downloadButtonAllCol1:
+                    st.download_button(
+                        'Download CSV File',
+                        data=storeStudentData.to_csv().encode('utf-8'),
+                        file_name=f"{str(pdf_file.name).split('.')[0]}.csv",
+                        mime='text/csv'
+                    )
+                with downloadButtonAllCol2:
+                
+                    st.markdown(getTabledownloadLink(
+                        df=storeStudentData,fileName=f"{str(pdf_file.name).split('.')[0]}.xlsx",), unsafe_allow_html=True)
 
             with st.expander('Show Students Marks by Subject Code'):
 
@@ -161,8 +182,19 @@ def App():
                         time.sleep(4)
                         st.text("")
 
-                        st.markdown(getTabledownloadLink(
-                            studentMarksStore), unsafe_allow_html=True)
+                        downloadButtonCol1,downloadButtonCol2 = st.columns(2)
+                        with downloadButtonCol1:
+                            st.download_button(
+                                'Download CSV File',
+                                data=studentMarksStore.to_csv().encode('utf-8'),
+                                file_name=f"{str(pdf_file.name).split('.')[0]}.csv",
+                                mime='text/csv'
+                            )
+                        with downloadButtonCol2:
+                            st.markdown(getTabledownloadLink(
+                                df=studentMarksStore,fileName=f"{str(pdf_file.name).split('.')[0]}.xlsx",), unsafe_allow_html=True)
+                            
+                                           
                     except:
                         st.error('Please enter valid subject code or cannot convert this marks')
                         
@@ -237,8 +269,22 @@ def App():
 
                         student_marks = student_marks.dropna(axis=1, how='all')
 
-                        st.markdown(getTabledownloadLink(
-                            student_marks), unsafe_allow_html=True)
+                        # st.markdown(getTabledownloadLink(
+                        #     student_marks), unsafe_allow_html=True)
+
+                        downloadButtonAllCol1,downloadButtonAllCol2 = st.columns(2)
+                        with downloadButtonAllCol1:
+                            st.download_button(
+                                'Download CSV File',
+                                data=student_marks.to_csv().encode('utf-8'),
+                                file_name=f"{str(pdf_file.name).split('.')[0]}.csv",
+                                mime='text/csv'
+                            )
+                        with downloadButtonAllCol2:
+                        
+                            st.markdown(getTabledownloadLink(
+                                df=student_marks,fileName=f"{str(pdf_file.name).split('.')[0]}.xlsx",), unsafe_allow_html=True)
+                            
                     except:
                         st.error(
                             'Please enter valid subject codes OR Cannot convert following subject codes to excel file')
@@ -330,8 +376,19 @@ def App():
                         time.sleep(4)
                         st.text("")
 
-                        st.markdown(getTabledownloadLink(
-                            studentMarksStore), unsafe_allow_html=True)
+
+                        downloadButtonAdvanceCol1,downloadButtonAdvanceCol2 = st.columns(2)
+                        with downloadButtonAdvanceCol1:
+                            st.download_button(
+                                'Download CSV File',
+                                data=studentMarksStore.to_csv().encode('utf-8'),
+                                file_name=f"{str(pdf_file.name).split('.')[0]}.csv",
+                                mime='text/csv'
+                            )
+                        with downloadButtonAdvanceCol2:
+                        
+                            st.markdown(getTabledownloadLink(
+                                df=studentMarksStore,fileName=f"{str(pdf_file.name).split('.')[0]}.xlsx",), unsafe_allow_html=True)
                     except:
                         st.error('Please enter valid subject code or cannot convert this marks')
                         

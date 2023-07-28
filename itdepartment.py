@@ -4,15 +4,18 @@ import PyPDF2
 import base64
 import re
 import os 
+import io
+from typing import List
+import pandas as pd
 
 
-@st.cache
+
 def getSubjectNames(text):
     pattern = r"\d{6}\s(.+?)\s\s\*"
     subject_codes = re.findall(pattern, text)
     return subject_codes
 
-@st.cache
+
 def getSubjectCodes(text: str,subjectCodeCount:int) -> list:
     pattern = re.findall(r'[1-4]{1}\d{4,6}\w{1}', text)
     # return a list of top 10 element having maximum occurence
@@ -25,7 +28,6 @@ def getSubjectCodes(text: str,subjectCodeCount:int) -> list:
     return list(dict(sorted(d.items(), key=lambda item: item[1], reverse=True)).keys())[:subjectCodeCount]
 
 
-@st.cache
 def studentDetails(text: str):
     l = []
     pattern = re.findall(
@@ -39,7 +41,7 @@ def studentDetails(text: str):
         dataframe = pd.DataFrame(d)
     return dataframe
 
-@st.cache
+
 def studentSgpa(text: str):
     pattern = re.findall(r'SGPA1\W*\d*\W*\d*', text)
     # SGPA1: 8.3
@@ -49,19 +51,19 @@ def studentSgpa(text: str):
         d['sgpa'].append(temp[0])
         d['score'].append(temp[1])
     return pd.DataFrame(d)
-@st.cache
-def getTabledownloadLink(df):
-    """Generates a link allowing the data in a given panda dataframe to be downloaded
+
+
+def getTabledownloadLink(df: pd.DataFrame,fileName=str):
+    """Generates a link allowing the data in a given panda dataframe to be downloaded as an Excel file.
     """
-    csv = df.to_csv(index=False)
-    # some strings <-> bytes conversions necessary here
-    b64 = base64.b64encode(csv.encode()).decode()
-    href = f'<a href="data:file/csv;base64,{b64}" download="output.csv">Download Excel file</a>'
+    excel_buffer = io.BytesIO()
+    df.to_excel(excel_buffer, index=False)
+    excel_buffer.seek(0)
+    b64 = base64.b64encode(excel_buffer.read()).decode()
+    href = f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="{fileName}">Download Excel file</a>'
     return href
 
 
-
-@st.cache
 def cleanText(text: str) -> str:
     subjects = ['OBJECT ORIENTED PROG. LAB','DATA STRUCTURES & ALGO. LAB','LOGIC DESIGN COMP. ORG. LAB','LOGIC DESIGN & COMP. ORG.','DATA STRUCTURES & ALGO.','INFORMATION AND CYBER SECURITY', 'MACHINE LEARNING & APPS.','DESIGN AND ANALYSIS OF ALG.' 
                 'SOFTWARE DESIGN AND MODELING', 'BUS. ANALYTICS & INTEL.', 'SW. TESTING & QA.',
@@ -193,7 +195,6 @@ def cleanText(text: str) -> str:
 # function to display pdf
 
 
-@st.cache(suppress_st_warning=True)
 def displayPDF(file):
     """
     Function to display PDF in Streamlit
@@ -205,8 +206,7 @@ def displayPDF(file):
     # Displaying File
     st.markdown(pdf_display, unsafe_allow_html=True)
 
-
-@st.cache
+@st.cache_resource
 def pdfToText(path):
     pdfreader = PyPDF2.PdfReader(path)
     no_of_pages = len(pdfreader.pages)
@@ -222,15 +222,12 @@ def pdfToText(path):
         return text
 
 
-@st.cache
 def showUploadedFile(file):
     f = pd.read_csv(file)
     return f
 
 
-@st.cache
 def cleanMarks(text: str, subject_codes) -> dict:
-    print(subject_codes)
     """
     This function will clean the marks from the pdf file.
     """
@@ -253,8 +250,7 @@ def cleanMarks(text: str, subject_codes) -> dict:
                 while len(temp)!=12:
                     temp.append('Error')
             
-            # print('temp ', temp)
-            # print(len(temp))
+        
             d['subject'].append(temp[0])
             d['OE'].append(temp[1])
             d['TH'].append(temp[2])
@@ -269,6 +265,5 @@ def cleanMarks(text: str, subject_codes) -> dict:
             d['PTS2'].append(temp[11])
         dataframe = pd.DataFrame(d)
         subject_codes[codes] = dataframe
-    print('returning subjects ', subject_codes)
     return subject_codes
 
