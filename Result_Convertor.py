@@ -77,8 +77,9 @@ def App():
             # store text to find subject names
             textForSubjectNames = text
             text = cleanText(text)
-            with open('clean.txt','w') as clean_marks:
-                clean_marks.write(text)
+             # uncomment to log the data
+            # with open('clean.txt','w') as clean_marks:
+            #     clean_marks.write(text)
 
             try:
 
@@ -188,8 +189,9 @@ def App():
                         # pattern = r'[A-Z]\w*[A-Z]'
                         pattern = r'[A-Z]{3}'
                         text = re.sub(pattern, '', text)
-                        with open('tt.txt','w') as tt:
-                            tt.write(text)
+                        # uncomment to log the data
+                        # with open('tt.txt','w') as tt:
+                        #     tt.write(text)
                         try:
                             marks = cleanMarks(text, subject_codes)
                         except:

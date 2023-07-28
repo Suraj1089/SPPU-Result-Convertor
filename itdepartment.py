@@ -4,8 +4,6 @@ import PyPDF2
 import base64
 import re
 import os 
-from st_aggrid import  GridOptionsBuilder
-
 
 
 @st.cache
@@ -220,7 +218,7 @@ def pdfToText(path):
     with open('final_txt.txt', 'r') as f:
         text = f.read()
     if os.path.exists("final_txt.txt"):
-        # os.remove("final_txt.txt")
+        os.remove("final_txt.txt")
         return text
 
 
@@ -246,11 +244,10 @@ def cleanMarks(text: str, subject_codes) -> dict:
         d = {'subject': [], 'OE': [], 'TH': [], 'OE_TH': [], 'TW': [], 'PR': [
         ], 'OR': [], 'TOT': [], 'CRD': [], 'GRD': [], 'PTS1': [], 'PTS2': []}
         
-        print('pattern' , pattern)
-        with open('patern.txt', 'w') as patt:
-            patt.write(str(pattern))
+        # uncomment to log the data
+        # with open('patern.txt', 'w') as patt:
+        #     patt.write(str(pattern))
         for index,i in enumerate(pattern):
-            print(index)
             temp = i.split()
             if len(temp) < 12:
                 while len(temp)!=12:
