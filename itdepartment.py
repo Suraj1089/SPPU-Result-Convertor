@@ -77,6 +77,34 @@ def cleanText(text: str) -> str:
         text = text.replace(i, '')
 
     # SE subject names and TE subject names
+    # BE subjects
+    text = text.replace('INFO. & STORAGE RETRIEVAL','')
+    text = text.replace('SOFTWARE PROJECT MANAGEMENT','')
+    text = text.replace('DEEP LEARNING','')
+    text = text.replace('MOBILE COMPUTING','')
+    text = text.replace('INTRODUCTION TO DEVOPS','')
+    text = text.replace('LAB PRACTICE III','')
+    text = text.replace('LAB PRACTICE IV','')
+    text = text.replace('PROJECT STAGE-I','')
+    text = text.replace('COPYRIGHTS AND PATENTS','')
+    text = text.replace('PROJECT STAGE II','')
+    text = text.replace('DISTRIBUTED SYSTEMS','')
+    text = text.replace('GAME ENGINEERING','')
+    text = text.replace('BLOCKCHAIN TECHNOLOGY','')
+    text = text.replace('STARTUP & ENTREPRENEURSHIP','')
+    text = text.replace('LAB PRACTICE V','')
+    text = text.replace('LAB PRACTICE VI','')
+    text = text.replace('CYBER LAWS & USE OF S.M','')
+    text = text.replace('TOTAL GRADE POINTS / TOTAL CREDITS','')
+    text = text.replace('FOURTH YEAR','')
+    text = text.replace('SE SGPA','')
+    text = text.replace('FE SGPA','')
+    text = text.replace('TE SGPA','')
+    text = text.replace('FIRST CLASS WITH DISTINCTION','')
+    text = text.replace('CGPA','')
+
+    
+    
     text = text.replace('DESIGN AND ANALYSIS OF ALG.','')
     text = text.replace('COMPUTER ORGANIZATION & ARCH.','')
     text = text.replace('THEORY OF COMPUTATION', '')
