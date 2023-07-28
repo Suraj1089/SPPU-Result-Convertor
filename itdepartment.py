@@ -182,16 +182,17 @@ def displayPDF(file):
 
 @st.cache
 def pdfToText(path):
-    pdfreader = PyPDF2.PdfFileReader(path)
-    no_of_pages = pdfreader.numPages
+    pdfreader = PyPDF2.PdfReader(path)
+    no_of_pages = len(pdfreader.pages)
     with open('final_txt.txt', 'w') as f:
         for i in range(0, no_of_pages):
-            pagObj = pdfreader.getPage(i)
-            f.write(pagObj.extractText())
+            # pagObj = pdfreader.getPage(i) # deprecated
+            pagObj = pdfreader.pages[i]
+            f.write(pagObj.extract_text())
     with open('final_txt.txt', 'r') as f:
         text = f.read()
     if os.path.exists("final_txt.txt"):
-        os.remove("final_txt.txt")
+        # os.remove("final_txt.txt")
         return text
 
 
