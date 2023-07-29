@@ -406,7 +406,8 @@ if __name__ == "__main__":
     try:
         st.set_page_config(
             page_title='Result Analysis',
-            page_icon='📃'
+            page_icon='📃',
+            layout='wide'
         )
     except Exception as e:
         pass
