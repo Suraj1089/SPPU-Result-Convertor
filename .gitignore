@@ -206,3 +206,4 @@ css/
 .vscode
 !.vscode/launch.json
 result.xlsx
+main.ipynb

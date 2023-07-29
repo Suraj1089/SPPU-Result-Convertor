@@ -1,7 +1,10 @@
 import streamlit as st
 import pandas as pd
 from st_aggrid import AgGrid
-import openpyxl as op
+from pages.utils.utils import Preprocessing,Plots
+import time
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 st.title("Visualize Result")
 st.warning('To visualize result your input file contains the following columns with exact same name')
@@ -31,10 +34,28 @@ if inputFile:
         df = pd.read_csv(inputFile)
     elif fileExtension == "xlsx":
         df = pd.read_excel(inputFile)
+    else:
+        st.error('Invalid file format')
+        st.stop()
+
+    #uncomment this add spinner | progress bar
+    # progressBar = st.progress(0, text='Processing File')
+    # for percentageComplete in range(100):
+    #     time.sleep(0.05)
+    #     progressBar.progress(percentageComplete + 1, text='Processing File')
+
+    # hide progress bar after finish
+    # progressBar.empty()
+
+    processor = Preprocessing(df)
+    df = processor.fillMissingValues()
+    df = processor.preprocessPackage('Package')
+    # df.to_csv(f"{inputFile.name.split('.')[0]}.csv")
 
     with st.expander('Show Data in Tabular form'):
         st.success('Click on cloumn name to filter | sort | search')  
-        AgGrid(df)
+        st.dataframe(df)
+        # AgGrid(df)
 
     
     import streamlit as st
@@ -42,11 +63,33 @@ if inputFile:
     col1, col2 = st.columns([5,5])
 
     with col1:
-        st.header("A cat")
-        st.image("https://static.streamlit.io/examples/cat.jpg")
+        try:
+            fig = plt.figure(figsize=(15, 10))
+            plt.title('Package Staticstics')
+            plt.xlabel('Package')
+            plt.ylabel('No of Students')
+            sns.histplot(df['Package'])
+            plt.legend(['No of Students','Pakcage'],loc='upper right')
+            st.pyplot(fig)
+            plot = Plots(df)
+            plot.downloadPlotBtn(fileName='Package Statistics.png')
+            
+
+        except Exception as e:
+            st.error(str(e))
 
     with col2:
-        st.header("A dog")
-        st.image("https://static.streamlit.io/examples/dog.jpg")
+        try:
+            fig = plt.figure(figsize=(15, 10))
+            sns.histplot(df['Package'])
+            st.pyplot(fig)
+            plot = Plots(df)
+            plot.downloadPlotBtn()
+
+        except:
+            st.error('error in ploating graph')
+
+
+
 
 
