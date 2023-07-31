@@ -5,3 +5,4 @@ pandas==2.0.3
 img2pdf==0.4.4
 requests==2.31.0
 seaborn==0.12.2
+pypdf==3.14.0
