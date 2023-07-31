@@ -236,6 +236,7 @@ def pdfToText(path):
         text = file.read()
     if os.path.exists('extractedText.txt'):
         os.remove('extractedText.txt')
+        pass
     return text
 
 
