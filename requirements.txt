@@ -1,5 +1,5 @@
 streamlit==1.23.0
-streamlit-aggrid==0.3.4.post3
+streamlit-aggrid==0.3.2
 pandas==2.0.3
 img2pdf==0.4.4
 requests==2.31.0
