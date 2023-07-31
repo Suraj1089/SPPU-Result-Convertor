@@ -19,7 +19,6 @@ idna==3.4
 ImageHash==4.3.1
 importlib-metadata==6.8.0
 Jinja2==3.1.2
-joblib==1.1.1
 jsonschema==4.18.4
 jsonschema-specifications==2023.7.1
 kiwisolver==1.4.4
@@ -47,7 +46,7 @@ Pygments==2.15.1
 Pympler==1.0.1
 pyparsing==3.0.9
 pypdf==3.14.0
-PyPDF2==3.0.1
+# PyPDF2==3.0.1  Issue : https://github.com/Suraj1089/SPPU-Result-Convertor/security/dependabot/17
 python-dateutil==2.8.2
 python-decouple==3.8
 python-dotenv==1.0.0

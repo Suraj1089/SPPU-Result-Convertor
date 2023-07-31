@@ -9,10 +9,10 @@ class PdfProcessor:
     def __init__(self,text: str) -> None:
         self.text = text
 
-    def removeSubjectNames(self, subjectNames: List[str]) -> str:
-        print('*' * 50)
+    def removeSubjectNames(self, subjectNames) -> str:
+        subjectNames = subjectNames.split('\n')
         for name in subjectNames:
-            print(name)
+            name = name.strip()
             self.text = self.text.replace(name,'')
         return self.text 
     

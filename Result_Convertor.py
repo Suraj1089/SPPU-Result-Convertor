@@ -81,14 +81,20 @@ def App():
             subjectNamesList = []
             # other departments than IT
             if department !='IT':
-                subjectNamesList = st.text_input(label="Enter subject Names seperate by comma ','")
+                st.info('Enter subject Names')
+                subjectNamesList = st.text_area(label="Enter subject Names(Each subject on separate line)")
                 subjectNamesListBtn = st.button(label='Add Subjects')
-                if subjectNamesListBtn:
-                    st.write(subjectNamesList.split(','))
+                if subjectNamesListBtn and subjectNamesList:
+                    st.success('Selected subjects are')
+                    st.write(subjectNamesList.split('\n'))
 
-            # remove input subject names
-            processor = PdfProcessor(text)
-            text = processor.removeSubjectNames(subjectNames=subjectNamesList)
+                    # remove input subject names
+                    processor = PdfProcessor(text)
+                    text = processor.removeSubjectNames(subjectNames=subjectNamesList)
+                else:
+                    st.error('Subject Name must be added to work.')
+                    st.stop()
+
 
             text = cleanText(text)
             try:
