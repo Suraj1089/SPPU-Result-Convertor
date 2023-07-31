@@ -1,13 +1,13 @@
 import streamlit as st
 import pandas as pd
-import PyPDF2
+# import PyPDF2
 import base64
 import re
 import os 
 import io
 from typing import List
 import pandas as pd
-
+import pypdf
 
 
 def getSubjectNames(text):
@@ -206,20 +206,37 @@ def displayPDF(file):
     # Displaying File
     st.markdown(pdf_display, unsafe_allow_html=True)
 
+# Issue: https://github.com/Suraj1089/SPPU-Result-Convertor/security/dependabot/17
+# Migrate to pypdf
+# @st.cache_resource
+# def pdfToText(path):
+#     pdfreader = PyPDF2.PdfReader(path) 
+#     no_of_pages = len(pdfreader.pages)
+#     with open('final_txt.txt', 'w') as f:
+#         for i in range(0, no_of_pages):
+#             # pagObj = pdfreader.getPage(i) # deprecated
+#             pagObj = pdfreader.pages[i]
+#             f.write(pagObj.extract_text())
+#     with open('final_txt.txt', 'r') as f:
+#         text = f.read()
+#     if os.path.exists("final_txt.txt"):
+#         # os.remove("final_txt.txt")
+#         return text
+
+
 @st.cache_resource
 def pdfToText(path):
-    pdfreader = PyPDF2.PdfReader(path)
-    no_of_pages = len(pdfreader.pages)
-    with open('final_txt.txt', 'w') as f:
-        for i in range(0, no_of_pages):
-            # pagObj = pdfreader.getPage(i) # deprecated
-            pagObj = pdfreader.pages[i]
-            f.write(pagObj.extract_text())
-    with open('final_txt.txt', 'r') as f:
-        text = f.read()
-    if os.path.exists("final_txt.txt"):
-        # os.remove("final_txt.txt")
-        return text
+    reader = pypdf.PdfReader(path)
+    noOfPages = len(reader.pages)
+    with open('extractedText.txt','w') as file:
+        for line in range(0,noOfPages):
+            page = reader.pages[line]
+            file.write(page.extract_text())
+    with open('extractedText.txt','r') as file:
+        text = file.read()
+    if os.path.exists('extractedText.txt'):
+        os.remove('extractedText.txt')
+    return text
 
 
 def showUploadedFile(file):
