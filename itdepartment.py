@@ -218,7 +218,7 @@ def pdfToText(path):
     with open('final_txt.txt', 'r') as f:
         text = f.read()
     if os.path.exists("final_txt.txt"):
-        os.remove("final_txt.txt")
+        # os.remove("final_txt.txt")
         return text
 
 

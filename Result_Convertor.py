@@ -5,6 +5,7 @@ import re
 import numpy as np
 from itdepartment import getTabledownloadLink, displayPDF, pdfToText, cleanText, studentDetails, cleanMarks,getSubjectCodes,getSubjectNames
 from st_aggrid import AgGrid
+from utils import PdfProcessor
 
 
 @st.cache_resource
@@ -60,11 +61,10 @@ def App():
             'CIVIL', 'ELECTRICAL', 'INSTRUMENTATION']
     )
 
-    if department == 'IT':
-        st.write('Selected department is ', department)
+    if department:
+        st.success(f'Selected department is {department}')
 
         pdf_file = st.file_uploader(label="Upload Pdf File", type="pdf")
-        pdfFileName = 'marks'
         if pdf_file:
             # display document
             with st.expander(label="Show Uploaded File"):
@@ -77,11 +77,20 @@ def App():
                 return
             # store text to find subject names
             textForSubjectNames = text
-            text = cleanText(text)
-             # uncomment to log the data
-            # with open('clean.txt','w') as clean_marks:
-            #     clean_marks.write(text)
+            
+            subjectNamesList = []
+            # other departments than IT
+            if department !='IT':
+                subjectNamesList = st.text_input(label="Enter subject Names seperate by comma ','")
+                subjectNamesListBtn = st.button(label='Add Subjects')
+                if subjectNamesListBtn:
+                    st.write(subjectNamesList.split(','))
 
+            # remove input subject names
+            processor = PdfProcessor(text)
+            text = processor.removeSubjectNames(subjectNames=subjectNamesList)
+
+            text = cleanText(text)
             try:
 
                 seat_no_name = studentDetails(text)
@@ -194,7 +203,7 @@ def App():
                             st.markdown(getTabledownloadLink(
                                 df=studentMarksStore,fileName=f"{str(pdf_file.name).split('.')[0]}.xlsx",), unsafe_allow_html=True)
                             
-                                           
+                                        
                     except:
                         st.error('Please enter valid subject code or cannot convert this marks')
                         
