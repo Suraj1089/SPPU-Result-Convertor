@@ -45,7 +45,7 @@ pydeck==0.8.1b0
 Pygments==2.15.1
 Pympler==1.0.1
 pyparsing==3.0.9
-pypdf==3.14.0
+pypdf==3.14.0     # Issue: It is recommended to upgrade to pypdf>=3.9.0. PyPDF2 users should migrate to pypdf.
 # PyPDF2==3.0.1  Issue : https://github.com/Suraj1089/SPPU-Result-Convertor/security/dependabot/17
 python-dateutil==2.8.2
 python-decouple==3.8
