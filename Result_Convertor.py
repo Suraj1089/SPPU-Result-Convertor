@@ -58,7 +58,10 @@ def App():
         <a href="https://github.com/Suraj1089/SPPU-Result-Convertor/pulls"><img src="https://img.shields.io/github/issues-pr/Suraj1089/SPPU-Result-Convertor" alt="Pull Requests Badge"/></a>
         <a href="https://github.com/Suraj1089/SPPU-Result-Convertor/issues"><img src="https://img.shields.io/github/issues/Suraj1089/SPPU-Result-Convertor" alt="Issues Badge"/></a>
         <a href="https://github.com/Suraj1089/SPPU-Result-Convertor/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Suraj1089/SPPU-Result-Convertor?color=2b9348"></a>
-        <a href="https://github.com/Suraj1089/SPPU-Result-Convertor/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Suraj1089/SPPU-Result-Convertor?color=2b9348" alt="License Badge"/></a>
+        [![GitHub license](https://img.shields.io/github/license/Suraj1089/SPPU-Result-Convertor?color=orange)](https://github.com/Suraj1089/SPPU-Result-Convertor/blob/main/LICENSE)
+        [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Suraj1089/SPPU-Result-Convertor)](https://github.com/Suraj1089/SPPU-Result-Convertor/graphs/commit-activity)
+        [![GitHub issues](https://img.shields.io/github/issues/Suraj1089/SPPU-Result-Convertor?color=blue)](https://github.com/Suraj1089/SPPU-Result-Convertor/issues)
+        [![GitHub stars](https://img.shields.io/github/stars/Suraj1089/SPPU-Result-Convertor)](https://github.com/Suraj1089/SPPU-Result-Convertor/stargazers)
 
     """, unsafe_allow_html=True)
 
@@ -104,11 +107,15 @@ def App():
                 subjectNamesListBtn = st.button(label='Add Subjects')
                 if subjectNamesListBtn and subjectNamesList:
                     st.success('Selected subjects are')
-                    st.write(subjectNamesList.split('\n'))
 
-                    # remove input subject names
-                    processor = PdfProcessor(text)
-                    text = processor.removeSubjectNames(subjectNames=subjectNamesList)
+                    # convert string to list
+                    subjectNamesList = subjectNamesList.split('\n')
+                    st.write(subjectNamesList)
+
+                    # store the subjectNames in session state
+                    if 'subjectNamesList' not in st.session_state:
+                        st.session_state['subjectnamesList'] = subjectNamesList
+
                 else:
                     st.error('Subject Name must be added to work.')
 

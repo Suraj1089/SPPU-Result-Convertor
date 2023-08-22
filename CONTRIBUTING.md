@@ -23,25 +23,5 @@ This document describes how to contribute to the project.
 ## How to run the application
 
 1. Run `pipenv shell` to activate the virtual environment
-2. Run `python3 Result_Convertor.py` to run the application
-
-
-## Fastapi setup
-
-1. Install [Python 3.6](https://www.python.org/downloads/)
-2. Install [pipenv](https://docs.pipenv.org/)
-3. Clone the project
-4. Run `pipenv install --dev` to install dependencies
-5. Run `pipenv shell` to activate the virtual environment
-6. Run `uvicorn main:app --reload` to run the application
-
-
-## React setup
-
-1. Install [Node.js](https://nodejs.org/en/)
-2. Install [Yarn](https://yarnpkg.com/en/docs/install)
-3. Clone the project
-4. Run `yarn install` to install dependencies
-5. Run `yarn start` to run the application
-
+2. Run `python Result_Convertor.py` to run the application
 
