@@ -93,7 +93,6 @@ def App():
                     text = processor.removeSubjectNames(subjectNames=subjectNamesList)
                 else:
                     st.error('Subject Name must be added to work.')
-                    st.stop()
 
 
             text = cleanText(text)
@@ -104,9 +103,9 @@ def App():
 
                 student_data = pd.concat(
                     [seat_no_name, student_prn_no], axis=1)
-            except:
+            except Exception as e:
                 st.error(
-                    "Error in extracting data from pdf. Please check the pdf file and try again.")
+                    f"Error in extracting data from pdf. Please check the pdf file and try again. {e}")
                 return
 
             # show progress bar
@@ -161,18 +160,18 @@ def App():
                         text = re.sub(pattern, '', text)
                         try:
                             marks = cleanMarks(text, subject_codes)
-                        except:
+                        except Exception as e:
                             st.error(
-                                'Error in processing pdf. Please check the pdf file and try again')
+                                f'Error in processing pdf. Please check the pdf file and try again {e}')
                             return
                         
                         try:
                             student_marks = concat_subjects(marks)
                             student_marks = pd.concat(
                                 [student_data, student_marks], axis=1)
-                        except:
+                        except Exception as e:
                             st.error(
-                                'Error in extracting marks. Please check the pdf file and try again.@concat_subjects')
+                                f'Error in extracting marks. Please check the pdf file and try again.@concat_subjects {e}')
                             return
 
 
@@ -210,8 +209,8 @@ def App():
                                 df=studentMarksStore,fileName=f"{str(pdf_file.name).split('.')[0]}.xlsx",), unsafe_allow_html=True)
                             
                                         
-                    except:
-                        st.error('Please enter valid subject code or cannot convert this marks')
+                    except Exception as e:
+                        st.error(f'Please enter valid subject code or cannot convert this marks {e}')
                         
                         return
 
@@ -237,13 +236,12 @@ def App():
                         pattern = r'[A-Z]{3}'
                         text = re.sub(pattern, '', text)
                         # uncomment to log the data
-                        # with open('tt.txt','w') as tt:
-                        #     tt.write(text)
+                    
                         try:
                             marks = cleanMarks(text, subject_codes)
-                        except:
+                        except Exception as e:
                             st.error(
-                                'Error in extracting marks. Please check the pdf file and try again.@cleanMarks')
+                                f'Error in extracting marks. Please check the pdf file and try again.@cleanMarks {e}')
                             return
                         
                         try:
@@ -251,9 +249,9 @@ def App():
                             student_marks = concat_subjects(marks)
                             student_marks = pd.concat(
                                 [student_data, student_marks], axis=1)
-                        except:
+                        except Exception as e:
                             st.error(
-                                'Error in extracting marks. Please check the pdf file and try again.@concat_subjects')
+                                f'Error in extracting marks. Please check the pdf file and try again.@concat_subjects {e}')
                             return
                         
                         student_marks = replaceNan(student_marks)
@@ -300,9 +298,9 @@ def App():
                             st.markdown(getTabledownloadLink(
                                 df=student_marks,fileName=f"{str(pdf_file.name).split('.')[0]}.xlsx",), unsafe_allow_html=True)
                             
-                    except:
+                    except Exception as e:
                         st.error(
-                            'Please enter valid subject codes OR Cannot convert following subject codes to excel file')
+                            f'Please enter valid subject codes OR Cannot convert following subject codes to excel file {e}')
                         return
 
             with st.expander('Advance subject wise marks'):

@@ -64,7 +64,30 @@ def getTabledownloadLink(df: pd.DataFrame,fileName=str):
     return href
 
 
-def cleanText(text: str) -> str:
+def cleanText(text: str,year: str = 'SE') -> str:
+    SE_SUBJECTS_END = [
+        "DISCRETE MATHEMATICS",       
+        "DISCRETE MATHEMATICS",       
+        "LOGIC DESIGN & COMP. ORG.",  
+        "DATA STRUCTURES & ALGO.",    
+        "OBJECT ORIENTED PROGRAMMING",
+        "BASIC OF COMPUTER NETWORK",  
+        "LOGIC DESIGN COMP. ORG. LAB",
+        "DATA STRUCTURES & ALGO. LAB",
+        "OBJECT ORIENTED PROG. LAB",  
+        "SOFT SKILL LAB",             
+        "CYBER SECURITY AND LAW",    
+        "ENGINEERING MATHEMATICS-III",   
+        "ENGINEERING MATHEMATICS-III",   
+        "PROCESSOR ARCHITECTURE",        
+        "DATABASE MANAGEMENT SYSTEM",    
+        "COMPUTER GRAPHICS",             
+        "SOFTWARE ENGINEERING",          
+        "PROG. SKILL DEVELOPMENT LAB",   
+        "DATABASE MGMT. SYSTEM LAB",     
+        "COMPUTER GRAPHICS LAB",         
+        "PROJECT BASED LEARNING"
+    ]
     subjects = ['OBJECT ORIENTED PROG. LAB','DATA STRUCTURES & ALGO. LAB','LOGIC DESIGN COMP. ORG. LAB','LOGIC DESIGN & COMP. ORG.','DATA STRUCTURES & ALGO.','INFORMATION AND CYBER SECURITY', 'MACHINE LEARNING & APPS.','DESIGN AND ANALYSIS OF ALG.' 
                 'SOFTWARE DESIGN AND MODELING', 'BUS. ANALYTICS & INTEL.', 'SW. TESTING & QA.',
                 'COMPUTER LABORATORY-VII', 'COMPUTER LABORATORY-VII', 'COMPUTER LABORATORY-VIII', 
@@ -73,8 +96,19 @@ def cleanText(text: str) -> str:
                 'INTERNET OF THINGS (IOT)', 'SOCIAL MEDIA ANALYTICS', 'COMPUTER LABORATORY-IX', 'COMPUTER LABORATORY-IX', 
                 'COMPUTER LABORATORY-X', 'PROJECT WORK', 'PROJECT WORK', 'IOT- APPLI. IN ENGG. FIELD','INFO. & STORAGE RETRIEVAL']
     
-    for i in subjects:
-        text = text.replace(i, '')
+    # first remove second year subject names
+    if year == 'SE':
+        for subject in SE_SUBJECTS_END:
+            text = text.replace(subject,'')
+
+        for i in subjects:
+            text = text.replace(i, '')   
+    else:
+        for i in subjects:
+            text = text.replace(i, '')
+        for subject in SE_SUBJECTS_END:
+            text = text.replace
+
 
     # SE subject names and TE subject names
     # BE subjects
@@ -257,15 +291,17 @@ def cleanMarks(text: str, subject_codes) -> dict:
 
         # dataframe column names
         d = {'subject': [], 'OE': [], 'TH': [], 'OE_TH': [], 'TW': [], 'PR': [
-        ], 'OR': [], 'TOT': [], 'CRD': [], 'GRD': [], 'PTS1': [], 'PTS2': []}
+        ], 'OR': [], 'TOT': [], 'CRD': [], 'GRD': [], 'PTS1': [], 'PTS2': [],'CP':[]}
         
         # uncomment to log the data
         # with open('patern.txt', 'w') as patt:
         #     patt.write(str(pattern))
         for index,i in enumerate(pattern):
             temp = i.split()
-            if len(temp) < 12:
-                while len(temp)!=12:
+            # print(len(temp))
+            # max_lenght = 
+            if len(temp) < 13:
+                while len(temp)!=13:
                     temp.append('Error')
             
         
@@ -281,6 +317,7 @@ def cleanMarks(text: str, subject_codes) -> dict:
             d['GRD'].append(temp[9])
             d['PTS1'].append(temp[10])
             d['PTS2'].append(temp[11])
+            d['CP'].append(temp[12])
         dataframe = pd.DataFrame(d)
         subject_codes[codes] = dataframe
     return subject_codes
