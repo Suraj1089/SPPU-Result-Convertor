@@ -1,4 +1,10 @@
 # SPPU-Result-Convertor
+<a href="https://github.com/Suraj1089/SPPU-Result-Convertor/network/members"><img src="https://img.shields.io/github/forks/Suraj1089/SPPU-Result-Convertor" alt="Forks Badge"/></a>
+        <a href="https://github.com/Suraj1089/SPPU-Result-Convertor/pulls"><img src="https://img.shields.io/github/issues-pr/Suraj1089/SPPU-Result-Convertor" alt="Pull Requests Badge"/></a>
+        <a href="https://github.com/Suraj1089/SPPU-Result-Convertor/issues"><img src="https://img.shields.io/github/issues/Suraj1089/SPPU-Result-Convertor" alt="Issues Badge"/></a>
+        <a href="https://github.com/Suraj1089/SPPU-Result-Convertor/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Suraj1089/SPPU-Result-Convertor?color=2b9348"></a>
+        <a href="https://github.com/Suraj1089/SPPU-Result-Convertor/blob/master/LICENSE"><img src="https://img.shields.io/github/license/Suraj1089/SPPU-Result-Convertor?color=2b9348" alt="License Badge"/></a>
+        </br>
 This is a simple python script to convert the result of SPPU (Savitribai Phule Pune University) to a more readable format.
 
 ## Usage
