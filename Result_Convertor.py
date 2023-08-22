@@ -53,17 +53,35 @@ def App():
 
     st.markdown("""
         ## :outbox_tray: Result Analyser :outbox_tray:
-    """)
 
-    department = st.selectbox(
-        'Select Department',
-        ['IT', 'COMPUTER', 'AIDS', 'MECHANICAL', 'E&TC',
-            'CIVIL', 'ELECTRICAL', 'INSTRUMENTATION']
-    )
+        <a href="https://github.com/Suraj1089/SPPU-Result-Convertor/network/members"><img src="https://img.shields.io/github/forks/Suraj1089/SPPU-Result-Convertor" alt="Forks Badge"/></a>
+        <a href="https://github.com/Suraj1089/SPPU-Result-Convertor/pulls"><img src="https://img.shields.io/github/issues-pr/Suraj1089/SPPU-Result-Convertor" alt="Pull Requests Badge"/></a>
+        <a href="https://github.com/Suraj1089/SPPU-Result-Convertor/issues"><img src="https://img.shields.io/github/issues/Suraj1089/SPPU-Result-Convertor" alt="Issues Badge"/></a>
+        <a href="https://github.com/Suraj1089/SPPU-Result-Convertor/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Suraj1089/SPPU-Result-Convertor?color=2b9348"></a>
+        <a href="https://github.com/Suraj1089/SPPU-Result-Convertor/blob/master/LICENSE"><img src="https://img.shields.io/github/license/Suraj1089/SPPU-Result-Convertor?color=2b9348" alt="License Badge"/></a>
 
-    if department:
+    """, unsafe_allow_html=True)
+
+                        
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        department = st.selectbox(
+            'Select Department',
+            ('IT', 'COMPUTER', 'AIDS', 'MECHANICAL', 'E&TC',
+                'CIVIL', 'ELECTRICAL', 'INSTRUMENTATION')
+        )
         st.success(f'Selected department is {department}')
 
+    with col2:
+        year = st.selectbox(
+            'SELECT YEAR',
+            ('BE','TE','SE','FE')
+        )
+        st.success(f'Selected year is {year}')
+    if department:
+        
         pdf_file = st.file_uploader(label="Upload Pdf File", type="pdf")
         if pdf_file:
             # display document
@@ -420,8 +438,34 @@ if __name__ == "__main__":
         st.set_page_config(
             page_title='Result Analysis',
             page_icon='📃',
-            layout='wide'
         )
+        with st.sidebar:
+            st.header('Our Contributors')
+
+            import streamlit as st
+
+            st.markdown(
+                """
+                <style>
+                    /* Add CSS styles here */
+                    .avatar-container {
+                        display: inline-block;
+                        margin-right: 20px; /* Adjust the margin to your desired spacing */
+                    }
+                </style>
+
+                <div class="avatar-container">
+                    <a href="https://github.com/Suraj1089/SPPU-Result-Convertor/graphs/contributors">
+                        <img src="https://contrib.rocks/image?max=50&repo=Suraj1089/SPPU-Result-Convertor" />
+                    </a>
+                </div>
+
+        
+                """,
+                unsafe_allow_html=True
+            )
+
+
     except Exception as e:
         pass
 
