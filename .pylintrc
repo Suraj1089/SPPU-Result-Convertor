@@ -14,3 +14,5 @@ disable=
     E0102,  # function-redefined
     F0010,  # error-while-code-parsing
     E0001   # parsing-failed
+    E0401   # import-error
+
