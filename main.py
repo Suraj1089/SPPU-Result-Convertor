@@ -1,13 +1,9 @@
-from functools import lru_cache
 from typing import Annotated
 
 from fastapi import Depends, FastAPI
-from routers import converter
+
 from internal.config import Settings, get_settings
-
-
-
-
+from routers import converter
 
 app = FastAPI()
 app.include_router(converter.router)
