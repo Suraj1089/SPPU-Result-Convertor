@@ -15,3 +15,4 @@ disable=
     F0010,  # error-while-code-parsing
     E0001,  # parsing-failed
     E0401   # import-error
+    E0611   # no-name-in-module
