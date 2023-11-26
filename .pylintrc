@@ -2,17 +2,4 @@
 
 # Ignore specific errors globally
 disable=
-    C0305,  # trailing-newlines
-    C0114,  # missing-module-docstring
-    C0115,  # missing-class-docstring
-    R0903,  # too-few-public-methods
-    C0103,  # invalid-name
-    W0104,  # pointless-statement
-    E0602,  # undefined-variable
-    C0116,  # missing-function-docstring
-    C0304,  # missing-final-newline
-    E0102,  # function-redefined
-    F0010,  # error-while-code-parsing
-    E0001   # parsing-failed
-    E0401   # import-error
-
+    C0305,C0114,C0115,R0903,C0103,W0104,E0602,C0116,C0304,E0102,F0010,E0001,E0401
