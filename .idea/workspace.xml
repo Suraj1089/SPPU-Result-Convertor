@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="551677a8-4e23-412c-931e-d5c97255870f" name="Changes" comment="" />
+    <list default="true" id="551677a8-4e23-412c-931e-d5c97255870f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schemas/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/schemas/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/routers/converter.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +42,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -56,7 +65,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.externalTools",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -128,7 +137,7 @@
       <workItem from="1700531101073" duration="15000" />
       <workItem from="1700915109190" duration="116000" />
       <workItem from="1700930271636" duration="6010000" />
-      <workItem from="1700971117359" duration="623000" />
+      <workItem from="1700971117359" duration="2617000" />
     </task>
     <servers />
   </component>
