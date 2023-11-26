@@ -20,13 +20,3 @@ async def create_upload_file(
         "filename": file.filename, "file": file.file, "content_type": file.content_type,
         "size": file.size
     }
-
-
-@router.get("/uploadFile/")
-async def create_upload_file(
-    file: Annotated[UploadFile, File(description="A result file read as UploadFile")]
-):
-    return {
-        "filename": file.filename, "file": file.file, "content_type": file.content_type,
-        "size": file.size
-    }
