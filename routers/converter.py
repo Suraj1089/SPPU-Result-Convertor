@@ -1,9 +1,9 @@
 from typing import Annotated
 
 from fastapi import APIRouter, Depends
+from fastapi import File, UploadFile
 
 from internal.config import get_settings
-from fastapi import File, UploadFile
 
 router = APIRouter(
     prefix='/files',

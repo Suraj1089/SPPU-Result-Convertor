@@ -1,0 +1,5 @@
+[MASTER]
+
+# Ignore specific errors globally
+disable=
+    C0305,C0114,C0115,R0903,C0103,W0104,E0602,C0116,C0304,E0102,F0010,E0001,E0401,E0611

@@ -1,5 +1,3 @@
-from typing import Union
-
 from pydantic import BaseModel
 
 
@@ -14,4 +12,3 @@ class UserCreate(UserBase):
 class User(UserBase):
     id: int
     is_active: bool
-
