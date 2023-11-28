@@ -1,12 +1,21 @@
 from typing import Annotated
 
 from fastapi import Depends, FastAPI
+from fastapi.security import OAuth2PasswordBearer
 
+from db.database import Base, engine
 from internal.config import Settings, get_settings
-from routers import converter
+from routers import converter, user
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+
+
+Base.metadata.create_all(bind=engine)
+
 
 app = FastAPI()
 app.include_router(converter.router)
+app.include_router(user.router)
 
 
 @app.get("/")
