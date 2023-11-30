@@ -1,17 +1,18 @@
+from datetime import timedelta
+from typing import Annotated
+from typing import Union
+
 from fastapi import APIRouter, Depends, HTTPException
+from fastapi import status, Response
+from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
 from db.database import get_db
+from db.models.user import User
 from db.schemas.user import UserInDB, UserCreate, Token
 from internal.config import settings
 from utils.user import create_user
 from utils.user import get_user, create_access_token, authenticate_user, get_current_active_user
-from typing import Union
-from fastapi import status, Response
-from datetime import timedelta
-from typing import Annotated
-from fastapi.security import OAuth2PasswordRequestForm
-from db.models.user import User
 
 router = APIRouter(
     prefix='/users',
@@ -49,7 +50,7 @@ async def login_for_access_token(
         )
     access_token_expires = timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(
-        data={"sub": user.username}, expires_delta=access_token_expires
+        user.id, expires_delta=access_token_expires
     )
     return {"access_token": access_token, "token_type": "bearer"}
 
