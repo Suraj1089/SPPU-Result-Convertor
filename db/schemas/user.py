@@ -1,12 +1,14 @@
 from typing import Union
 
 from pydantic import BaseModel
+from pydantic import EmailStr
 
 
 class UserBase(BaseModel):
     first_name: Union[str, None] = None
     last_name: Union[str, None] = None
-    email: str
+    email: EmailStr
+    is_active: bool = True
 
 
 class UserCreate(UserBase):
@@ -15,7 +17,7 @@ class UserCreate(UserBase):
 
 class UserInDB(UserBase):
     id: int
-    is_active: bool
+    password: str
 
 
 class Token(BaseModel):

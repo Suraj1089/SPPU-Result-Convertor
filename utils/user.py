@@ -1,21 +1,37 @@
-from typing import Union, Type
+from typing import Union, Type, Any, Annotated
 
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import jwt, JWTError
 from sqlalchemy.orm import Session
 
+from datetime import datetime, timedelta
 from db.database import get_db
 from db.models.user import User
-from db.schemas.user import UserCreate, UserInDB
-from internal.config import Settings, get_settings
+from db.schemas.user import UserCreate, UserInDB, TokenData
+from internal.config import settings
+from passlib.context import CryptContext
+from utils.logging_utils import logger
 
+
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 
-def create_user(db: Session, user: UserCreate) -> UserInDB:
-    user_in_db = User(first_name=user.first_name, last_name=user.last_name, email=user.email,
-                      password=user.password)
+def create_user(db: Session, user: UserCreate) -> Union[UserInDB, None]:
+    existing_user = db.query(User).filter(User.email==user.email).first()
+    if existing_user:
+        logger.error({
+            'event_type': 'USER',
+            'event_subtype': '',
+            'event_name': 'CREATE_USER',
+            'new_user': user,
+            'error': 'Existing User found',
+            'existing_user': existing_user
+        })
+        return None
+    user.password = get_password_hash(user.password)
+    user_in_db = User(**user.model_dump())
     db.add(user_in_db)
     db.commit()
     db.refresh(user_in_db)
@@ -44,8 +60,7 @@ def get_users(db: Session, skip: int = 0, limit: int = 100) -> list[Type[User]]:
     return db.query(User).offset(skip).limit(limit).all()
 
 
-def get_current_user(token: str = Depends(oauth2_scheme),
-                     settings: Settings = Depends(get_settings)):
+def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
     """
     :param token:
     :param settings:
@@ -57,11 +72,51 @@ def get_current_user(token: str = Depends(oauth2_scheme),
         headers={"WWW-Authenticate": "Bearer"}
     )
     try:
-        payload = jwt.decode(token, key=settings.SECRET_KEY, algorithms=[settings.ALGORITHMS])
+        payload = jwt.decode(token, key=settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
         username: str = payload.get("sub")
-    except JWTError as ex:
-        raise credential_exception from ex
-    user = get_user(username)
+        token_data = TokenData(username=username)
+    except JWTError:
+        raise credential_exception
+    user = get_user(token_data.username)
     if user is None:
         raise credential_exception
     return user
+
+
+def create_access_token(
+    subject: Union[str, Any], expires_delta: timedelta = None
+) -> str:
+    if expires_delta:
+        expire = datetime.utcnow() + expires_delta
+    else:
+        expire = datetime.utcnow() + timedelta(
+            minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES
+        )
+    to_encode = {"exp": expire, "sub": str(subject)}
+    encoded_jwt = jwt.encode(to_encode, settings.SECRET_KEY, algorithm=settings.ALGORITHM)
+    return encoded_jwt
+
+
+def verify_password(plain_password, hashed_password):
+    return pwd_context.verify(plain_password, hashed_password)
+
+
+def get_password_hash(password):
+    return pwd_context.hash(password)
+
+
+def authenticate_user(db: Session, username: str, password: str) -> [UserInDB, bool]:
+    user = get_user(username, db)
+    if not user:
+        return False
+    if not verify_password(password, user.password):
+        return False
+    return user
+
+
+async def get_current_active_user(
+    current_user: Annotated[User, Depends(get_current_user)]
+):
+    if current_user.disabled:
+        raise HTTPException(status_code=400, detail="Inactive user")
+    return current_user
