@@ -1,14 +1,11 @@
 from typing import Annotated
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter
 from fastapi import File, UploadFile
-
-from internal.config import get_settings
 
 router = APIRouter(
     prefix='/files',
-    tags=['files'],
-    dependencies=[Depends(get_settings), ]
+    tags=['files']
 )
 
 

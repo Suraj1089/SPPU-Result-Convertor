@@ -1,14 +1,29 @@
+from typing import Union
+
 from pydantic import BaseModel
+from pydantic import EmailStr
 
 
 class UserBase(BaseModel):
-    email: str
+    first_name: Union[str, None] = None
+    last_name: Union[str, None] = None
+    email: EmailStr
+    is_active: bool = True
 
 
 class UserCreate(UserBase):
     password: str
 
 
-class User(UserBase):
+class UserInDB(UserBase):
     id: int
-    is_active: bool
+    password: str
+
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    username: Union[str, None] = None
