@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     SECRET_KEY: str
     ALGORITHM: str
     ACCESS_TOKEN_EXPIRE_MINUTES: int
+    EMAILS_ENABLED: bool = False
     model_config = SettingsConfigDict(env_file='.env', env_file_encoding='utf-8')
 
 
