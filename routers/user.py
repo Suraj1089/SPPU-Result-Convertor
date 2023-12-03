@@ -1,18 +1,23 @@
 from datetime import timedelta
 from typing import Annotated
-from typing import Union
+from typing import Union, Optional
 
 from fastapi import APIRouter, Depends, HTTPException
-from fastapi import status, Response
+from fastapi import status
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
 from db.database import get_db
 from db.models.user import User
-from db.schemas.user import UserInDB, UserCreate, Token
+from db.schemas.user import UserInDB, UserCreate, Token, UserOutDB
 from internal.config import settings
-from utils.user import create_user
-from utils.user import get_user, create_access_token, authenticate_user, get_current_active_user
+from utils.user import (
+    create_access_token,
+    authenticate_user,
+    get_current_active_user,
+    get_user_by_email
+)
+from utils.user import create_user, get_user_by_query
 
 router = APIRouter(
     prefix='/users',
@@ -21,19 +26,19 @@ router = APIRouter(
 
 
 @router.post('/', response_model=Token, status_code=status.HTTP_201_CREATED)
-def create(user: UserCreate, db: Session = Depends(get_db)):
-    new_user: Union[UserInDB, None] = create_user(db, user)
-    print(new_user)
-    if not new_user:
-        return Response(content=f'User with email {user.email} already exist',
-                        status_code=status.HTTP_403_FORBIDDEN)
-    token = create_access_token(subject=new_user.id, expires_delta=timedelta(minutes=1))
+def create(user_in: UserCreate, db: Session = Depends(get_db)) -> Union[UserInDB, HTTPException]:
+    user = get_user_by_email(db, user_in.email)
+    if user:
+        raise HTTPException(
+            status_code=400,
+            detail=f"The user with {user_in.email} already exists.",
+        )
+    new_user: Union[UserInDB, None] = create_user(db, user_in)
+    if settings.EMAILS_ENABLED:
+        # TODO: send_user_create_link_in_email  # pylint: disable=fixme
+        pass
+    token = create_access_token(subject=new_user.email, expires_delta=timedelta(minutes=1))
     return Token(access_token=token, token_type='bearer')
-
-
-@router.get('/', response_model=Union[UserInDB, None])
-def get_user_by_username(username: str, db: Session = Depends(get_db)):
-    return get_user(username, db)
 
 
 @router.post("/token", response_model=Token)
@@ -50,13 +55,21 @@ async def login_for_access_token(
         )
     access_token_expires = timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(
-        user.id, expires_delta=access_token_expires
+        user.email, expires_delta=access_token_expires
     )
     return {"access_token": access_token, "token_type": "bearer"}
 
 
-@router.get("/users/me/", response_model=UserInDB)
+@router.get("/me", response_model=UserInDB)
 async def read_users_me(
     current_user: Annotated[User, Depends(get_current_active_user)]
 ):
     return current_user
+
+
+@router.get('/{query}', response_model=UserOutDB)
+def get_user(query: Optional[str], db: Session = Depends(get_db)):
+    user = get_user_by_query(query, db)
+    if user is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="No user found")
+    return user

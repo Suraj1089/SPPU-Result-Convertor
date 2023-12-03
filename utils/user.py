@@ -1,10 +1,12 @@
 from datetime import datetime, timedelta
+from typing import Optional
 from typing import Union, Type, Any, Annotated
 
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import jwt, JWTError
 from passlib.context import CryptContext
+from sqlalchemy import or_
 from sqlalchemy.orm import Session
 
 from db.database import get_db
@@ -14,7 +16,11 @@ from internal.config import settings
 from utils.logging_utils import logger
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="users/token")
+
+
+def get_user_by_email(db: Session, email: str) -> Optional[UserInDB]:
+    return db.query(User).filter(User.email == email).first()
 
 
 def create_user(db: Session, user: UserCreate) -> Union[UserInDB, None]:
@@ -37,7 +43,7 @@ def create_user(db: Session, user: UserCreate) -> Union[UserInDB, None]:
     return user_in_db
 
 
-def get_user(username: str, db: Session = Depends(get_db)) -> Union[UserInDB, None]:
+def get_user(username: str, db: Session) -> Union[UserInDB, None]:
     """
     :param username:
     :param db:
@@ -59,10 +65,11 @@ def get_users(db: Session, skip: int = 0, limit: int = 100) -> list[Type[User]]:
     return db.query(User).offset(skip).limit(limit).all()
 
 
-def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
+def get_current_user(token: Annotated[str, Depends(oauth2_scheme)],
+                     db: Session = Depends(get_db)):
     """
     :param token:
-    :param settings:
+    :param db:
     :return:
     """
     credential_exception: HTTPException = HTTPException(
@@ -76,7 +83,7 @@ def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
         token_data = TokenData(username=username)
     except JWTError:
         raise credential_exception
-    user = get_user(token_data.username)
+    user = get_user(token_data.username, db)
     if user is None:
         raise credential_exception
     return user
@@ -115,7 +122,18 @@ def authenticate_user(db: Session, username: str, password: str) -> [UserInDB, b
 
 async def get_current_active_user(
     current_user: Annotated[User, Depends(get_current_user)]
-):
-    if current_user.disabled:
+) -> Union[UserInDB, Any]:
+    if not current_user.is_active:
         raise HTTPException(status_code=400, detail="Inactive user")
     return current_user
+
+
+def get_user_by_query(query: str, db: Session) -> Union[UserInDB, None]:
+    user = db.query(User).filter(
+        or_(
+            User.first_name.ilike(f"%{query}%"),
+            User.last_name.ilike(f"%{query}%"),
+            User.email.ilike(f"%{query}%")
+        )
+    ).first()
+    return user

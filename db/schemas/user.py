@@ -1,12 +1,12 @@
-from typing import Union
+from typing import Optional
 
 from pydantic import BaseModel
 from pydantic import EmailStr
 
 
 class UserBase(BaseModel):
-    first_name: Union[str, None] = None
-    last_name: Union[str, None] = None
+    first_name: Optional[str] = None
+    last_name: Optional[str] = None
     email: EmailStr
     is_active: bool = True
 
@@ -15,9 +15,18 @@ class UserCreate(UserBase):
     password: str
 
 
+class UserUpdate(UserBase):
+    password: str
+
+
 class UserInDB(UserBase):
     id: int
     password: str
+
+
+class UserOutDB(UserBase):
+    # TODO: add more fields if want # pylint: disable=fixme
+    pass
 
 
 class Token(BaseModel):
@@ -26,4 +35,4 @@ class Token(BaseModel):
 
 
 class TokenData(BaseModel):
-    username: Union[str, None] = None
+    username: Optional[str] = None
