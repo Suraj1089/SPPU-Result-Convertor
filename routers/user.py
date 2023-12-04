@@ -11,6 +11,7 @@ from db.database import get_db
 from db.models.user import User
 from db.schemas.user import UserInDB, UserCreate, Token, UserOutDB
 from internal.config import settings
+from utils.email_utils import send_new_account_email
 from utils.user import (
     create_access_token,
     authenticate_user,
@@ -26,7 +27,7 @@ router = APIRouter(
 
 
 @router.post('/', response_model=Token, status_code=status.HTTP_201_CREATED)
-def create(user_in: UserCreate, db: Session = Depends(get_db)) -> Union[UserInDB, HTTPException]:
+async def create(user_in: UserCreate, db: Session = Depends(get_db)) -> Token:
     user = get_user_by_email(db, user_in.email)
     if user:
         raise HTTPException(
@@ -35,16 +36,17 @@ def create(user_in: UserCreate, db: Session = Depends(get_db)) -> Union[UserInDB
         )
     new_user: Union[UserInDB, None] = create_user(db, user_in)
     if settings.EMAILS_ENABLED:
-        # TODO: send_user_create_link_in_email  # pylint: disable=fixme
-        pass
+        # TODO: Use Anyone method either Email or Password  # pylint: disable=fixme
+        await send_new_account_email(email_to=new_user.email, subject="New Account creation email",
+                                     html_body="New Account creation body")
     token = create_access_token(subject=new_user.email, expires_delta=timedelta(minutes=1))
     return Token(access_token=token, token_type='bearer')
 
 
 @router.post("/token", response_model=Token)
 async def login_for_access_token(
-    form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
-    db: Session = Depends(get_db)
+        form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
+        db: Session = Depends(get_db)
 ):
     user = authenticate_user(db, form_data.username, form_data.password)
     if not user:
@@ -62,7 +64,7 @@ async def login_for_access_token(
 
 @router.get("/me", response_model=UserInDB)
 async def read_users_me(
-    current_user: Annotated[User, Depends(get_current_active_user)]
+        current_user: Annotated[User, Depends(get_current_active_user)]
 ):
     return current_user
 
