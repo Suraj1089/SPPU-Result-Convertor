@@ -5,10 +5,11 @@ class Settings(BaseSettings):
     PROJECT_NAME: str = 'SPPU-RESULT-CONVERTER'
     UPLOADCARE_API_KEY: str
     DROPBOX_ACCESS_TOKEN: str
+    WEBSITE_DOMAIN: str = 'http://localhost:8000'
     SECRET_KEY: str
     ALGORITHM: str
     ACCESS_TOKEN_EXPIRE_MINUTES: int
-    EMAILS_ENABLED: bool = True
+    EMAILS_ENABLED: bool = False
     SMTP_HOST: str
     SMTP_PORT: int
     SMTP_LOGIN: str
