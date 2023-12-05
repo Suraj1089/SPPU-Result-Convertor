@@ -40,4 +40,4 @@ ignore =
     # See https://www.flake8rules.com/ for an explanation of each rule with examples.
 select =
     E,W,F
-max-line-length = 100
+max-line-length = 120

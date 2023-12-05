@@ -16,3 +16,6 @@ disable=
     E0401,  # import-error
     W0707,  # raise-missing-from
     E0611,  # no-name-in-module
+
+[FORMAT]
+max-line-length = 120

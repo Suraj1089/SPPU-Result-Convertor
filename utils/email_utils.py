@@ -1,3 +1,4 @@
+import random
 from typing import List, Optional
 
 from fastapi import HTTPException, status
@@ -39,18 +40,13 @@ async def send_new_account_email(email_to: str, subject: Optional[str], html_bod
         raise HTTPException(detail=str(ex), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-
-
-
 async def send_password_reset_email(user: UserInDB) -> None:
     token = create_access_token(subject=user.email)
     try:
         await send_email(recipients=[user.email], subject="Reset Your Password",
-                         html_body=
-                         f"""Please click on the link to reset your password
+                         html_body=f"""Please click on the link to reset your password
                           {settings.WEBSITE_DOMAIN}/users/reset-password/{token}
-                          """
-                         )
+                          """)
     except Exception as ex:
         raise HTTPException(detail=str(ex), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -58,15 +54,10 @@ async def send_password_reset_email(user: UserInDB) -> None:
 async def send_email_otp(user: UserInDB) -> None:
     try:
         await send_email(recipients=[user.email], subject=f"Otp to reset password is {user.otp}",
-                         html_body=
-                         f"""
-                         Thank you
-                          """
-                         )
+                         html_body="Thank You")
     except Exception as ex:
         raise HTTPException(detail=str(ex), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
-import random
 def generate_otp():
     return random.randint(1000, 9999)
