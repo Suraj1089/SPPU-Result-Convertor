@@ -11,4 +11,5 @@ class User(Base):
     last_name = Column(String, default=None)
     email = Column(String, unique=True, index=True)
     password = Column(String)
+    otp = Column(Integer)
     is_active = Column(Boolean, default=True)
