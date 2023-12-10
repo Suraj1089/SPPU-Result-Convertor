@@ -2,13 +2,13 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
+    ACCESS_TOKEN_EXPIRE_MINUTES: int
     PROJECT_NAME: str = 'SPPU-RESULT-CONVERTER'
-    UPLOADCARE_API_KEY: str
     DROPBOX_ACCESS_TOKEN: str
+    DATABASE_URI: str = "postgresql://fastapi:fastapi@localhost/test"  # use local database in development
     WEBSITE_DOMAIN: str = 'http://localhost:8000'
     SECRET_KEY: str
     ALGORITHM: str
-    ACCESS_TOKEN_EXPIRE_MINUTES: int
     EMAILS_ENABLED: bool = False
     SMTP_HOST: str
     SMTP_PORT: int
