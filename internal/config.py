@@ -2,8 +2,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    PROJECT_NAME: str = 'SPPU-RESULT-CONVERTER'
-    UPLOADCARE_API_KEY: str
+    PROJECT_NAME: str = 'fastapi-tutorials'
     DROPBOX_ACCESS_TOKEN: str
     WEBSITE_DOMAIN: str = 'http://localhost:8000'
     SECRET_KEY: str
@@ -17,7 +16,7 @@ class Settings(BaseSettings):
     SMTP_API_KEY: str
     EMAILS_FROM_NAME: str
     EMAILS_FROM_EMAIL: str
-    EMAIL_TEMPLATES_DIR: str = "/fastApiProject/internal/email-templates/build"
+    EMAIL_TEMPLATES_DIR: str
     model_config = SettingsConfigDict(env_file='.env', env_file_encoding='utf-8')
 
 

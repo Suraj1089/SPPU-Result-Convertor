@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from typing import Optional
+from typing import Optional, Dict
 from typing import Union, Type, Any, Annotated
 
 from fastapi import Depends, HTTPException, status
@@ -14,6 +14,8 @@ from db.models.user import User
 from db.schemas.user import UserCreate, UserInDB, TokenData
 from internal.config import settings
 from utils.logging_utils import logger
+
+
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="users/token")
@@ -65,29 +67,6 @@ def get_users(db: Session, skip: int = 0, limit: int = 100) -> list[Type[User]]:
     return db.query(User).offset(skip).limit(limit).all()
 
 
-def get_current_user(token: Annotated[str, Depends(oauth2_scheme)],
-                     db: Session = Depends(get_db)):
-    """
-    :param token:
-    :param db:
-    :return:
-    """
-    credential_exception: HTTPException = HTTPException(
-        status_code=status.HTTP_401_UNAUTHORIZED,
-        detail='Could not validate credentials',
-        headers={"WWW-Authenticate": "Bearer"}
-    )
-    try:
-        payload = jwt.decode(token, key=settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
-        username: str = payload.get("sub")
-        token_data = TokenData(username=username)
-    except JWTError:
-        raise credential_exception
-    user = get_user(token_data.username, db)
-    if user is None:
-        raise credential_exception
-    return user
-
 
 def create_access_token(
     subject: Union[str, Any], expires_delta: timedelta = None
@@ -137,3 +116,9 @@ def get_user_by_query(query: str, db: Session) -> Union[UserInDB, None]:
         )
     ).first()
     return user
+
+from jinja2 import Template
+def fade_data_in_html(html_template_str: str, data: Dict[str, str]) -> str:
+    template = Template(html_template_str)
+    rendered_html = template.render(data)
+    return rendered_html

@@ -33,7 +33,7 @@ router = APIRouter(
 
 
 @router.post('/', response_model=Token, status_code=status.HTTP_201_CREATED)
-async def create(user_in: UserCreate, db: Session = Depends(get_db)) -> Token:
+async def create_new_account(user_in: UserCreate, db: Session = Depends(get_db)) -> Token:
     user = get_user_by_email(db, user_in.email)
     if user:
         raise HTTPException(
@@ -101,7 +101,6 @@ async def reset_user_password(token: str, password: PasswordReset, db: Session =
     if not user:
         raise HTTPException(detail="User not found", status_code=status.HTTP_400_BAD_REQUEST)
     existing_user = db.query(User).filter(User.email == user.email).first()
-    print(password.model_dump().get("password"))
     existing_user.password = get_password_hash(password.model_dump().get("password"))
     db.commit()
     db.refresh(existing_user)
