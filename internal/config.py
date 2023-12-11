@@ -2,6 +2,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 1
     PROJECT_NAME: str = 'fastapi-tutorials'
     DROPBOX_ACCESS_TOKEN: str
     DATABASE_URI: str = "postgresql://fastapi:fastapi@localhost/test"  # use local database in development

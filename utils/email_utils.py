@@ -44,7 +44,7 @@ async def send_new_account_email(email_to: str, subject: Optional[str], html_bod
 async def send_password_reset_email(user: UserInDB) -> None:
     token = create_access_token(subject=user.email)
     try:
-        with open(Path(settings.EMAIL_TEMPLATES_DIR) / "reset_password.html") as f:
+        with open(Path(settings.EMAIL_TEMPLATES_DIR) / "reset_password.html", encoding='utf-8') as f:
             html_template_str = f.read()
         data = {
             "project_name": settings.PROJECT_NAME,

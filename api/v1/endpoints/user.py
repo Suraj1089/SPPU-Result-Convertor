@@ -1,30 +1,26 @@
 from datetime import timedelta
-from typing import Annotated
-from typing import Union, Optional
+from typing import Annotated, Union, Optional
 
-from fastapi import APIRouter, Depends, HTTPException
-from fastapi import status
+from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.responses import JSONResponse
 from fastapi.security import OAuth2PasswordRequestForm
 from pydantic import EmailStr
 from sqlalchemy.orm import Session
 
+from api.deps import get_current_active_user, get_current_user
 from db.database import get_db
 from db.models.user import User
 from db.schemas.user import UserInDB, UserCreate, Token, UserOutDB, PasswordReset
 from internal.config import settings
-from utils.email_utils import send_email_otp, generate_otp
-from utils.email_utils import send_new_account_email
-from utils.email_utils import send_password_reset_email
+from utils.email_utils import send_email_otp, generate_otp, send_new_account_email, send_password_reset_email
 from utils.user import (
     create_access_token,
     authenticate_user,
-    get_current_active_user,
     get_user_by_email,
-    get_password_hash
+    get_password_hash,
+    create_user,
+    get_user_by_query
 )
-from utils.user import create_user, get_user_by_query
-from utils.user import get_current_user
 
 router = APIRouter(
     prefix='/users',

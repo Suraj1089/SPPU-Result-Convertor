@@ -1,24 +1,19 @@
 from datetime import datetime, timedelta
 from typing import Optional, Dict
-from typing import Union, Type, Any, Annotated
+from typing import Union, Type, Any
 
-from fastapi import Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer
-from jose import jwt, JWTError
+from jinja2 import Template
+from jose import jwt
 from passlib.context import CryptContext
 from sqlalchemy import or_
 from sqlalchemy.orm import Session
 
-from db.database import get_db
 from db.models.user import User
-from db.schemas.user import UserCreate, UserInDB, TokenData
+from db.schemas.user import UserCreate, UserInDB
 from internal.config import settings
 from utils.logging_utils import logger
 
-
-
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="users/token")
 
 
 def get_user_by_email(db: Session, email: str) -> Optional[UserInDB]:
@@ -26,7 +21,7 @@ def get_user_by_email(db: Session, email: str) -> Optional[UserInDB]:
 
 
 def create_user(db: Session, user: UserCreate) -> Union[UserInDB, None]:
-    existing_user = db.query(User).filter(User.email==user.email).first()
+    existing_user = db.query(User).filter(User.email == user.email).first()
     if existing_user:
         logger.error({
             'event_type': 'USER',
@@ -67,9 +62,8 @@ def get_users(db: Session, skip: int = 0, limit: int = 100) -> list[Type[User]]:
     return db.query(User).offset(skip).limit(limit).all()
 
 
-
 def create_access_token(
-    subject: Union[str, Any], expires_delta: timedelta = None
+        subject: Union[str, Any], expires_delta: timedelta = None
 ) -> str:
     if expires_delta:
         expire = datetime.utcnow() + expires_delta
@@ -99,14 +93,6 @@ def authenticate_user(db: Session, username: str, password: str) -> [UserInDB, b
     return user
 
 
-async def get_current_active_user(
-    current_user: Annotated[User, Depends(get_current_user)]
-) -> Union[UserInDB, Any]:
-    if not current_user.is_active:
-        raise HTTPException(status_code=400, detail="Inactive user")
-    return current_user
-
-
 def get_user_by_query(query: str, db: Session) -> Union[UserInDB, None]:
     user = db.query(User).filter(
         or_(
@@ -117,7 +103,7 @@ def get_user_by_query(query: str, db: Session) -> Union[UserInDB, None]:
     ).first()
     return user
 
-from jinja2 import Template
+
 def fade_data_in_html(html_template_str: str, data: Dict[str, str]) -> str:
     template = Template(html_template_str)
     rendered_html = template.render(data)
