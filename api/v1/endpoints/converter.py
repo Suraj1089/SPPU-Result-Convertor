@@ -2,7 +2,7 @@ from typing import Annotated
 
 from fastapi import APIRouter, Depends
 from fastapi import File, UploadFile
-from utils.user import get_current_active_user
+from api.deps import get_current_active_user
 
 
 router = APIRouter(

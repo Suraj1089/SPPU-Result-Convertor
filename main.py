@@ -5,7 +5,7 @@ from sqladmin import Admin, ModelView
 
 from db.database import Base, engine
 from db.models.user import User
-from routers import converter, user
+from api.v1.endpoints import converter, user
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 

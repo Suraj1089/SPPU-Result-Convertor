@@ -1,4 +1,5 @@
 import random
+from pathlib import Path
 from typing import List, Optional
 
 from fastapi import HTTPException, status
@@ -6,7 +7,7 @@ from fastapi_mail import ConnectionConfig, FastMail, MessageSchema, MessageType
 
 from db.schemas.user import UserInDB
 from internal.config import settings
-from utils.user import create_access_token
+from utils.user import create_access_token, fade_data_in_html
 
 conf = ConnectionConfig(
     MAIL_USERNAME=settings.SMTP_LOGIN,
@@ -43,10 +44,18 @@ async def send_new_account_email(email_to: str, subject: Optional[str], html_bod
 async def send_password_reset_email(user: UserInDB) -> None:
     token = create_access_token(subject=user.email)
     try:
+        with open(Path(settings.EMAIL_TEMPLATES_DIR) / "reset_password.html", encoding='utf-8') as f:
+            html_template_str = f.read()
+        data = {
+            "project_name": settings.PROJECT_NAME,
+            "username": user.email,
+            "token": token,
+            "valid_hours": settings.ACCESS_TOKEN_EXPIRE_MINUTES,
+            "link": f"{settings.WEBSITE_DOMAIN}/users/reset-password/{token}"
+        }
+        build_html_body = fade_data_in_html(html_template_str=html_template_str, data=data)
         await send_email(recipients=[user.email], subject="Reset Your Password",
-                         html_body=f"""Please click on the link to reset your password
-                          {settings.WEBSITE_DOMAIN}/users/reset-password/{token}
-                          """)
+                         html_body=build_html_body)
     except Exception as ex:
         raise HTTPException(detail=str(ex), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 

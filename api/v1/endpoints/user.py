@@ -1,30 +1,26 @@
 from datetime import timedelta
-from typing import Annotated
-from typing import Union, Optional
+from typing import Annotated, Union, Optional
 
-from fastapi import APIRouter, Depends, HTTPException
-from fastapi import status
+from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.responses import JSONResponse
 from fastapi.security import OAuth2PasswordRequestForm
 from pydantic import EmailStr
 from sqlalchemy.orm import Session
 
+from api.deps import get_current_active_user, get_current_user
 from db.database import get_db
 from db.models.user import User
 from db.schemas.user import UserInDB, UserCreate, Token, UserOutDB, PasswordReset
 from internal.config import settings
-from utils.email_utils import send_email_otp, generate_otp
-from utils.email_utils import send_new_account_email
-from utils.email_utils import send_password_reset_email
+from utils.email_utils import send_email_otp, generate_otp, send_new_account_email, send_password_reset_email
 from utils.user import (
     create_access_token,
     authenticate_user,
-    get_current_active_user,
     get_user_by_email,
-    get_password_hash
+    get_password_hash,
+    create_user,
+    get_user_by_query
 )
-from utils.user import create_user, get_user_by_query
-from utils.user import get_current_user
 
 router = APIRouter(
     prefix='/users',
@@ -33,7 +29,7 @@ router = APIRouter(
 
 
 @router.post('/', response_model=Token, status_code=status.HTTP_201_CREATED)
-async def create(user_in: UserCreate, db: Session = Depends(get_db)) -> Token:
+async def create_new_account(user_in: UserCreate, db: Session = Depends(get_db)) -> Token:
     user = get_user_by_email(db, user_in.email)
     if user:
         raise HTTPException(
@@ -101,7 +97,6 @@ async def reset_user_password(token: str, password: PasswordReset, db: Session =
     if not user:
         raise HTTPException(detail="User not found", status_code=status.HTTP_400_BAD_REQUEST)
     existing_user = db.query(User).filter(User.email == user.email).first()
-    print(password.model_dump().get("password"))
     existing_user.password = get_password_hash(password.model_dump().get("password"))
     db.commit()
     db.refresh(existing_user)
