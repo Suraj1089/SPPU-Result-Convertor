@@ -7,9 +7,8 @@ SQLALCHEMY_DATABASE_URL = settings.DATABASE_URI
 
 # engine = create_engine(SQLALCHEMY_DATABASE_URL)x
 
-engine = create_engine(
-    SQLALCHEMY_DATABASE_URL
-)
+engine = create_engine(SQLALCHEMY_DATABASE_URL, pool_size=8, max_overflow=2,
+                       pool_recycle=300, pool_pre_ping=True, pool_use_lifo=True)
 # instance of this class will be database sessions
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
