@@ -5,7 +5,7 @@ from internal.config import settings
 
 SQLALCHEMY_DATABASE_URL = settings.DATABASE_URI
 
-# engine = create_engine(SQLALCHEMY_DATABASE_URL)
+# engine = create_engine(SQLALCHEMY_DATABASE_URL)x
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL
