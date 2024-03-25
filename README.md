@@ -5,13 +5,13 @@
         <a href="https://github.com/Suraj1089/SPPU-Result-Convertor/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Suraj1089/SPPU-Result-Convertor?color=2b9348"></a>
         <a href="https://github.com/Suraj1089/SPPU-Result-Convertor/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Suraj1089/SPPU-Result-Convertor?color=orange" alt="License Badge"/></a>
 
-        </br>
 This is a simple python script to convert the result of SPPU (Savitribai Phule Pune University) to a more readable format.
 
-## Usage
+## Usage (For College Level)
 1. Download the result from the SPPU website.
 2. Visit - https://resultconvertor.streamlit.app/
-3. The result will be saved in the same directory as excel file.
+3. Upload the file
+4. Follow the steps.
 
 
 ## Example
@@ -31,8 +31,6 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
-## Acknowledgments
-* [SPPU](https://www.unipune.ac.in/) - Savitribai Phule Pune University
 
 ## Author
 * **Suraj Pisal** - [Suraj1089]
@@ -48,3 +46,6 @@ If you have any issues, please open an issue on the [issues page].
 * [Streamlit](https://www.streamlit.io/) - Streamlit is an open-source app framework for Machine Learning and Data Science teams.
 * [FastAPI](https://fastapi.tiangolo.com/) - FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
 * [React](https://reactjs.org/) - A JavaScript library for building user interfaces
+
+
+<img width="1564" alt="image" src="https://github.com/Suraj1089/SPPU-Result-Convertor/assets/85509795/802c54f4-00e7-441f-93f5-87705886d9c4">
